@@ -1,0 +1,112 @@
+@media only screen and (max-width: 923px) {
+  main {
+    height: calc(100vh - 330px);
+  }
+
+  nav {
+    padding: 8px 30px;
+  }
+
+  h1 {
+    display: none;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .div-principal {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 800px;
+    padding-block: 0;
+    padding-inline: 0;
+  }
+
+  .texts-principal {
+    padding-top: 0;
+    flex: none;
+  }
+
+  .title__principal {
+    font-size: 6rem;
+    line-height: 5.5rem;
+  }
+
+  .img_principal {
+    flex: none;
+    text-align: center;
+    justify-content: ends;
+  }
+
+  .my-img {
+    width: 300px;
+  }
+
+  #frase-cabecalho {
+    font-size: 0.5rem;
+    width: 500px;
+  }
+
+  .github-info {
+    margin-top: 150px;
+    margin-inline: 2rem;
+  }
+
+  .graphics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & img {
+      width: 90%;
+    }
+  }
+
+  .skill {
+    margin-inline: 2rem;
+    gap: 2rem;
+    align-items: center;
+
+    & img {
+      height: 2.5rem;
+    }
+  }
+
+  .div-servicos {
+    margin-inline: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  td,
+  th {
+    width: 200px;
+    font-size: 0.8rem;
+  }
+
+  .div__projects {
+    display: grid;
+    margin: 5rem;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .title__projects {
+    margin-inline: 2rem;
+  }
+
+  .name-project {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .name {
+    text-align: center;
+  }
+
+  footer {
+    font-size: 0.7rem;
+  }
+}

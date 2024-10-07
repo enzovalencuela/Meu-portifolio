@@ -1,0 +1,443 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+* {
+  font-family: "Inter";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--fontColor);
+}
+
+body {
+  background-image: var(--bg);
+  background-size: cover;
+}
+
+nav {
+  background-color: #5b5b5b;
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  color: #d9d9d9;
+  text-transform: uppercase;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+ul {
+  display: flex;
+  gap: 1rem;
+
+  & li {
+    list-style: none;
+  }
+
+  & a {
+    text-decoration: none;
+    color: var(--pColor);
+    font-size: 1.3rem;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.example-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.example-2 .icon-content {
+  margin: 0 10px;
+  position: relative;
+}
+.example-2 .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+.example-2 .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  color: #4d4d4d;
+  background-color: var(--color);
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+.example-2 .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 25px;
+  height: 25px;
+}
+.example-2 .icon-content a:hover {
+  color: white;
+}
+.example-2 .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
+
+.example-2 .icon-content a[data-social="linkedin"] .filled,
+.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+  background-color: #0274b3;
+}
+
+.example-2 .icon-content a[data-social="github"] .filled,
+.example-2 .icon-content a[data-social="github"] ~ .tooltip {
+  background-color: var(--bgGitHub);
+}
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+  );
+}
+.example-2 .icon-content a[data-social="youtube"] .filled,
+.example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+  background-color: #ff0000;
+}
+
+main {
+  flex: 1 1 100vw;
+  height: calc(100vh - 224px);
+}
+
+.btn {
+  display: block;
+  --width-of-switch: 3.5em;
+  --height-of-switch: 2em;
+  --size-of-icon: 1.4em;
+  --slider-offset: 0.3em;
+  position: relative;
+  width: var(--width-of-switch);
+  height: var(--height-of-switch);
+}
+
+.btn input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f4f4f5;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: var(--size-of-icon, 1.4em);
+  width: var(--size-of-icon, 1.4em);
+  border-radius: 20px;
+  left: var(--slider-offset, 0.3em);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #303136;
+}
+
+input:checked + .slider:before {
+  left: calc(100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em)));
+  background: #303136;
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+}
+
+.div-principal {
+  padding-block: 30px;
+  padding-inline: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100vh;
+}
+
+.texts-principal {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.title__principal {
+  color: var(--h2color);
+  font-size: 8rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 200;
+  line-height: 7.5rem;
+}
+
+.img_principal {
+  flex: 1;
+  text-align: center;
+}
+
+.my-img {
+  width: 450px;
+  margin-top: 23%;
+}
+
+#frase-cabecalho {
+  display: block;
+  margin: 0 auto;
+}
+
+.github-info {
+  border: 4px solid var(--borderColor);
+  border-radius: 10px;
+  margin-inline: 7rem;
+  margin-bottom: 130px;
+}
+
+.visitantes {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.graphics {
+  display: flex;
+  margin-block: 50px;
+  margin-inline: 0;
+}
+
+/* Estiliza a caixa de resultados da pesquisa */
+.div__projects {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem;
+  gap: 50px;
+}
+
+.title__projects {
+  color: #f4f4f4;
+  border: 1px solid #2f2f2f;
+  background-color: #2f2f2f;
+  border-radius: 10px;
+  margin-inline: 7rem;
+  padding: 7px;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* A própria imagem */
+.img-projects {
+  width: 400px;
+  padding: 30px 30px 0px 0px;
+  border-radius: 0 0 0 2em;
+}
+
+.name-project {
+  display: flex; /* Usa Flexbox para layout */
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.name {
+  font-size: 1.6rem;
+  color: var(--fontColor);
+  padding-bottom: 10px;
+}
+
+.link-pagina {
+  display: flex; /* Usa Flexbox para layout */
+  flex-direction: row;
+  align-items: center;
+}
+
+.item-resultado {
+  padding: 0.2rem;
+}
+
+/* Estiliza os links dentro dos itens de resultado */
+.item-resultado a {
+  text-decoration: none;
+  color: #fcfcfc;
+}
+
+/* Estiliza a descrição meta dentro dos itens de resultado */
+.descricao-meta {
+  color: #45474b;
+  margin: 0.5rem 0;
+}
+
+li {
+  list-style: none;
+}
+
+.buttons-project {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 7px;
+  align-items: center;
+  justify-content: left;
+}
+
+.button {
+  padding: 12.5px 30px;
+  border: 0;
+  border-radius: 100px;
+  background-color: var(--h2Bg);
+  color: #ffffff;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.button:hover {
+  background-color: var(--h2Bg);
+  box-shadow: 0 0 20px var(--h2Bg);
+  transform: scale(1.1);
+}
+
+.button:active {
+  background-color: var(--h2Bg);
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
+.btn-github {
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  border: none;
+
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 100px;
+  font-weight: 800;
+  place-content: center;
+
+  padding: 0.75rem 1rem;
+  font-size: 0.825rem;
+  line-height: 1rem;
+
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.04),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+}
+
+.btn-github:hover {
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
+    inset 0 0 0 1px rgba(252, 232, 3, 0.08);
+  color: #fce803;
+  transform: translate(0, -0.25rem);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  padding-block: 5rem;
+
+  & p {
+    color: var(--pColor);
+  }
+}
+
+:root {
+  --white: #feffd0;
+  --black: #101010;
+  --blue: #4b61a7;
+  --purple: #6000ef;
+  --lightBlue: #117702;
+  --gray: #d9d9d9;
+  --lightGray: #f4f4f4;
+  --highGray: #2f2f2f;
+  --gitGray: #24262a;
+  --mediumGray: #5e5e5e;
+  --fundo: url(/img/fundo.png);
+  --fundo2: url(/img/fundo-claro.png);
+}
+
+.light-mode {
+  --bg: var(--fundo2);
+  --fontColor: var(--highGray);
+  --h2Color: var(--gray);
+  --h2Bg: var(--purple);
+  --btnFontColor: var(--white);
+  --borderColor: var(--mediumGray);
+  --pColor: var(--lightGray);
+  --color: var(--lightGray);
+  --bgGitHub: var(--gitGray);
+}
+
+.dark-mode {
+  --bg: var(--fundo);
+  --h2color: var(--gray);
+  --fontColor: var(--lightGray);
+  --h2Bg: var(--lightBlue);
+  --btnFontColor: var(--black);
+  --borderColor: var(--highGray);
+  --pColor: var(--lightGray);
+  --color: var(--highGray);
+  --bgGitHub: var(--mediumGray);
+}
