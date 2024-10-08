@@ -254,11 +254,18 @@ input:checked + .slider:before {
 /* Estiliza a caixa de resultados da pesquisa */
 .div__projects {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
   align-items: center;
-  justify-content: center;
-  margin: 5rem 7rem;
-  gap: 50px;
+  margin: 5rem auto;
+}
+
+.item-resultado {
+  padding: 0.2rem;
+  flex: 0 0 calc(25% - 20px); /* This sets the width of each item to 25% of the screen size, minus 20px for margin */
+  margin: 10px;
+  text-align: center;
 }
 
 .title__projects {
@@ -297,10 +304,6 @@ input:checked + .slider:before {
   display: flex; /* Usa Flexbox para layout */
   flex-direction: row;
   align-items: center;
-}
-
-.item-resultado {
-  padding: 0.2rem;
 }
 
 .buttons-project {

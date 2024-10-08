@@ -1,4 +1,4 @@
-@media only screen and (max-width: 478px) {
+@media only screen and (max-width: 580px) {
   main {
     height: calc(100vh - 330px);
   }
@@ -45,7 +45,7 @@
 
   #frase-cabecalho {
     font-size: 0.5rem;
-    width: 380px;
+    width: 360px;
   }
 
   .github-info {
