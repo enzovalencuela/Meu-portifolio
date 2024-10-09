@@ -13,7 +13,13 @@ body {
   background-size: cover;
 }
 
-nav {
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: top 0.3s; /* Adiciona uma transição suave */
+  top: -80px; /* Inicialmente, a barra está fora da tela */
   background-color: #5b5b5b;
   padding: 15px 30px;
   display: flex;
@@ -265,6 +271,7 @@ input:checked + .slider:before {
 }
 
 .div-principal {
+  margin-top: 80px;
   padding-block: 30px;
   padding-inline: 60px;
   display: flex;
@@ -296,7 +303,7 @@ input:checked + .slider:before {
 
 .my-img {
   width: 450px;
-  margin-top: 23%;
+  margin-top: 20%;
 }
 
 #frase-cabecalho {
@@ -327,7 +334,6 @@ input:checked + .slider:before {
 .div__projects {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   width: 90%;
   align-items: center;
   margin: 5rem auto;
@@ -443,6 +449,33 @@ input:checked + .slider:before {
   background-color: rgba(109, 109, 109, 0.799);
 }
 
+.div-logotipos {
+  padding-block: 7em;
+  background-image: var(--bgL);
+  background-size: cover;
+}
+
+.title__logotipos {
+  text-align: center;
+  color: var(--h2color);
+  font-size: 8rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 200;
+  line-height: 7.5rem;
+}
+
+.div__img-logos {
+  padding-top: 8rem;
+  justify-content: space-around;
+  margin-inline: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.logo-img {
+  width: 400px;
+}
+
 footer {
   display: flex;
   flex-direction: column;
@@ -471,6 +504,8 @@ footer {
   --mediumGray: #5e5e5e;
   --fundo: url(/img/fundo.png);
   --fundo2: url(/img/fundo-claro.png);
+  --fundoL: url(/img/fundo-logotipos.png);
+  --fundoL2: url(/img/fundo-logotipos-claro.png);
 }
 
 .light-mode {
@@ -483,6 +518,7 @@ footer {
   --pColor: var(--lightGray);
   --color: var(--lightGray);
   --bgGitHub: var(--gitGray);
+  --bgL: var(--fundoL2);
 }
 
 .dark-mode {
@@ -495,4 +531,5 @@ footer {
   --pColor: var(--lightGray);
   --color: var(--highGray);
   --bgGitHub: var(--mediumGray);
+  --bgL: var(--fundoL);
 }
