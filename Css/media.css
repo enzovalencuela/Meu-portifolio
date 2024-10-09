@@ -15,6 +15,38 @@
     display: none;
   }
 
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .mobile-menu {
+    border-radius: 0 0 0 10px;
+    position: absolute;
+    right: 0;
+    background-color: #353535;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 5rem;
+  }
+
+  .mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mobile-menu .my-pages,
+  .mobile-menu .example-2 {
+    display: block;
+  }
+
+  .mobile-menu .example-2 {
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+  }
+
   .div-principal {
     display: flex;
     flex-direction: column-reverse;
