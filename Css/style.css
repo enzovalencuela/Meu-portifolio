@@ -277,6 +277,7 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   height: 100vh;
 }
 
@@ -303,7 +304,6 @@ input:checked + .slider:before {
 
 .my-img {
   width: 450px;
-  margin-top: 20%;
 }
 
 #frase-cabecalho {

@@ -1,6 +1,7 @@
 @media only screen and (max-width: 580px) {
   body {
     background-image: var(--mobileBg);
+    position: relative;
   }
 
   main {
@@ -27,6 +28,7 @@
     border-radius: 0 0 0 10px;
     position: absolute;
     right: 0;
+    top: -19px;
     background-color: #353535;
     align-items: center;
     justify-content: center;
@@ -98,28 +100,6 @@
     & img {
       width: 90%;
     }
-  }
-
-  .skill {
-    margin-inline: 2rem;
-    gap: 2rem;
-    align-items: center;
-
-    & img {
-      height: 2.5rem;
-    }
-  }
-
-  .div-servicos {
-    margin-inline: 2rem;
-    display: flex;
-    flex-direction: column;
-  }
-
-  td,
-  th {
-    width: 200px;
-    font-size: 0.8rem;
   }
 
   .title__projects {

@@ -1,0 +1,133 @@
+@media only screen and (max-width: 580px) {
+  body {
+    background-image: var(--mobileBg);
+    position: relative;
+  }
+
+  main {
+    height: calc(100vh - 330px);
+  }
+
+  nav {
+    padding: 8px 20px;
+  }
+
+  .example-2 {
+    display: none;
+  }
+
+  .my-pages {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .mobile-menu {
+    border-radius: 0 0 0 10px;
+    position: absolute;
+    right: 0;
+    top: -67px;
+    background-color: #353535;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 5rem;
+  }
+
+  .mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mobile-menu .my-pages,
+  .mobile-menu .example-2 {
+    display: block;
+  }
+
+  .mobile-menu .example-2 {
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+  }
+
+  .skill {
+    margin-inline: 0rem;
+    gap: 2rem;
+    align-items: center;
+
+    & img {
+      height: 2.5rem;
+    }
+  }
+
+  .div-servicos {
+    margin-inline: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .title-servicos {
+    margin-top: 100px;
+    margin-bottom: 60px;
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  .servicos {
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 0px;
+  }
+
+  tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+  }
+
+  td,
+  th {
+    width: 380px;
+  }
+
+  .item-servico {
+    padding-block: 10px;
+    background-color: #282828;
+    border-radius: 10px;
+    min-height: 100px;
+    justify-content: center;
+    align-items: center;
+    & h3 {
+      font-size: 1.3rem;
+    }
+
+    & p {
+      font-size: 1.2rem;
+      margin-top: 5px;
+      margin-bottom: 0px;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+
+  .apresentation {
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+    margin-inline: auto;
+    max-width: 900px;
+
+    & p {
+      text-align: center;
+      font-size: 1rem;
+    }
+  }
+}
