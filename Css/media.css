@@ -1,4 +1,8 @@
 @media only screen and (max-width: 580px) {
+  body {
+    background-image: var(--mobileBg);
+  }
+
   main {
     height: calc(100vh - 330px);
   }
@@ -124,11 +128,11 @@
   }
 
   .div__projects {
-    display: grid;
-    margin-block: 5rem;
-    margin-inline: 0;
+    display: flex;
     gap: 50px;
     align-items: center;
+    justify-content: center;
+    margin: 5rem auto;
   }
 
   .item-resultado {
@@ -149,6 +153,18 @@
   .buttons-project {
     align-items: center;
     text-align: center;
+  }
+
+  .div-logotipos {
+    background-image: var(--mobileBgL);
+  }
+
+  .div__img-logos {
+    margin-inline: 1rem;
+  }
+
+  .logo-img {
+    width: 250px;
   }
 
   footer {

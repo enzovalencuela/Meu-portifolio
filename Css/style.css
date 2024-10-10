@@ -336,6 +336,7 @@ input:checked + .slider:before {
   flex-wrap: wrap;
   width: 90%;
   align-items: center;
+  justify-content: start;
   margin: 5rem auto;
 }
 
@@ -506,6 +507,10 @@ footer {
   --fundo2: url(/img/fundo-claro.png);
   --fundoL: url(/img/fundo-logotipos.png);
   --fundoL2: url(/img/fundo-logotipos-claro.png);
+  --fundoMobile: url(/img/Fundo-mobile/fundo-mobile.png);
+  --fundoMobile2: url(/img/Fundo-mobile/fundo-mobile-claro.png);
+  --fundoMobileL: url(/img/Fundo-mobile/fundo-mobile-logo.png);
+  --fundoMobileL2: url(/img/Fundo-mobile/fundo-mobile-logo-claro.png);
 }
 
 .light-mode {
@@ -519,6 +524,8 @@ footer {
   --color: var(--lightGray);
   --bgGitHub: var(--gitGray);
   --bgL: var(--fundoL2);
+  --mobileBg: var(--fundoMobile2);
+  --mobileBgL: var(--fundoMobileL2);
 }
 
 .dark-mode {
@@ -532,4 +539,6 @@ footer {
   --color: var(--highGray);
   --bgGitHub: var(--mediumGray);
   --bgL: var(--fundoL);
+  --mobileBg: var(--fundoMobile);
+  --mobileBgL: var(--fundoMobileL);
 }
