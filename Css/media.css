@@ -1,4 +1,4 @@
-@media only screen and (max-width: 580px) {
+@media only screen and (max-width: 479px) {
   body {
     background-image: var(--mobileBg);
     position: relative;
@@ -132,6 +132,106 @@
 
   .buttons-project {
     align-items: center;
+    text-align: center;
+  }
+
+  .div-logotipos {
+    background-image: var(--mobileBgL);
+  }
+
+  .div__img-logos {
+    margin-inline: 1rem;
+  }
+
+  .logo-img {
+    width: 250px;
+  }
+
+  footer {
+    padding: 3rem 1rem;
+    font-size: 0.7rem;
+  }
+}
+
+/*-----------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 768px) {
+  .div-principal {
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    padding-block: 0;
+    padding-inline: 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .texts-principal {
+    padding-top: 0;
+    flex: none;
+  }
+
+  .title__principal {
+    font-size: 6rem;
+    line-height: 5.5rem;
+  }
+
+  .img_principal {
+    flex: none;
+    text-align: center;
+    justify-content: end;
+  }
+
+  .my-img {
+    width: 300px;
+  }
+
+  #frase-cabecalho {
+    font-size: 0.5rem;
+    width: 400px;
+  }
+
+  .github-info {
+    margin-top: 150px;
+    margin-inline: 2rem;
+    padding-block: 20px;
+  }
+
+  .graphics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block: 0;
+
+    & img {
+      width: 500px;
+    }
+  }
+
+  .title__projects {
+    font-size: 2rem;
+    margin-inline: 2rem;
+  }
+
+  .div__projects {
+    display: flex;
+    gap: 0px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5rem 2rem;
+  }
+
+  .item-resultado {
+    align-items: center;
+    padding: 0;
+  }
+
+  .img-projects {
+    width: 260px;
+    padding: 0;
+  }
+
+  .name {
     text-align: center;
   }
 
