@@ -1,4 +1,4 @@
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 708px) {
   body {
     background-image: var(--mobileBg);
     position: relative;
@@ -53,6 +53,20 @@
     margin-bottom: 40px;
   }
 
+  .apresentation {
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+    margin-inline: auto;
+    max-width: 370px;
+
+    & p {
+      text-align: center;
+      font-size: 0.8rem;
+    }
+  }
+
   .skill {
     margin-inline: 0rem;
     gap: 2rem;
@@ -83,6 +97,9 @@
     align-items: center;
     margin-block: 0px;
   }
+  table {
+    border: none;
+  }
 
   tr {
     display: flex;
@@ -94,6 +111,7 @@
   td,
   th {
     width: 380px;
+    border: none;
   }
 
   .item-servico {
@@ -116,25 +134,11 @@
       justify-content: center;
     }
   }
-
-  .apresentation {
-    justify-content: center;
-    align-items: center;
-    margin-top: 8rem;
-    margin-bottom: 2rem;
-    margin-inline: auto;
-    max-width: 900px;
-
-    & p {
-      text-align: center;
-      font-size: 1rem;
-    }
-  }
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
-@media only screen and (max-width: 768px) {
+@media (min-width: 709px) and (max-width: 1024px) {
   .apresentation {
     justify-content: center;
     align-items: center;
