@@ -29,8 +29,11 @@ body {
 }
 
 h1 {
-  color: #d9d9d9;
-  text-transform: uppercase;
+  & a {
+    color: #d9d9d9;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
 }
 
 ul {
@@ -330,21 +333,76 @@ input:checked + .slider:before {
   margin-inline: 0;
 }
 
+/* Estiliza o formulário de pesquisa */
+.search-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 80px;
+
+  & .item-search {
+    display: flex;
+    flex-direction: row;
+    background-color: #222;
+    border-radius: 10px;
+    padding: 15px 20px;
+    width: 700px;
+    gap: 20px;
+    align-items: center;
+    justify-content: start;
+
+    & label {
+      color: #fff;
+    }
+
+    & input {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+
+    & button {
+      padding: 10px 30px;
+      border-radius: 5px;
+      border: none;
+      background-color: #159301;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 500;
+    }
+  }
+}
+
 /* Estiliza a caixa de resultados da pesquisa */
 .div__projects {
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
-  align-items: center;
+  width: 100vw;
+  min-height: 70vh;
+  align-items: start;
   justify-content: start;
-  margin: 5rem auto;
+  margin: 6rem;
+  gap: 20px;
 }
 
 .item-resultado {
   padding: 0.2rem;
-  flex: 0 0 calc(25% - 20px); /* This sets the width of each item to 25% of the screen size, minus 20px for margin */
+  flex: 0 0 calc(25% - 20px);
   margin: 10px;
   text-align: center;
+}
+
+.title-btn {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  color: #fd1f1f;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .title__projects {
@@ -361,8 +419,7 @@ input:checked + .slider:before {
 
 /* A própria imagem */
 .img-projects {
-  width: 400px;
-  padding: 30px 30px 0px 0px;
+  width: 380px;
 }
 
 .name-project {

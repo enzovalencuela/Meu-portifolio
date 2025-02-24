@@ -56,8 +56,10 @@
   .div-principal {
     display: flex;
     flex-direction: column-reverse;
-    height: 100vh;
-    padding-block: 0;
+    justify-content: start;
+    gap: 20px;
+    height: 500px;
+    padding-block: 50px;
     padding-inline: 0;
   }
 
@@ -67,8 +69,8 @@
   }
 
   .title__principal {
-    font-size: 5rem;
-    line-height: 5.2rem;
+    font-size: 4rem;
+    line-height: 4rem;
   }
 
   .img_principal {
@@ -78,7 +80,7 @@
   }
 
   .my-img {
-    width: 300px;
+    width: 150px;
   }
 
   #frase-cabecalho {
@@ -106,6 +108,34 @@
     }
   }
 
+  /* Estiliza o formulário de pesquisa */
+  .search-user {
+    margin: 2rem;
+
+    & .item-search {
+      flex-direction: column;
+      padding: 15px 0px;
+      width: 100%;
+      gap: 5px;
+      background-color: transparent;
+
+      & label {
+        display: none;
+      }
+
+      & input {
+        padding: 10px;
+        border: 2px solid #159301;
+        width: 100%;
+      }
+
+      & button {
+        padding: 10px;
+        width: 100%;
+      }
+    }
+  }
+
   .title__projects {
     font-size: 2rem;
     margin-inline: 2rem;
@@ -114,29 +144,60 @@
   .div__projects {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 20px;
     align-items: center;
     justify-content: center;
-    margin: 5rem auto;
+    margin: 50px 0px;
   }
 
   .item-resultado {
     align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex: auto;
     justify-content: center;
+    width: 85vw;
+    gap: 20px;
+    border: 1px solid #353535;
+    border-radius: 10px;
   }
 
   .img-projects {
-    width: 290px;
+    flex: 1;
+    width: 100px;
     padding: 0;
   }
 
   .name {
     text-align: center;
+    font-size: 1.1rem;
+  }
+
+  .title-btn {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 2;
   }
 
   .buttons-project {
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+  }
+
+  .button,
+  .btn-github {
+    justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 0.6rem;
+    padding: 7px;
+    border: 0;
+    border-radius: 20px;
+    gap: 0;
+    margin: 0;
+    height: 25px;
   }
 
   .div-logotipos {

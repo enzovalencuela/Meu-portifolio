@@ -5,22 +5,51 @@
   font-family: "Inter";
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .apresentation {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 8rem;
   margin-bottom: 2rem;
   margin-inline: auto;
-  max-width: 900px;
+  max-width: 70vw;
+}
+
+.apresentation__text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 
   & p {
-    text-align: center;
-    font-size: 1.2rem;
+    text-align: start;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 100px;
+  }
+
+  & ul {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
   }
 }
 
+/*Minhas habilidades===========================================*/
+
 .main-skills {
+  display: flex;
+  flex-direction: column;
   margin-top: 120px;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-skills h3 {
@@ -36,6 +65,8 @@
 
 .skill {
   display: flex;
+  flex-direction: row;
+  width: 70vw;
   gap: 5rem;
   border: 1px solid #222;
   border-radius: 10px;
@@ -63,19 +94,22 @@
 
 .div-servicos {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 80px;
-  gap: 8rem;
+  gap: 5rem;
   margin-inline: 5rem;
 }
 
 .servicos-frontEnd,
-.servicos-designGrafico {
+.servicos-designGrafico,
+.servicos-backEnd {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
   align-items: center;
   justify-content: center;
-  text-align: center;
   background-color: #222;
   border-radius: 1.5rem;
   padding: 0 0 50px 0;
@@ -94,6 +128,7 @@
 
   & h3 {
     font-size: 1.4rem;
+    color: var(--pColor);
   }
 
   & p {
@@ -101,17 +136,12 @@
     font-weight: 300;
     color: #858585;
   }
-
-  & h3 {
-    color: var(--pColor);
-  }
 }
 
 table {
   font-size: 1.3rem;
   margin: 0 auto;
-  border-collapse: collapse;
-  border: 2px solid rgb(23, 23, 23);
+  border: none;
 }
 
 tr {
@@ -124,12 +154,12 @@ tr {
 td,
 th {
   min-height: 90px;
-  width: 300px;
   padding: 10px;
   text-align: center;
   vertical-align: middle;
 }
 
 td {
-  border: 2px solid rgb(23, 23, 23);
+  border: none;
+  width: 100%;
 }
