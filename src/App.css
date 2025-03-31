@@ -23,14 +23,14 @@ html {
   --highGray: #2f2f2f;
   --gitGray: #24262a;
   --mediumGray: #5e5e5e;
-  --fundo: url(public/assets/img/fundo.png);
-  --fundo2: url(public/assets/img/fundo-claro.png);
-  --fundoL: url(public/assets/img/fundo-logotipos.png);
-  --fundoL2: url(public/assets/img/fundo-logotipos-claro.png);
-  --fundoMobile: url(public/assets/img/Fundo-mobile/fundo-mobile.png);
-  --fundoMobile2: url(public/assets/img/Fundo-mobile/fundo-mobile-claro.png);
-  --fundoMobileL: url(public/assets/img/Fundo-mobile/fundo-mobile-logo.png);
-  --fundoMobileL2: url(public/assets/img/Fundo-mobile/fundo-mobile-logo-claro.png);
+  --fundo: url(/assets/img/fundo.png);
+  --fundo2: url(/assets/img/fundo-claro.png);
+  --fundoL: url(/assets/img/fundo-logotipos.png);
+  --fundoL2: url(/assets/img/fundo-logotipos-claro.png);
+  --fundoMobile: url(/assets/img/Fundo-mobile/fundo-mobile.png);
+  --fundoMobile2: url(/assets/img/Fundo-mobile/fundo-mobile-claro.png);
+  --fundoMobileL: url(/assets/img/Fundo-mobile/fundo-mobile-logo.png);
+  --fundoMobileL2: url(/assets/img/Fundo-mobile/fundo-mobile-logo-claro.png);
 }
 
 .dark-mode,
