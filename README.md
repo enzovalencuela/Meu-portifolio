@@ -1,12 +1,81 @@
-# React + Vite
+# 🚀 Meu Portfólio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é o repositório do meu portfólio profissional, desenvolvido com tecnologias modernas para apresentar meus projetos e habilidades na área de desenvolvimento Full Stack e design gráfico.
 
-Currently, two official plugins are available:
+## 🔗 Link do Portfólio
+[**Acesse aqui**](#
+https://enzovalencuela-meu-portifolio.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+- **React.js** → Construção da interface
+- **Next.js** → Renderização otimizada e SEO
+- **JSX** → Sintaxe para estruturação de componentes
+- **CSS** → Estilização personalizada
+- **Node.js** → Backend e API
+- **Vite** → Ferramenta para build e desenvolvimento rápido
+- **NPM** → Gerenciador de pacotes
+- **Git & GitHub** → Controle de versão e hospedagem do código
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📌 Funcionalidades
+
+- 🔥 **Modo Claro/Escuro** → Alternância entre temas
+- 📊 **Gráficos do GitHub** → Exibição de estatísticas de contribuição
+- 🔍 **Visualizador de Visitas** → Contador de acessos ao portfólio
+- 🎨 **Destaque de Projetos** → Apresentação dos principais trabalhos realizados
+- ⚡ **Performance Otimizada** → Uso de Next.js e Vite para carregamento rápido
+
+## 📂 Estrutura do Projeto
+
+```
+📁 meu-portfolio
+ ┣ 📂 src
+ ┃ ┣ 📂 components  # Componentes reutilizáveis
+ ┃ ┣ 📂 pages       # Páginas do site
+ ┃ ┣ 📂 styles      # Estilos globais e específicos
+ ┃ ┣ 📂 assets      # Imagens e ícones
+ ┃ ┗ 📜 app.js      # Arquivo principal
+ ┣ 📜 package.json  # Dependências e scripts
+ ┣ 📜 README.md     # Documentação
+ ┗ 📜 .gitignore    # Arquivos ignorados no Git
+```
+
+## 🚀 Como Executar
+
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   ```
+2. **Acesse o diretório**
+   ```bash
+   cd meu-portfolio
+   ```
+3. **Instale as dependências**
+   ```bash
+   npm install
+   ```
+4. **Inicie o servidor de desenvolvimento**
+   ```bash
+   npm run dev
+   ```
+5. **Abra no navegador**
+   ```
+   http://localhost:3000
+   ```
+
+## 📌 Melhorias Futuras
+
+- 🚀 **Adição de novas animações e interatividade**
+- 🖼 **Galeria com capturas de tela dos projetos**
+- 🌍 **Versão multilíngue (PT-BR e EN)**
+- 📩 **Formulário de contato dinâmico**
+
+## 📬 Contato
+
+Se quiser trocar uma ideia sobre tecnologia ou tiver interesse em algum projeto, entre em contato:
+- **Email:** [esilvavalencuela@gmail.com](esilvavalencuela@gmail.com)
+- **LinkedIn:** [https://www.linkedin.com/in/enzo-silva10/](https://www.linkedin.com/in/enzo-silva10/)
+
+---
+
+✨ Feito com dedicação por Enzo Valençuela 🚀
