@@ -3,7 +3,7 @@
 Este é o repositório do meu portfólio profissional, desenvolvido com tecnologias modernas para apresentar meus projetos e habilidades na área de desenvolvimento Full Stack e design gráfico.
 
 ## 🔗 Link do Portfólio
-[**Acesse aqui**](#
+[**Acesse aqui**](
 https://enzovalencuela-meu-portifolio.netlify.app/)
 
 ## 🛠️ Tecnologias Utilizadas
