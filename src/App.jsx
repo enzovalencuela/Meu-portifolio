@@ -21,7 +21,6 @@ function App() {
       <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
         <Nav />
         <Main />
-        <About />
         <Projects />
         <LogotipoPage />
         <Contacts />

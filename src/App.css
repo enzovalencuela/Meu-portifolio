@@ -72,3 +72,15 @@ html {
   --mobileBg: var(--fundoMobile);
   --mobileBgL: var(--fundoMobileL);
 }
+
+@media only screen and (max-width: 708px) {
+  .light-mode {
+    background-image: var(--fundoMobile2);
+    --bgL: var(--fundoMobileL2);
+  }
+
+  .dark-mode {
+    background-image: var(--fundoMobile);
+    --bgL: var(--fundoMobileL);
+  }
+}

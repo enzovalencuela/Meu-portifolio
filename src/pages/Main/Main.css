@@ -198,7 +198,8 @@ input:checked + .slider:before {
   }
 
   main {
-    height: calc(100vh - 330px);
+    padding-top: 100px;
+    min-height: 1400px;
   }
 
   nav {

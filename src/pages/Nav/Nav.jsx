@@ -125,7 +125,7 @@ function Nav() {
       </div>
 
       <div className={`menu ${menuOpen ? "open" : ""}`} ref={menuMobileRef}>
-        <ul className="menu-nav">
+        <ul className="menu-nav my-pages">
           <li className="nav-item">
             <a href="#home" className="nav-link">
               Home
