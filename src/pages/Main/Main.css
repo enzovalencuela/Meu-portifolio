@@ -1,0 +1,359 @@
+main {
+  min-height: 100%;
+}
+
+.btn {
+  display: block;
+  --width-of-switch: 3.5em;
+  --height-of-switch: 2em;
+  --size-of-icon: 1.4em;
+  --slider-offset: 0.3em;
+  position: relative;
+  width: var(--width-of-switch);
+  height: var(--height-of-switch);
+}
+
+.btn input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f4f4f5;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: var(--size-of-icon, 1.4em);
+  width: var(--size-of-icon, 1.4em);
+  border-radius: 20px;
+  left: var(--slider-offset, 0.3em);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #303136;
+}
+
+input:checked + .slider:before {
+  left: calc(100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em)));
+  background: #303136;
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+}
+
+.mobile-menu-icon {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.menu-icon {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.menu-icon input {
+  display: none;
+}
+
+.menu-icon span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: rgb(198, 198, 198);
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.menu-icon span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.menu-icon span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.menu-icon span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.menu-icon input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.menu-icon input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.menu-icon input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+
+.open {
+  display: block;
+}
+
+.div-principal {
+  padding: 60px 60px 0 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+.texts-principal {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.title__principal {
+  color: var(--h2color);
+  font-size: 8rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 200;
+  line-height: 7.5rem;
+}
+
+.img_principal {
+  display: flex;
+  flex: 1;
+  text-align: center;
+  justify-content: center;
+}
+
+.my-img {
+  width: 450px;
+}
+
+#frase-cabecalho {
+  display: block;
+  margin: 0 auto;
+}
+
+.github-info {
+  border: 4px solid var(--borderColor);
+  border-radius: 10px;
+  margin-inline: 7rem;
+  margin-bottom: 130px;
+}
+
+.visitantes {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.graphics {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block: 50px;
+  margin-inline: 0;
+  gap: 50px;
+}
+
+/*?-------------------------------------------MOBILE----------------------------------------------------------*/
+
+@media only screen and (max-width: 708px) {
+  body {
+    background-image: var(--mobileBg);
+    position: relative;
+  }
+
+  main {
+    height: calc(100vh - 330px);
+  }
+
+  nav {
+    padding: 8px 20px;
+  }
+
+  .example-2 {
+    display: none;
+  }
+
+  .my-pages {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .mobile-menu {
+    border-radius: 0 0 0 10px;
+    position: absolute;
+    right: 0;
+    top: -19px;
+    background-color: #353535;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 5rem;
+  }
+
+  .mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mobile-menu .my-pages,
+  .mobile-menu .example-2 {
+    display: block;
+  }
+
+  .mobile-menu .example-2 {
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+  }
+
+  .div-principal {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: start;
+    gap: 20px;
+    height: 500px;
+    padding-block: 50px;
+    padding-inline: 0;
+  }
+
+  .texts-principal {
+    padding-top: 0;
+    flex: none;
+  }
+
+  .title__principal {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  .img_principal {
+    flex: none;
+    text-align: center;
+    justify-content: end;
+  }
+
+  .my-img {
+    width: 150px;
+  }
+
+  #frase-cabecalho {
+    font-size: 0.5rem;
+    width: 360px;
+  }
+
+  .github-info {
+    margin-top: 150px;
+    margin-inline: 2rem;
+    padding: 0 0 20px 0;
+  }
+
+  .graphics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block: 0;
+    padding-top: 30px;
+    gap: 10px;
+
+    & img {
+      height: 150px;
+      width: 90%;
+    }
+  }
+}
+
+/*?-------------------------------------------TABLETS----------------------------------------------------------*/
+
+@media (min-width: 709px) and (max-width: 1024px) {
+  .div-principal {
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    padding-block: 0;
+    padding-inline: 0;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .texts-principal {
+    padding-top: 0;
+    flex: none;
+  }
+
+  .title__principal {
+    font-size: 6rem;
+    line-height: 5.5rem;
+  }
+
+  .img_principal {
+    flex: none;
+    text-align: center;
+    justify-content: end;
+  }
+
+  .my-img {
+    width: 300px;
+  }
+
+  #frase-cabecalho {
+    font-size: 0.5rem;
+    width: 400px;
+  }
+
+  .github-info {
+    margin-top: 150px;
+    margin-inline: 2rem;
+    padding-block: 20px;
+  }
+
+  .graphics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block: 0;
+
+    & img {
+      width: 500px;
+    }
+  }
+}

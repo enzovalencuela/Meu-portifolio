@@ -1,0 +1,32 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg);
+  padding-block: 5rem;
+  gap: 10px;
+
+  & p {
+    text-align: center;
+    color: var(--bgGitHub);
+  }
+}
+
+/*?-------------------------------------------MOBILE----------------------------------------------------------*/
+
+@media only screen and (max-width: 708px) {
+  footer {
+    padding: 3rem 1rem;
+    font-size: 0.7rem;
+  }
+}
+
+/*?-------------------------------------------TABLETS----------------------------------------------------------*/
+
+@media (min-width: 709px) and (max-width: 1024px) {
+  footer {
+    padding: 3rem 1rem;
+    font-size: 0.7rem;
+  }
+}

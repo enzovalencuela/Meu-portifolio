@@ -1,0 +1,69 @@
+.div-logotipos {
+  padding-block: 7em;
+  background-image: var(--bgL);
+  background-size: cover;
+}
+
+.title__logotipos {
+  text-align: center;
+  color: var(--h2color);
+  font-size: 8rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 200;
+  line-height: 7.5rem;
+}
+
+.div__img-logos {
+  padding-top: 8rem;
+  justify-content: space-around;
+  margin-inline: 10rem;
+  column-gap: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.logo-img {
+  width: 400px;
+}
+
+/*?-------------------------------------------MOBILE----------------------------------------------------------*/
+
+@media only screen and (max-width: 708px) {
+  .title__projects {
+    font-size: 2rem;
+    margin-inline: 2rem;
+  }
+
+  .div-logotipos {
+    background-image: var(--mobileBgL);
+  }
+
+  .div__img-logos {
+    margin-inline: 1rem;
+  }
+
+  .logo-img {
+    width: 250px;
+  }
+}
+
+/*?-------------------------------------------TABLETS----------------------------------------------------------*/
+
+@media (min-width: 709px) and (max-width: 1024px) {
+  .title__projects {
+    font-size: 2rem;
+    margin-inline: 2rem;
+  }
+
+  .div-logotipos {
+    background-image: var(--mobileBgL);
+  }
+
+  .div__img-logos {
+    margin-inline: 1rem;
+  }
+
+  .logo-img {
+    width: 250px;
+  }
+}
