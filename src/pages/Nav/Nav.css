@@ -128,10 +128,6 @@ ul {
     position: relative;
   }
 
-  main {
-    height: calc(100vh - 330px);
-  }
-
   nav {
     padding: 8px 20px;
   }
@@ -140,7 +136,7 @@ ul {
     display: none;
   }
 
-  .my-pages {
+  .menu-nav {
     display: none;
   }
 

@@ -19,8 +19,6 @@ html {
   --gitGray: #282a36;
   --blue: #001f84;
   --lightBlue: #204371;
-  --purple: #f4f81b;
-  --purple: #e4c900;
   --fundo: url(/assets/img/fundo.png);
   --fundo2: url(/assets/img/fundo-claro.png);
   --fundoL: url(/assets/img/fundo-logotipos.png);
@@ -68,7 +66,7 @@ html {
   --bg: var(--gitGray);
   --h2color: var(--gray);
   --fontColor: var(--white);
-  --btnBg: var(--semiPurple);
+  --btnBg: var(--mediumGray);
   --hoverBtn: var(--gitGray);
   --btnFontColor: var(--gitGray);
   --borderColor: var(--gitGray);
