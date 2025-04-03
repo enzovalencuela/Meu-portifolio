@@ -1,7 +1,5 @@
 .div-logotipos {
   padding-block: 7em;
-  background-image: var(--bgL);
-  background-size: cover;
 }
 
 .title__logotipos {
@@ -34,10 +32,6 @@
     margin-inline: 2rem;
   }
 
-  .div-logotipos {
-    background-image: var(--mobileBgL);
-  }
-
   .div__img-logos {
     margin-inline: 1rem;
   }
@@ -53,10 +47,6 @@
   .title__projects {
     font-size: 2rem;
     margin-inline: 2rem;
-  }
-
-  .div-logotipos {
-    background-image: var(--mobileBgL);
   }
 
   .div__img-logos {

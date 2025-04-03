@@ -1,6 +1,6 @@
 import React from "react";
 import "./Main.css";
-import minhaFoto from "../../../public/assets/img/minha-foto.png";
+import minhaFoto from "../../../public/assets/img/minha_foto_cinza_3d.png";
 
 const Main = () => {
   return (
@@ -26,31 +26,32 @@ const Main = () => {
 
       <div className="github-info">
         <div align="center">
-          <br />
           <p align="center" className="visitantes">
-            <b>Visitantes</b>
+            <b>Github Status</b>
           </p>
-          <p align="center">
-            <img
-              align="center"
-              src="https://profile-counter.glitch.me/{enzovalencuela}/count.svg"
-              alt="Contador de visitantes"
-            />
-          </p>
-          <br />
         </div>
 
         <div className="graphics">
-          <img
-            width="40%"
-            src="https://github-readme-stats.vercel.app/api?username=enzovalencuela&show_icons=true&count_private=true&hide_border=true&title_color=E8E5BC&icon_color=E8E5BC&text_color=c9d1d9&bg_color=0d1117"
-            alt="Estatísticas do GitHub de Enzo Valencuela"
-          />
-          <img
-            width="36%"
-            src="https://github-readme-stats.vercel.app/api/top-langs/?username=enzovalencuela&layout=compact&hide_border=true&title_color=E8E5BC&text_color=E8E5BC&bg_color=0d1117"
-            alt="Linguagens mais usadas de Enzo Valencuela"
-          />
+          <div>
+            <img
+              width="100%"
+              height="100%"
+              src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=enzovalencuela&theme=dark"
+              alt="Linguagens mais usadas de Enzo Valencuela"
+            />
+          </div>
+          <div>
+            <img
+              height="100%"
+              src="https://github-readme-stats.vercel.app/api?username=enzovalencuela&theme=dark&hide_border=true"
+              alt="Estatísticas do GitHub de Enzo Valencuela"
+            />
+            <img
+              height="100%"
+              src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=enzovalencuela&theme=dark&utcOffset=-3"
+              alt="Estatísticas do GitHub de Enzo Valencuela"
+            />
+          </div>
         </div>
       </div>
     </main>
@@ -58,3 +59,9 @@ const Main = () => {
 };
 
 export default Main;
+
+/* 
+    
+ | [![GitHub Commits]()](https://github.com/vn7n24fzkq/github-profile-summary-cards) | [![GitHub Details](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=klusvarghi&theme=dracula)](https://github.com/vn7n24fzkq/github-profile-summary-cards) |  
+ | ----------- | ----------- |
+ */

@@ -74,7 +74,7 @@ function Projects() {
           <div className="item-resultado" key={repo.id}>
             <img
               className="img-projects"
-              src={`/assets/img/${repo.name}.png`}
+              src={`../../public/assets/img/${repo.name}.png`}
               alt=""
             />
             <div className="title-btn">

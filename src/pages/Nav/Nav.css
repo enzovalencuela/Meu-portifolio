@@ -16,7 +16,7 @@
 
 h1 {
   & a {
-    color: #d9d9d9;
+    color: var(--h2Color);
     text-transform: uppercase;
     text-decoration: none;
     font-weight: bold;
@@ -40,7 +40,7 @@ ul {
   }
 
   & a:hover {
-    color: #bdbdbdc7;
+    color: var(--h2Color);
   }
 }
 
@@ -94,7 +94,7 @@ ul {
   height: 25px;
 }
 .example-2 .icon-content a:hover {
-  color: white;
+  color: (--h2Color);
 }
 .example-2 .icon-content a .filled {
   position: absolute;
@@ -118,22 +118,6 @@ ul {
 .example-2 .icon-content a[data-social="github"] .filled,
 .example-2 .icon-content a[data-social="github"] ~ .tooltip {
   background-color: var(--bgGitHub);
-}
-.example-2 .icon-content a[data-social="instagram"] .filled,
-.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
-  background: linear-gradient(
-    45deg,
-    #405de6,
-    #5b51db,
-    #b33ab4,
-    #c135b4,
-    #e1306c,
-    #fd1f1f
-  );
-}
-.example-2 .icon-content a[data-social="youtube"] .filled,
-.example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
-  background-color: #ff0000;
 }
 
 /*?-------------------------------------------MOBILE----------------------------------------------------------*/

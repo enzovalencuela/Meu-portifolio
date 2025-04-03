@@ -172,6 +172,7 @@ input:checked + .slider:before {
   border-radius: 10px;
   margin-inline: 7rem;
   margin-bottom: 130px;
+  padding: 50px;
 }
 
 .visitantes {
@@ -182,24 +183,31 @@ input:checked + .slider:before {
 
 .graphics {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-block: 50px;
   margin-inline: 0;
-  gap: 50px;
+  gap: 20px;
+
+  & div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+    width: 70%;
+  }
 }
 
 /*?-------------------------------------------MOBILE----------------------------------------------------------*/
 
-@media only screen and (max-width: 708px) {
+@media only screen and (max-width: 1000px) {
   body {
     background-image: var(--mobileBg);
     position: relative;
   }
 
   main {
-    padding-top: 100px;
-    min-height: 1400px;
+    height: calc(100vh - 330px);
   }
 
   nav {
@@ -252,7 +260,8 @@ input:checked + .slider:before {
     flex-direction: column-reverse;
     justify-content: start;
     gap: 20px;
-    height: 500px;
+    height: auto;
+    min-height: 600px;
     padding-block: 50px;
     padding-inline: 0;
   }
@@ -295,6 +304,14 @@ input:checked + .slider:before {
     margin-block: 0;
     padding-top: 30px;
     gap: 10px;
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      width: 70%;
+    }
 
     & img {
       height: 150px;
