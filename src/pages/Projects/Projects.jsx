@@ -63,8 +63,10 @@ function Projects() {
             placeholder="Ex: World-Football-Players"
             ref={inputRef}
           />
-          <button onClick={() => searchProject()}>Buscar</button>
-          <button onClick={() => searchProject(true)}>Mostrar Todos</button>
+          <div className="btns-search">
+            <button onClick={() => searchProject()}>Buscar</button>
+            <button onClick={() => searchProject(true)}>Mostrar Todos</button>
+          </div>
         </div>
       </div>
 
