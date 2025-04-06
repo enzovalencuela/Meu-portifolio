@@ -62,8 +62,8 @@
 
 /* Estiliza a caixa de resultados da pesquisa */
 .div__projects {
-  display: flex;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(4, 1fr);
+  display: grid;
   min-height: 70vh;
   align-items: center;
   justify-content: space-around;
@@ -127,7 +127,9 @@
 }
 
 .button {
-  padding: 12.5px 30px;
+  padding: 0.75rem 1rem;
+  font-size: 0.825rem;
+  line-height: 1rem;
   border: 0;
   border-radius: 100px;
   background-color: var(--btnBg);
@@ -237,6 +239,7 @@
 
   .div__projects {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     gap: 20px;
     align-items: center;
@@ -304,11 +307,23 @@
   }
 
   .div__projects {
-    display: flex;
-    gap: 0px;
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    gap: 0px;
     margin: 5rem 2rem;
+  }
+
+  .btns-search {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    & button {
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: 500;
+    }
   }
 
   .item-resultado {
@@ -323,5 +338,6 @@
 
   .name {
     text-align: center;
+    font-size: 20px;
   }
 }

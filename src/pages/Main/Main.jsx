@@ -32,7 +32,7 @@ const Main = () => {
         </div>
 
         <div className="graphics">
-          <div>
+          <div className="graphics-only">
             <img
               width="100%"
               height="100%"
@@ -40,7 +40,7 @@ const Main = () => {
               alt="Linguagens mais usadas de Enzo Valencuela"
             />
           </div>
-          <div>
+          <div className="graphics-double">
             <img
               height="100%"
               src="https://github-readme-stats.vercel.app/api?username=enzovalencuela&theme=dark&hide_border=true"

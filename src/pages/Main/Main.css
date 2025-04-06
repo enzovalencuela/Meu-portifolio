@@ -200,7 +200,7 @@ input:checked + .slider:before {
 
 /*?-------------------------------------------MOBILE----------------------------------------------------------*/
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 708px) {
   body {
     background-image: var(--mobileBg);
     position: relative;
@@ -263,7 +263,7 @@ input:checked + .slider:before {
     justify-content: start;
     gap: 20px;
     height: unset;
-    min-height: 0px;
+    min-height: 200px;
     padding-top: 50px;
     padding-inline: 0;
   }
@@ -331,9 +331,8 @@ input:checked + .slider:before {
     display: flex;
     flex-direction: row;
     height: unset;
-    min-height: 2000px;
-    padding-block: 0;
-    padding-inline: 0;
+    min-height: 200px;
+    padding: 100px 0 0 0;
     justify-content: space-evenly;
     align-items: center;
   }
@@ -364,9 +363,14 @@ input:checked + .slider:before {
   }
 
   .github-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 150px;
     margin-inline: 2rem;
-    padding-block: 20px;
+    padding: 20px 0;
+    border: none;
   }
 
   .graphics {
@@ -374,9 +378,38 @@ input:checked + .slider:before {
     flex-direction: column;
     align-items: center;
     margin-block: 0;
+    padding-top: 30px;
+    gap: 10px;
+    width: 700px;
 
-    & img {
-      width: 500px;
+    & .graphics-only {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: none;
+      width: 100%;
+      gap: 10px;
+
+      & img {
+        height: unset;
+        width: 100%;
+      }
+    }
+
+    & .graphics-double {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex: none;
+      width: 100%;
+      gap: 10px;
+
+      & img {
+        height: 172px;
+        width: unset;
+      }
     }
   }
 }

@@ -100,7 +100,7 @@ function Projects() {
                         fill="currentcolor"
                       ></path>
                     </svg>
-                    Veja no GitHub
+                    GitHub
                   </button>
                 </a>
                 <a
