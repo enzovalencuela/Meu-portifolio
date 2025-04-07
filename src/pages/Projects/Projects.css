@@ -12,58 +12,6 @@
   text-transform: uppercase;
 }
 
-.search-user {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: 80px;
-
-  & .item-search {
-    display: flex;
-    flex-direction: row;
-    background-color: var(--bgGitHub);
-    border-radius: 10px;
-    padding: 15px 20px;
-    width: 700px;
-    gap: 20px;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: 13px;
-
-    & label {
-      color: #fff;
-    }
-
-    & input {
-      padding: 10px 30px;
-      border-radius: 5px;
-      border: none;
-      outline: none;
-    }
-  }
-}
-
-.btns-search {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-
-  & button {
-    padding: 10px 30px;
-    border-radius: 5px;
-    border: none;
-    background-color: var(--btnBg);
-    color: #fff;
-    cursor: pointer;
-    font-weight: 500;
-  }
-
-  & button:hover {
-    background-color: var(--hoverBtn);
-  }
-}
-
 /* Estiliza a caixa de resultados da pesquisa */
 .div__projects {
   grid-template-columns: repeat(4, 1fr);
@@ -179,66 +127,18 @@
 }
 
 .btn-github:hover {
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
-    inset 0 0 0 1px rgba(123, 3, 252, 0.403);
-  color: #5a03fc;
+  box-shadow: inset 0 1px 0 0 rgba(15, 41, 211, 0.08),
+    inset 0 0 0 1px rgba(3, 32, 252, 0.403);
+  color: #5e5f79;
   background-color: rgba(109, 109, 109, 0.799);
 }
 
 /*?-------------------------------------------MOBILE----------------------------------------------------------*/
 
 @media only screen and (max-width: 708px) {
-  .search-user {
-    margin: 2rem;
-
-    & .item-search {
-      flex-direction: column;
-      padding: 15px 0px;
-      width: 100%;
-      gap: 5px;
-      background-color: transparent;
-
-      & label {
-        display: none;
-      }
-
-      & input {
-        padding: 10px;
-        border: 2px solid var(--bgGitHub);
-        width: 100%;
-      }
-
-      & button {
-        padding: 10px;
-        width: 100%;
-      }
-    }
-  }
-
   .title__projects {
     font-size: 2rem;
     margin-inline: 2rem;
-  }
-
-  .btns-search {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    gap: 5px;
-
-    & button {
-      padding: 10px 30px;
-      border-radius: 5px;
-      border: none;
-      background-color: var(--btnBg);
-      color: #fff;
-      cursor: pointer;
-      font-weight: 500;
-    }
-
-    & button:hover {
-      background-color: var(--hoverBtn);
-    }
   }
 
   .div__projects {
@@ -317,17 +217,6 @@
     justify-content: space-around;
     gap: 0px;
     margin: 5rem 2rem;
-  }
-
-  .btns-search {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    & button {
-      padding: 10px 20px;
-      cursor: pointer;
-      font-weight: 500;
-    }
   }
 
   .item-resultado {

@@ -41,7 +41,7 @@ function Nav() {
     <nav className="navbar" ref={navbarRef}>
       <div className="nav__title">
         <h1>
-          <a href="./index.html">Meu Portifólio</a>
+          <a href="/">Meu Portifólio</a>
         </h1>
       </div>
 

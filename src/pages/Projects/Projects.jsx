@@ -18,7 +18,6 @@ function Projects() {
         headers: { "Content-Type": "application/json" },
       });
       const data = await response.json();
-
       if (showAll) {
         if (Array.isArray(data)) {
           setProjects(data);
@@ -54,22 +53,6 @@ function Projects() {
       <h2 className="title__projects" id="projects">
         Projetos
       </h2>
-      <div className="search-user">
-        <div className="item-search">
-          <label htmlFor="user">Nome do Projeto:</label>
-          <input
-            type="text"
-            id="user"
-            placeholder="Ex: World-Football-Players"
-            ref={inputRef}
-          />
-          <div className="btns-search">
-            <button onClick={() => searchProject()}>Buscar</button>
-            <button onClick={() => searchProject(true)}>Mostrar Todos</button>
-          </div>
-        </div>
-      </div>
-
       {errorMessage && <p className="error">{errorMessage}</p>}
       <div className="div__projects">
         {projects.map((repo) => (
