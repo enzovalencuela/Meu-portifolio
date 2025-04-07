@@ -55,7 +55,7 @@
   justify-content: center;
   align-items: start;
   gap: 20px;
-  width: 100%;
+  width: 80%;
 }
 
 .skills-content {
@@ -63,6 +63,27 @@
   flex-direction: column;
   flex: 1;
   gap: 15px;
+  width: 100%;
+}
+
+.skill {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  border-radius: 10px;
+  gap: 20px;
+  background-color: #222;
+  padding: 5px 30px;
+
+  h3 {
+    min-width: 20%;
+  }
+
+  img {
+    max-width: 80%;
+    height: 50px;
+  }
 }
 
 .div_curriculo {
@@ -97,27 +118,13 @@
   background-color: var(--btnCurriculoHover);
 }
 
-.skill {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: start;
-  border-radius: 10px;
-  gap: 20px;
-  background-color: #222;
-  padding: 5px 30px;
-
-  h3 {
-    width: 20%;
-  }
-}
-
-.skill-level-content {
+.skills-level-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex: 1;
   gap: 15px;
+  flex: 1;
+  width: 100%;
 }
 
 .skill-level {
@@ -125,16 +132,14 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  gap: 5rem;
   border-radius: 15px;
   background-color: #222;
   padding: 8px 30px;
-  margin-bottom: 20px;
 
   & h3 {
     color: #dcdcdc;
     text-align: start;
-    flex: 1;
+    flex: 2;
     font-size: 16px;
     font-weight: 500;
   }
@@ -142,7 +147,6 @@
 
 .progress-bar {
   display: flex;
-  width: 300px; /* Largura da barra */
   height: 15px; /* Altura da barra */
   background-color: #7cb8b6; /* Cor de fundo da barra */
   border-radius: 10px; /* Arredondamento das bordas */
@@ -180,39 +184,6 @@
     display: none;
   }
 
-  .mobile-menu-icon {
-    display: block;
-  }
-
-  .mobile-menu {
-    border-radius: 0 0 0 10px;
-    position: absolute;
-    right: 0;
-    top: -67px;
-    background-color: #353535;
-    align-items: center;
-    justify-content: center;
-    padding: 4rem 5rem;
-  }
-
-  .mobile-menu ul {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .mobile-menu .my-pages,
-  .mobile-menu .example-2 {
-    display: block;
-  }
-
-  .mobile-menu .example-2 {
-    gap: 20px;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 40px;
-  }
-
   .apresentation {
     justify-content: center;
     align-items: center;
@@ -236,127 +207,21 @@
       height: 2.5rem;
     }
   }
-
-  .div-servicos {
-    margin-inline: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-  }
-
-  .title-servicos {
-    margin-top: 100px;
-    margin-bottom: 60px;
-    text-align: center;
-    font-size: 2rem;
-    text-transform: uppercase;
-  }
-
-  .servicos {
-    justify-content: space-between;
-    align-items: center;
-    margin-block: 0px;
-  }
-  table {
-    border: none;
-  }
-
-  tr {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
-  }
-
-  td,
-  th {
-    width: 380px;
-    border: none;
-  }
-
-  .item-servico {
-    padding-block: 10px;
-    background-color: #282828;
-    border-radius: 10px;
-    min-height: 100px;
-    justify-content: center;
-    align-items: center;
-    & h3 {
-      font-size: 1.3rem;
-    }
-
-    & p {
-      font-size: 1.2rem;
-      margin-top: 5px;
-      margin-bottom: 0px;
-      display: flex;
-      text-align: center;
-      justify-content: center;
-    }
-  }
 }
 
 /*?-------------------------------------------TABLETS----------------------------------------------------------*/
 
 @media (min-width: 709px) and (max-width: 1024px) {
-  .apresentation {
-    justify-content: center;
-    align-items: center;
-    margin-top: 8rem;
-    margin-bottom: 2rem;
-    margin-inline: auto;
-    max-width: 600px;
-
-    & p {
-      text-align: center;
-      font-size: 1rem;
-    }
+  .main-skills {
+    margin: 4rem 2rem 10rem;
   }
 
-  .skill {
-    display: flex;
-    gap: 5rem;
-    border-radius: 10px;
-    background-color: #222;
-    margin-block: 1rem;
-    margin-inline: 3rem;
-    padding: 5px 30px;
-  }
-
-  .div-servicos {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-  }
-
-  .servicos {
-    justify-content: center;
+  .skills-container {
+    flex-direction: column-reverse;
     align-items: center;
   }
 
-  td,
-  th {
-    width: 330px;
-  }
-
-  .item-servico {
-    padding-block: 10px;
-    background-color: #282828;
-    border-radius: 10px;
-    min-height: 100px;
-    justify-content: center;
-    align-items: center;
-    & h3 {
-      font-size: 1.3rem;
-    }
-
-    & p {
-      font-size: 1.2rem;
-      margin-top: 5px;
-      margin-bottom: 0px;
-      display: flex;
-      text-align: center;
-      justify-content: center;
-    }
+  .skills-level-content {
+    width: 100%;
   }
 }
