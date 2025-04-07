@@ -107,13 +107,11 @@ function Nav() {
               Home
             </a>
           </li>
-          {/** 
           <li className="nav-item">
             <a href="#about" className="nav-link">
               Sobre mim
             </a>
           </li>
-          */}
           <li className="nav-item">
             <a href="#projects" className="nav-link">
               Projetos

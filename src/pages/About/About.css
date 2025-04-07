@@ -163,19 +163,6 @@
 /*?-------------------------------------------MOBILE----------------------------------------------------------*/
 
 @media only screen and (max-width: 708px) {
-  body {
-    background-image: var(--mobileBg);
-    position: relative;
-  }
-
-  main {
-    height: calc(100vh - 330px);
-  }
-
-  nav {
-    padding: 8px 20px;
-  }
-
   .example-2 {
     display: none;
   }
@@ -187,15 +174,26 @@
   .apresentation {
     justify-content: center;
     align-items: center;
-    margin-top: 8rem;
-    margin-bottom: 2rem;
-    margin-inline: auto;
-    max-width: 370px;
+    margin: 8rem 2rem 2rem;
+    max-width: 100%;
 
     & p {
-      text-align: center;
+      text-align: justify;
       font-size: 0.8rem;
     }
+  }
+
+  .main-skills {
+    margin: 4rem 0rem 10rem;
+  }
+
+  .skills-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .skills-level-content {
+    width: 100%;
   }
 
   .skill {
@@ -203,8 +201,12 @@
     gap: 2rem;
     align-items: center;
 
+    h3 {
+      font-size: 0.8rem;
+    }
+
     & img {
-      height: 2.5rem;
+      height: 1.3rem;
     }
   }
 }
