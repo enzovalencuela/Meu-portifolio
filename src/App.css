@@ -19,6 +19,8 @@ html {
   --gitGray: #282a36;
   --blue: #001f84;
   --lightBlue: #204371;
+  --green: #66b1fd;
+  --highGreen: rgb(62, 117, 255);
   --fundo: url(/assets/img/fundo.png);
   --fundo2: url(/assets/img/fundo-claro.png);
   --fundoL: url(/assets/img/fundo-logotipos.png);
@@ -48,6 +50,8 @@ html {
   --h2Bg: var(--purple);
   --btnBg: var(--blue);
   --hoverBtn: var(--lightBlue);
+  --btnCurriculo: var(--green);
+  --btnCurriculoHover: var(--highGreen);
   --btnFontColor: var(--white);
   --borderColor: var(--mediumGray);
   --pColor: var(--white);
@@ -68,6 +72,8 @@ html {
   --fontColor: var(--white);
   --btnBg: var(--mediumGray);
   --hoverBtn: var(--gitGray);
+  --btnCurriculo: var(--mediumGray);
+  --btnCurriculoHover: var(--gitGray);
   --btnFontColor: var(--gitGray);
   --borderColor: var(--gitGray);
   --pColor: var(--white);

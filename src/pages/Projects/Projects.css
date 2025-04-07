@@ -28,7 +28,7 @@
     width: 700px;
     gap: 20px;
     align-items: center;
-    justify-content: start;
+    justify-content: space-evenly;
     font-size: 13px;
 
     & label {
@@ -36,7 +36,7 @@
     }
 
     & input {
-      padding: 10px;
+      padding: 10px 30px;
       border-radius: 5px;
       border: none;
       outline: none;
@@ -45,6 +45,10 @@
 }
 
 .btns-search {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
   & button {
     padding: 10px 30px;
     border-radius: 5px;
