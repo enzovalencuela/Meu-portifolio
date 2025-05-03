@@ -14,7 +14,7 @@ const Main = () => {
             </h2>
             <img
               id="frase-cabecalho"
-              src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=17&pause=1000&color=686868&center=true&width=480&lines=Seja+vem+vindo+ao+meu+portifólio!;Sou+Desenvolvedor+Front+End+e+Designer+Gráfico"
+              src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=17&pause=1000&color=686868&center=true&width=480&lines=Seja+bem+vindo+ao+meu+portifólio!;Sou+Desenvolvedor+Front+End+e+Designer+Gráfico"
               alt="Typing SVG"
             />
           </div>

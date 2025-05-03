@@ -32,12 +32,12 @@ function About() {
 
             <div align="center" class="skill">
               <h3>Estudando</h3>
-              <img src="https://skillicons.dev/icons?i=nodejs,prisma,mongodb" />
+              <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,prisma,mysql,ts" />
             </div>
 
             <div align="center" class="skill">
               <h3>Ferramentas</h3>
-              <img src="https://skillicons.dev/icons?i=git,github,netlify,npm,vscode" />
+              <img src="https://skillicons.dev/icons?i=git,github,netlify,vercel,vscode,firebase" />
             </div>
             <div className="div__curriculo">
               <button className="btn__curriculo">
@@ -72,15 +72,22 @@ function About() {
 
             <div align="center" class="skill-level">
               <h3>React</h3>
+              <div class="progress-bar" data-percent="70">
+                <div class="progress" style={{ width: "70%" }}></div>
+              </div>
+            </div>
+
+            <div align="center" class="skill-level">
+              <h3>Next</h3>
               <div class="progress-bar" data-percent="60">
                 <div class="progress" style={{ width: "60%" }}></div>
               </div>
             </div>
 
             <div align="center" class="skill-level">
-              <h3>Chakra UI</h3>
-              <div class="progress-bar" data-percent="30">
-                <div class="progress" style={{ width: "65%" }}></div>
+              <h3>Tailwind</h3>
+              <div class="progress-bar" data-percent="70">
+                <div class="progress" style={{ width: "70%" }}></div>
               </div>
             </div>
           </div>
