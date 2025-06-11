@@ -122,7 +122,7 @@ ul {
 
 /*?-------------------------------------------MOBILE----------------------------------------------------------*/
 
-@media only screen and (max-width: 708px) {
+@media only screen and (max-width: 808px) {
   body {
     background-image: var(--mobileBg);
     position: relative;

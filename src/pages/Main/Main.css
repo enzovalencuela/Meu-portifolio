@@ -168,7 +168,7 @@ input:checked + .slider:before {
 }
 
 .github-info {
-  border: 4px solid var(--borderColor);
+  border: 1px solid var(--borderColor);
   border-radius: 10px;
   margin-inline: 7rem;
   margin-bottom: 130px;
