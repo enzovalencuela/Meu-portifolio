@@ -14,7 +14,7 @@ const Main = () => {
             </h2>
             <img
               id="frase-cabecalho"
-              src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=17&pause=1000&color=686868&center=true&width=480&lines=Seja+bem+vindo+ao+meu+portifólio!;Sou+Desenvolvedor+Front+End+e+Designer+Gráfico"
+              src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=17&pause=1000&color=686868&center=true&width=480&lines=Seja+bem+vindo+ao+meu+portifólio!;Sou+Desenvolvedor+Front+End"
               alt="Typing SVG"
             />
           </div>
@@ -23,45 +23,8 @@ const Main = () => {
           </div>
         </div>
       </section>
-
-      <div className="github-info">
-        <div align="center">
-          <p align="center" className="visitantes">
-            <b>Github Status</b>
-          </p>
-        </div>
-
-        <div className="graphics">
-          <div className="graphics-only">
-            <img
-              width="100%"
-              height="100%"
-              src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=enzovalencuela&theme=dark"
-              alt="Linguagens mais usadas de Enzo Valencuela"
-            />
-          </div>
-          <div className="graphics-double">
-            <img
-              height="100%"
-              src="https://github-readme-stats.vercel.app/api?username=enzovalencuela&theme=dark&hide_border=true"
-              alt="Estatísticas do GitHub de Enzo Valencuela"
-            />
-            <img
-              height="100%"
-              src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=enzovalencuela&theme=dark&utcOffset=-3"
-              alt="Estatísticas do GitHub de Enzo Valencuela"
-            />
-          </div>
-        </div>
-      </div>
     </main>
   );
 };
 
 export default Main;
-
-/* 
-    
- | [![GitHub Commits]()](https://github.com/vn7n24fzkq/github-profile-summary-cards) | [![GitHub Details](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=klusvarghi&theme=dracula)](https://github.com/vn7n24fzkq/github-profile-summary-cards) |  
- | ----------- | ----------- |
- */
