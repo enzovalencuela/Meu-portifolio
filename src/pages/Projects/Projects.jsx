@@ -1,72 +1,73 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import "./Projects.css";
 
 function Projects() {
-  const [projects, setProjects] = useState([]);
-  const [errorMessage, setErrorMessage] = useState("");
-  const inputRef = useRef(null);
-
-  const searchProject = async (showAll = false) => {
-    const user = inputRef.current?.value || "";
-    const apiUrl = showAll
-      ? "https://api.github.com/users/enzovalencuela/repos"
-      : `https://api.github.com/repos/enzovalencuela/${user}`;
-
-    try {
-      const response = await fetch(apiUrl, {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-      });
-      const data = await response.json();
-      if (showAll) {
-        if (Array.isArray(data)) {
-          setProjects(data);
-          setErrorMessage("");
-        } else {
-          setErrorMessage(
-            "Erro: Resposta da API inválida para busca de todos os repositórios."
-          );
-          setProjects([]);
-        }
-      } else {
-        if (data && data.name) {
-          setProjects([data]);
-          setErrorMessage("");
-        } else {
-          setErrorMessage("Repositório não encontrado ou erro na API.");
-          setProjects([]);
-        }
-      }
-    } catch (err) {
-      console.error("Erro ao buscar repositório:", err);
-      setErrorMessage(`Erro ao buscar repositório: ${err.message}`);
-      setProjects([]);
-    }
-  };
-
-  useEffect(() => {
-    searchProject(true);
-  }, []);
+  const projectsData = [
+    {
+      id: 1,
+      name: "Jubitasks",
+      github: "https://github.com/enzovalencuela/JubiTasks-TodoList",
+      deploy: "https://enzovalencuela-jubitasks-todolist.netlify.app",
+      img: "/assets/img/jubitasks.png",
+    },
+    {
+      id: 2,
+      name: "Meu Portifólio",
+      github: "https://github.com/enzovalencuela/Meu-portifolio",
+      deploy: "https://enzovalencuela-meu-portifolio.netlify.app",
+      img: "/assets/img/meu-portifolio.png",
+    },
+    {
+      id: 3,
+      name: "Projeto Avanti",
+      github: "https://github.com/enzovalencuela/Projeto-Avanti",
+      deploy: "https://enzovalencuela-projeto-avanti.netlify.app",
+      img: "/assets/img/projeto-avanti.png",
+    },
+    {
+      id: 4,
+      name: "Projeto Github API",
+      github: "https://github.com/enzovalencuela/Projeto-Github-API",
+      deploy: "https://enzovalencuela-projeto-github-api.netlify.app",
+      img: "/assets/img/projeto-github-api.png",
+    },
+    {
+      id: 5,
+      name: "Projeto Proxion",
+      github: "https://github.com/enzovalencuela/Projeto-Proxion",
+      deploy: "/",
+      img: "/assets/img/projeto-proxion.png",
+    },
+    {
+      id: 6,
+      name: "ToDo List",
+      github: "https://github.com/enzovalencuela/RID185696-Desafio-Todo",
+      deploy: "https://enzovalencuela-rid185696-desafio-todo.netlify.app",
+      img: "/assets/img/todo-list.png",
+    },
+    {
+      id: 7,
+      name: "World Football Players",
+      github: "https://github.com/enzovalencuela/World-Football-Players",
+      deploy: "https://enzovalencuela-world-football-players.netlify.app",
+      img: "/assets/img/world-football-players.png",
+    },
+  ];
 
   return (
     <>
       <h2 className="title__projects" id="projects">
         Projetos
       </h2>
-      {errorMessage && <p className="error">{errorMessage}</p>}
       <div className="div__projects">
-        {projects.map((repo) => (
-          <div className="item-resultado" key={repo.id}>
-            <img
-              className="img-projects"
-              src={`/assets/img/${repo.name}.png`}
-              alt=""
-            />
+        {projectsData.map((project) => (
+          <div className="item-resultado" key={project.id}>
+            <img className="img-projects" src={project.img} alt="" />
             <div className="title-btn">
-              <h2 className="name">{repo.name}</h2>
+              <h2 className="name">{project.name}</h2>
               <div className="buttons-project">
                 <a
-                  href={repo.html_url}
+                  href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -83,11 +84,10 @@ function Projects() {
                         fill="currentcolor"
                       ></path>
                     </svg>
-                    GitHub
                   </button>
                 </a>
                 <a
-                  href={`https://enzovalencuela-${repo.name}.netlify.app/`}
+                  href={project.deploy}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
