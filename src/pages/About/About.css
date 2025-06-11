@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 8rem;
-  margin-inline: 2rem;
+  margin-inline: 7rem;
 }
 
 .apresentation__text-content {
@@ -35,6 +35,7 @@
   border-radius: 10px;
   padding: 7px;
   width: 100%;
+
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
@@ -176,6 +177,10 @@
 /*?-------------------------------------------MOBILE----------------------------------------------------------*/
 
 @media only screen and (max-width: 708px) {
+  .apresentation {
+    margin-inline: 2rem;
+  }
+
   .title__about {
     font-size: 2rem;
   }
@@ -231,6 +236,10 @@
 /*?-------------------------------------------TABLETS----------------------------------------------------------*/
 
 @media (min-width: 709px) and (max-width: 1024px) {
+  .apresentation {
+    margin-inline: 2rem;
+  }
+
   .title__about {
     font-size: 2rem;
   }
