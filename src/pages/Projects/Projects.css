@@ -91,8 +91,7 @@
 
 .button:hover {
   background-color: var(--hoverBtn);
-  box-shadow: 0 0 20px var(--hoverBtn);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .button:active {

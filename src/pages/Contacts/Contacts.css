@@ -16,7 +16,13 @@
 .form-container {
   width: 400px;
   background: linear-gradient(var(--bg), var(--bg)) padding-box,
-    linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+    linear-gradient(
+        145deg,
+        transparent 35%,
+        var(--primaryGradient),
+        var(--secondaryGradient)
+      )
+      border-box;
   border: 2px solid transparent;
   padding: 32px 24px;
   font-size: 14px;
@@ -149,7 +155,13 @@
   border-top: none;
   border-radius: 0 0 1rem 1rem;
   background: linear-gradient(var(--bg), var(--bg)) padding-box,
-    linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+    linear-gradient(
+        145deg,
+        transparent 35%,
+        var(--primaryGradient),
+        var(--secondaryGradient)
+      )
+      border-box;
   border: 2px solid transparent;
 }
 
@@ -169,7 +181,13 @@
   width: 100%;
   border-radius: 2rem;
   background: linear-gradient(var(--bg), var(--bg)) padding-box,
-    linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+    linear-gradient(
+        145deg,
+        transparent 35%,
+        var(--primaryGradient),
+        var(--secondaryGradient)
+      )
+      border-box;
   border: 2px solid transparent;
   position: absolute;
   backface-visibility: hidden;

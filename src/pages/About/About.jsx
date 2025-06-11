@@ -7,7 +7,7 @@ function About() {
   return (
     <>
       <div class="apresentation" id="about">
-        <h2 class="title-main-skills">Sobre Mim</h2>
+        <h2 className="title__about">Sobre Mim</h2>
         <div class="apresentation__text-content">
           <p>
             Desenvolvedor Front-end com experiência em criação de interfaces de
@@ -27,11 +27,11 @@ function About() {
           <div class="skills-content">
             <div align="center" class="skill">
               <h3>Front-end</h3>
-              <img src="https://skillicons.dev/icons?i=js,html,css,react,next,tailwind" />
+              <img src="https://skillicons.dev/icons?i=html,css,js,react,next,tailwind" />
             </div>
 
             <div align="center" class="skill">
-              <h3>Estudando</h3>
+              <h3>Back-End</h3>
               <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,prisma,mysql,ts" />
             </div>
 
@@ -46,49 +46,6 @@ function About() {
                 </a>
                 <FontAwesomeIcon icon={faDownload} color="#fff" />
               </button>
-            </div>
-          </div>
-          <div class="skills-level-content">
-            <div align="center" class="skill-level">
-              <h3>Html</h3>
-              <div class="progress-bar" data-percent="100">
-                <div class="progress" style={{ width: "100%" }}></div>
-              </div>
-            </div>
-
-            <div align="center" class="skill-level">
-              <h3>Css</h3>
-              <div class="progress-bar" data-percent="90">
-                <div class="progress" style={{ width: "90%" }}></div>
-              </div>
-            </div>
-
-            <div align="center" class="skill-level">
-              <h3>Javascript</h3>
-              <div class="progress-bar" data-percent="60">
-                <div class="progress" style={{ width: "60%" }}></div>
-              </div>
-            </div>
-
-            <div align="center" class="skill-level">
-              <h3>React</h3>
-              <div class="progress-bar" data-percent="70">
-                <div class="progress" style={{ width: "70%" }}></div>
-              </div>
-            </div>
-
-            <div align="center" class="skill-level">
-              <h3>Next</h3>
-              <div class="progress-bar" data-percent="60">
-                <div class="progress" style={{ width: "60%" }}></div>
-              </div>
-            </div>
-
-            <div align="center" class="skill-level">
-              <h3>Tailwind</h3>
-              <div class="progress-bar" data-percent="70">
-                <div class="progress" style={{ width: "70%" }}></div>
-              </div>
             </div>
           </div>
         </div>

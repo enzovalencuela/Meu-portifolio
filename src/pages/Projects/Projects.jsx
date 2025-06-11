@@ -84,6 +84,7 @@ function Projects() {
                         fill="currentcolor"
                       ></path>
                     </svg>
+                    Github
                   </button>
                 </a>
                 <a

@@ -12,11 +12,11 @@ const Main = () => {
               Eu sou Enzo <br />
               Valençuela
             </h2>
-            <img
-              id="frase-cabecalho"
-              src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&pause=1000&color=686868&center=true&width=480&lines=Seja+bem+vindo+ao+meu+portifólio!;Sou+Desenvolvedor+Front+End"
-              alt="Typing SVG"
-            />
+            <p>
+              Seja bem vindo ao meu portifólio! Sou
+              <span className="span-p"> Desenvolvedor Front End</span> e curso
+              Sistemas de Informação.
+            </p>
           </div>
           <div className="img_principal">
             <img className="my-img" src={minhaFoto} alt="Minha foto" />
