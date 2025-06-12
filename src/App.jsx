@@ -4,7 +4,6 @@ import "./App.css";
 import Main from "./pages/Main/Main";
 import Nav from "./pages/Nav/Nav";
 import Projects from "./pages/Projects/Projects";
-import LogotipoPage from "./pages/LogotipoPage/LogotipoPage";
 import Footer from "./pages/Footer/Footer";
 import Contacts from "./pages/Contacts/Contacts";
 import About from "./pages/About/About";

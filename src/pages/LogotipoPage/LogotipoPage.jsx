@@ -1,9 +1,5 @@
-import React from "react";
+/*import React from "react";
 import "./LogotipoPage.css";
-import logoNexgen from "../../../public/assets/img/logo_nexgen.png";
-import logoPedalDePrata from "../../../public/assets/img/logo-pedaldeprata.png";
-import logoCardenas from "../../../public/assets/img/logo-cardenas.png";
-import logoFutebolDosAmigos from "../../../public/assets/img/logo-fut.png";
 
 function LogotipoPage() {
   return (
@@ -30,3 +26,4 @@ function LogotipoPage() {
 }
 
 export default LogotipoPage;
+*/
