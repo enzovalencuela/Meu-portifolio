@@ -206,13 +206,6 @@
     font-size: 1.1rem;
   }
 
-  .title-btn {
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
-    flex: 2;
-  }
-
   .buttons-project {
     display: flex;
     flex-direction: row;
