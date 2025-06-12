@@ -53,7 +53,7 @@ html {
   --hoverBtn: var(--lightBlue);
   --btnCurriculo: var(--green);
   --btnCurriculoHover: var(--highGreen);
-  --btnFontColor: var(--white);
+  --btnFontColor: #cfcfcf;
   --borderColor: var(--mediumGray);
   --pColor: var(--white);
   --color: var(--white);

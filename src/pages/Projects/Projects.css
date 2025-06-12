@@ -19,14 +19,7 @@
   align-items: center;
   justify-content: space-around;
   margin: 6rem;
-  gap: 20px;
-}
-
-.item-resultado {
-  padding: 0.2rem;
-  flex: 0 0 calc(25% - 20px);
-  margin: 10px;
-  text-align: center;
+  gap: 40px;
 }
 
 .title-btn {
@@ -41,8 +34,60 @@
   font-size: 16px;
 }
 
-.img-projects {
-  width: 380px;
+/* From Uiverse.io by gharsh11032000 */
+.card {
+  position: relative;
+  width: 310px;
+  height: 370px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 0 0 2px #ffffff80;
+  transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  flex: 0 0 calc(25% - 20px);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: var(--btnFontColor);
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__content {
+  transform: rotateX(0deg);
+}
+
+.card__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
 }
 
 .name-project {
@@ -145,16 +190,9 @@
     margin: 50px 0px;
   }
 
-  .item-resultado {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex: auto;
-    justify-content: center;
-    width: 85vw;
-    gap: 20px;
-    border: 1px solid #353535;
-    border-radius: 10px;
+  .card {
+    width: 78vw;
+    max-width: 400px;
   }
 
   .img-projects {
@@ -205,17 +243,17 @@
   }
 
   .div__projects {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     display: grid;
     align-items: center;
     justify-content: space-around;
-    gap: 0px;
+    gap: 20px;
     margin: 5rem 2rem;
   }
 
-  .item-resultado {
-    align-items: center;
-    padding: 0;
+  .card {
+    width: 280px;
+    height: 335px;
   }
 
   .img-projects {

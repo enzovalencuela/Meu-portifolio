@@ -162,35 +162,37 @@ input:checked + .slider:before {
   line-height: 7.5rem;
 }
 
-.img_principal {
-  display: flex;
-  position: relative;
+.title_project_destaque {
+  color: var(--fontColor);
+  font-size: 3rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 200;
   text-align: center;
+  line-height: 7.5rem;
+}
+
+/* From Uiverse.io by gharsh11032000 */
+.card-destaque {
+  position: relative;
+  width: 350px;
+  height: 410px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: linear-gradient(transparent) padding-box,
-    linear-gradient(
-        145deg,
-        transparent 35%,
-        var(--primaryGradient),
-        var(--secondaryGradient)
-      )
-      border-box;
-  border: 2px solid transparent;
+  overflow: hidden;
+  box-shadow: 0 0 0 2px #ffffff80;
+  transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  flex: 0 0 calc(25% - 20px);
 }
 
-.my-img {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
+.card-destaque:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
 }
 
-#frase-cabecalho {
-  display: block;
-  margin: 0 auto;
+.card-destaque:hover .card__content {
+  transform: rotateX(0deg);
 }
 
 /*?-------------------------------------------MOBILE----------------------------------------------------------*/
@@ -203,7 +205,7 @@ input:checked + .slider:before {
 
   main {
     height: unset;
-    min-height: 700px;
+    min-height: 340px;
     padding-top: 50px;
   }
 
@@ -279,32 +281,31 @@ input:checked + .slider:before {
     line-height: 3rem;
   }
 
-  #frase-cabecalho {
-    font-size: 0.5rem;
-    width: 360px;
-  }
-
-  .img_principal {
-    width: 240px;
-    height: 240px;
+  .projeto-destaque-div {
+    display: none;
   }
 }
 
 /*?-------------------------------------------TABLETS----------------------------------------------------------*/
 
 @media (min-width: 709px) and (max-width: 1024px) {
+  main {
+    min-height: 400px;
+  }
+
   .div-principal {
     display: flex;
     flex-direction: row;
     height: unset;
-    min-height: 200px;
+    min-height: 400px;
     padding: 100px 0 0 0;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
   }
 
   .texts-principal {
     max-width: 45%;
+    text-align: center;
 
     p {
       font-size: 16px;
@@ -316,13 +317,7 @@ input:checked + .slider:before {
     line-height: 4rem;
   }
 
-  #frase-cabecalho {
-    font-size: 0.5rem;
-    width: 400px;
-  }
-
-  .img_principal {
-    width: 280px;
-    height: 280px;
+  .projeto-destaque-div {
+    display: none;
   }
 }

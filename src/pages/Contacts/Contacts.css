@@ -133,7 +133,7 @@
   flex: 2;
 }
 
-.card {
+.card-contact {
   width: 100%;
   height: 100%;
   background: var(--bg);
@@ -170,7 +170,7 @@
   font-weight: bold;
 }
 
-.container:hover > .card {
+.container:hover > .card-contact {
   cursor: pointer;
   transform: rotateX(180deg) rotateZ(-180deg);
 }

@@ -31,7 +31,7 @@ function Contacts() {
           </form>
         </div>
         <div className="container">
-          <div className="card">
+          <div className="card-contact">
             <div className="front">
               <div className="card-top">
                 <p className="card-top-para">Perfil</p>

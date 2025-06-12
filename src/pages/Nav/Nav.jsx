@@ -108,15 +108,16 @@ function Nav() {
             </a>
           </li>
           <li className="nav-item">
-            <a href="#about" className="nav-link">
-              Sobre mim
-            </a>
-          </li>
-          <li className="nav-item">
             <a href="#projects" className="nav-link">
               Projetos
             </a>
           </li>
+          <li className="nav-item">
+            <a href="#about" className="nav-link">
+              Sobre mim
+            </a>
+          </li>
+
           <li className="nav-item">
             <a href="#contact" className="nav-link">
               Contato
