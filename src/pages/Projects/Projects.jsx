@@ -66,6 +66,15 @@ function Projects() {
         "O World Football Players é um site desenvolvido com HTML, CSS e JavaScript que permite visualizar informações sobre jogadores de futebol, técnicos, clubes e seleções. O projeto foi criado com o objetivo de facilitar a pesquisa e exibição de dados de futebol de forma dinâmica e interativa.",
       img: "/assets/img/2.png",
     },
+    {
+      id: 8,
+      name: "Landing Page",
+      github: "https://github.com/enzovalencuela/projeto-blog",
+      deploy: "https://enzovalencuela-projeto-blog.netlify.app/",
+      description:
+        "Este projeto foi desenvolvido como parte do curso da DNC, utilizando React e Vite. Ele simula uma página de arquitetura fictícia, funcionando como uma landing page com múltiplas seções, e demonstra a aplicação de diversos conceitos fundamentais do React, como gerenciamento de estado global com Context API, reutilização de componentes, utilitários e integração com APIs.",
+      img: "/assets/img/8.png",
+    },
   ];
 
   return (
