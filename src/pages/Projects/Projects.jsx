@@ -5,6 +5,15 @@ function Projects() {
   const projectsData = [
     {
       id: 1,
+      name: "Dashboard de Vendas",
+      github: "https://github.com/enzovalencuela/projeto-sales-dashboard",
+      deploy: "https://projeto-sales-dashboard.vercel.app/",
+      img: "/assets/img/9.png",
+      description:
+        "Recentemente, concluí o desenvolvimento de um Sales Dashboard, uma aplicação completa para gerenciamento de vendas. Este projeto foi uma ótima oportunidade para aprofundar minhas habilidades e trabalhar com uma stack super moderna e requisitada no mercado.",
+    },
+    {
+      id: 2,
       name: "Jubitasks",
       github: "https://github.com/enzovalencuela/JubiTasks-TodoList",
       deploy: "https://enzovalencuela-jubitasks-todolist.netlify.app",
@@ -13,7 +22,7 @@ function Projects() {
         "Sua Lista de Tarefas! Bem-vindo ao Jubitasks! Cansado de esquecer compromissos ou se perder na organização das suas tarefas? O Jubitasks é a solução perfeita para você! Desenvolvido para ser intuitivo e eficiente, ele te ajuda a gerenciar suas atividades diárias, projetos e ideias de forma simples e visual.",
     },
     {
-      id: 2,
+      id: 3,
       name: "Meu Portifólio",
       github: "https://github.com/enzovalencuela/Meu-portifolio",
       deploy: "https://enzovalencuela-meu-portifolio.netlify.app",
@@ -22,7 +31,7 @@ function Projects() {
         "Este é o meu portfólio profissional, desenvolvido com tecnologias modernas para apresentar meus projetos e habilidades na área de desenvolvimento Full Stack.",
     },
     {
-      id: 3,
+      id: 4,
       name: "Projeto Avanti",
       github: "https://github.com/enzovalencuela/Projeto-Avanti",
       deploy: "https://enzovalencuela-projeto-avanti.netlify.app",
@@ -31,7 +40,7 @@ function Projects() {
         "Este projeto é uma página web de uma loja de roupas chamada AVANTI, criada com o objetivo de apresentar produtos de forma moderna, interativa e responsiva.",
     },
     {
-      id: 4,
+      id: 5,
       name: "Projeto Github API",
       github: "https://github.com/enzovalencuela/Projeto-Github-API",
       deploy: "https://enzovalencuela-projeto-github-api.netlify.app",
@@ -40,22 +49,13 @@ function Projects() {
         "Aplicação web construída com React que consome a GitHub API para buscar informações públicas de usuários. Basta digitar o nome de usuário do GitHub para visualizar os dados como: 📛 Nome, 📝 Bio, 🖼️ Foto de perfil",
     },
     {
-      id: 5,
+      id: 6,
       name: "Projeto Proxion",
       github: "https://github.com/enzovalencuela/Projeto-Proxion",
       deploy: "/",
       img: "/assets/img/5.png",
       description:
         "Proxion é uma plataforma web desenvolvida como uma ferramenta preventiva de vistoria de equipamentos, voltada à otimização de processos internos e ao monitoramento detalhado de inspeções técnicas. O projeto foi desenvolvido em equipe e representa uma solução digital eficiente para a empresa Proxion.",
-    },
-    {
-      id: 6,
-      name: "ToDo List",
-      github: "https://github.com/enzovalencuela/RID185696-Desafio-Todo",
-      deploy: "https://enzovalencuela-rid185696-desafio-todo.netlify.app",
-      description:
-        "Este é um Board de Tarefas simples, desenvolvido com HTML, CSS e JavaScript puro. Ele permite que você adicione, visualize e marque tarefas como concluídas, além de fornecer um contador para acompanhar seu progresso.",
-      img: "/assets/img/6.png",
     },
     {
       id: 7,
@@ -68,11 +68,11 @@ function Projects() {
     },
     {
       id: 8,
-      name: "Landing Page",
+      name: "Blog de Arquitetura",
       github: "https://github.com/enzovalencuela/projeto-blog",
       deploy: "https://enzovalencuela-projeto-blog.netlify.app/",
       description:
-        "Este projeto foi desenvolvido como parte do curso da DNC, utilizando React e Vite. Ele simula uma página de arquitetura fictícia, funcionando como uma landing page com múltiplas seções, e demonstra a aplicação de diversos conceitos fundamentais do React, como gerenciamento de estado global com Context API, reutilização de componentes, utilitários e integração com APIs.",
+        "Este projeto foi desenvolvido utilizando React e Vite. Ele simula uma página de arquitetura fictícia, funcionando como uma landing page com múltiplas seções, e demonstra a aplicação de diversos conceitos fundamentais do React, como gerenciamento de estado global com Context API, reutilização de componentes, utilitários e integração com APIs.",
       img: "/assets/img/8.png",
     },
   ];

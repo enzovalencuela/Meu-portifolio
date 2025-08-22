@@ -9,7 +9,7 @@ footer {
 
   & p {
     text-align: center;
-    color: var(--bgGitHub);
+    color: var(--h2color);
   }
 }
 

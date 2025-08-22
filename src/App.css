@@ -21,23 +21,15 @@ html {
   --lightBlue: #204371;
   --green: #66b1fd;
   --highGreen: rgb(62, 117, 255);
-  --fundo: url(/assets/img/fundo.png);
-  --fundo2: url(/assets/img/fundo-claro.png);
 }
 
 .dark-mode,
 .light-mode {
   transition: background-image 0.5s ease-in-out;
-  background-size: contain;
-  background-repeat: repeat;
-  background-position: center start;
 }
 
 .light-mode {
-  background-image: var(--fundo2);
-  background-repeat: no-repeat;
-  background-position: center start;
-  background-size: cover;
+  background-color: #cecece;
   --bg: var(--gray);
   --h2Color: var(--gray);
   --fontColor: var(--gitGray);
@@ -54,16 +46,10 @@ html {
   --primaryGradient: #797979;
   --secondaryGradient: #38b6ff;
   --bgGitHub: var(--gitGray);
-  --bgL: var(--fundoL2);
-  --mobileBg: var(--fundoMobile2);
-  --mobileBgL: var(--fundoMobileL2);
 }
 
 .dark-mode {
-  background-image: var(--fundo);
-  background-repeat: no-repeat;
-  background-position: center start;
-  background-size: cover;
+  background-color: #25262f;
   --bg: var(--gitGray);
   --h2color: var(--gray);
   --fontColor: var(--white);
@@ -79,7 +65,4 @@ html {
   --primaryGradient: #5b5b5b;
   --secondaryGradient: #e2e2e2;
   --bgGitHub: var(--mediumGray);
-  --bgL: var(--fundoL);
-  --mobileBg: var(--fundoMobile);
-  --mobileBgL: var(--fundoMobileL);
 }

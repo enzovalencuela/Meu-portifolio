@@ -18,7 +18,7 @@
   min-height: 70vh;
   align-items: center;
   justify-content: space-around;
-  margin: 6rem;
+  margin: 6rem 7rem;
   gap: 40px;
 }
 
@@ -37,8 +37,8 @@
 /* From Uiverse.io by gharsh11032000 */
 .card {
   position: relative;
-  width: 310px;
-  height: 370px;
+  width: auto;
+  height: 350px;
   background-color: #f2f2f2;
   border-radius: 10px;
   display: flex;
