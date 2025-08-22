@@ -224,6 +224,7 @@
 @media only screen and (max-width: 708px) {
   .contacts {
     padding: 030px 20px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
   }
