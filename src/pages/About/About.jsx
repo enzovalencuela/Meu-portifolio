@@ -2,7 +2,7 @@ import React from "react";
 import "./About.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import minhaFoto from "../../../public/assets/img/minha_foto_cinza_3d.png";
+import minhaFoto from "/minha_foto_cinza_3d.png";
 
 function About() {
   return (

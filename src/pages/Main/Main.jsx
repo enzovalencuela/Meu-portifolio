@@ -1,6 +1,6 @@
 import React from "react";
 import "./Main.css";
-import minhaFoto from "../../../public/assets/img/minha_foto_cinza_3d.png";
+import minhaFoto from "/minha_foto_cinza_3d.png";
 
 const Main = () => {
   return (
