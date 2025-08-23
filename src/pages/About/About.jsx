@@ -7,9 +7,9 @@ import minhaFoto from "/minha_foto_cinza_3d.png";
 function About() {
   return (
     <>
-      <div class="apresentation" id="about">
+      <div className="apresentation" id="about">
         <h2 className="title__about">Sobre Mim</h2>
-        <div class="apresentation__text-content">
+        <div className="apresentation__text-content">
           <div className="img_principal">
             <img className="my-img" src={minhaFoto} alt="Minha foto" />
           </div>
@@ -34,22 +34,22 @@ function About() {
         </div>
       </div>
 
-      <div class="main-skills">
-        <h2 class="title-main-skills">Minhas habilidades</h2>
+      <div className="main-skills">
+        <h2 className="title-main-skills">Minhas habilidades</h2>
 
-        <div class="skills-container">
-          <div class="skills-content">
-            <div align="center" class="skill">
+        <div className="skills-container">
+          <div className="skills-content">
+            <div align="center" className="skill">
               <h3>Front-end</h3>
               <img src="https://skillicons.dev/icons?i=html,css,js,react,next,tailwind" />
             </div>
 
-            <div align="center" class="skill">
+            <div align="center" className="skill">
               <h3>Back-End</h3>
               <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,prisma,mysql,ts" />
             </div>
 
-            <div align="center" class="skill">
+            <div align="center" className="skill">
               <h3>Ferramentas</h3>
               <img src="https://skillicons.dev/icons?i=git,github,netlify,vercel,vscode,firebase" />
             </div>
