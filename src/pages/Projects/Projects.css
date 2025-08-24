@@ -16,8 +16,6 @@
   grid-template-columns: repeat(4, 1fr);
   display: grid;
   min-height: 70vh;
-  align-items: center;
-  justify-content: space-around;
   margin: 6rem 7rem;
   gap: 40px;
 }
@@ -235,10 +233,6 @@
 
   .div__projects {
     grid-template-columns: repeat(2, 1fr);
-    display: grid;
-    align-items: center;
-    justify-content: space-around;
-    gap: 20px;
     margin: 5rem 2rem;
   }
 

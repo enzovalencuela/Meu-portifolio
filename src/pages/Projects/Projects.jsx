@@ -158,8 +158,8 @@ function Projects() {
             <SwiperSlide
               key={project.id}
               style={{
-                height: "410px",
-                padding: "20px 9.5%",
+                height: "450px",
+                padding: "60px 9.5% 0px",
               }}
             >
               <div className="card">
