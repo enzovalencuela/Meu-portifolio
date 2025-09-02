@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 * {
-  font-family: "Inter";
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,13 +14,15 @@ html {
 
 :root {
   --white: #fcfcfc;
+  --lightGray: #e2e2e2;
   --gray: #d9d9d9;
   --mediumGray: #44475a;
+  --highGray: #2b2e37;
   --gitGray: #282a36;
   --blue: #001f84;
   --lightBlue: #204371;
-  --green: #66b1fd;
-  --highGreen: rgb(62, 117, 255);
+  --blue: #66b1fd;
+  --highblue: rgb(62, 117, 255);
 }
 
 .dark-mode,
@@ -29,7 +31,7 @@ html {
 }
 
 .light-mode {
-  background-color: #cecece;
+  background-color: var(--bg);
   --bg: var(--gray);
   --h2Color: var(--gray);
   --fontColor: var(--gitGray);
@@ -37,19 +39,20 @@ html {
   --h2Bg: var(--gray);
   --btnBg: var(--blue);
   --hoverBtn: var(--lightBlue);
-  --btnCurriculo: var(--green);
-  --btnCurriculoHover: var(--highGreen);
+  --btnCurriculo: var(--blue);
+  --btnCurriculoHover: var(--highblue);
   --btnFontColor: #e4e4e4;
   --borderColor: var(--mediumGray);
-  --pColor: var(--white);
+  --pColor: var(--gitGray);
   --color: var(--white);
   --primaryGradient: #797979;
   --secondaryGradient: #38b6ff;
   --bgGitHub: var(--gitGray);
+  --bgCard: var(--lightGray);
 }
 
 .dark-mode {
-  background-color: #25262f;
+  background-color: var(--bg);
   --bg: var(--gitGray);
   --h2color: var(--gray);
   --fontColor: var(--white);
@@ -57,7 +60,7 @@ html {
   --btnBg: var(--mediumGray);
   --hoverBtn: var(--gitGray);
   --btnCurriculo: var(--mediumGray);
-  --btnCurriculoHover: var(--gitGray);
+  --btnCurriculoHover: #3c4350;
   --btnFontColor: var(--gitGray);
   --borderColor: var(--gitGray);
   --pColor: var(--white);
@@ -65,4 +68,5 @@ html {
   --primaryGradient: #5b5b5b;
   --secondaryGradient: #e2e2e2;
   --bgGitHub: var(--mediumGray);
+  --bgCard: var(--highGray);
 }

@@ -1,51 +1,27 @@
-/* Estiliza o formulário de pesquisa */
-.title__projects {
-  color: #f4f4f4;
-  border: 1px solid var(--bgGitHub);
-  background-color: var(--bgGitHub);
-  border-radius: 10px;
-  margin-inline: 7rem;
-  padding: 7px;
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
+.projects {
+  background-color: var(--bg);
+  min-height: 100vh;
 }
 
 .div__projects {
-  grid-template-columns: repeat(4, 1fr);
-  display: grid;
-  min-height: 70vh;
-  margin: 6rem 7rem;
-  gap: 40px;
-}
-
-.title-btn {
   display: flex;
-  flex-direction: column;
-}
-
-.error {
-  text-align: center;
-  color: #fd1f1f;
-  font-weight: bold;
-  font-size: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  gap: 40px;
 }
 
 /* From Uiverse.io by gharsh11032000 */
 .card {
   position: relative;
-  width: auto;
-  height: 350px;
+  width: 300px;
+  height: auto;
   background-color: #f2f2f2;
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
   box-shadow: 0 0 0 2px #ffffff80;
   transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  flex: 0 0 calc(25% - 20px);
 }
 
 .card:hover {
@@ -96,8 +72,13 @@
 
 .name {
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   color: var(--fontColor);
+  margin-bottom: 10px;
+}
+
+.name::after {
+  background: none;
 }
 
 .link-pagina {
@@ -171,43 +152,6 @@
 /*?-------------------------------------------MOBILE----------------------------------------------------------*/
 
 @media only screen and (max-width: 708px) {
-  .title__projects {
-    font-size: 2rem;
-    margin-inline: 2rem;
-  }
-
-  .div__projects {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-    margin: 50px 0px;
-  }
-
-  .card {
-    width: 78vw;
-    max-width: 400px;
-  }
-
-  .img-projects {
-    flex: 1;
-    width: 100px;
-    padding: 0;
-  }
-
-  .name {
-    text-align: center;
-    font-size: 1.1rem;
-  }
-
-  .buttons-project {
-    display: flex;
-    flex-direction: row;
-    gap: 7px;
-  }
-
   .button,
   .btn-github {
     justify-content: center;
@@ -229,21 +173,6 @@
   .title__projects {
     font-size: 2rem;
     margin-inline: 2rem;
-  }
-
-  .div__projects {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 5rem 2rem;
-  }
-
-  .card {
-    width: 280px;
-    height: 335px;
-  }
-
-  .img-projects {
-    width: 260px;
-    padding: 0;
   }
 
   .name {

@@ -1,19 +1,23 @@
 .contacts {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
+  flex-direction: column;
   padding: 150px 300px;
-  gap: 50px;
   background: rgba(51, 51, 51, 0.44);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2.9px);
   -webkit-backdrop-filter: blur(2.9px);
 }
 
+.forms {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 40px;
+}
+
 /* From Uiverse.io by gharsh11032000 */
 .form-container {
-  width: 400px;
+  flex: 1.5;
   background: linear-gradient(var(--bg), var(--bg)) padding-box,
     linear-gradient(
         145deg,
@@ -32,7 +36,6 @@
   gap: 20px;
   box-sizing: border-box;
   border-radius: 16px;
-  flex: 3;
 }
 
 .form-container button:active {
@@ -123,13 +126,11 @@
 
 /* From Uiverse.io by IWhat1 */
 .container {
-  height: 354px;
-  width: 240px;
+  flex: 1;
   color: #e81cff;
   perspective: 800px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  flex: 2;
 }
 
 .card-contact {
@@ -224,32 +225,19 @@
 @media only screen and (max-width: 708px) {
   .contacts {
     padding: 030px 20px;
+  }
+
+  .forms {
     height: 100vh;
-    display: flex;
     flex-direction: column;
   }
 
   .form-container {
-    font-display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 340px;
-    padding: 0px;
-    flex: 2;
-  }
-
-  .form-container .form-group input {
-    width: 300px;
-  }
-
-  .form-container .form-group textarea {
-    width: 300px;
-    height: 96px;
+    flex: 1;
   }
 
   .container {
-    width: 340px;
-    flex: 2;
+    flex: 1;
   }
 }
 
@@ -259,29 +247,24 @@
   .contacts {
     padding: 030px 20px;
     display: flex;
-    flex-direction: row;
+  }
+
+  .forms {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 800px;
+    width: 100%;
   }
 
   .form-container {
-    font-display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 340px;
-    padding: 0px;
-    flex: 2;
-  }
-
-  .form-container .form-group input {
-    width: 300px;
-  }
-
-  .form-container .form-group textarea {
-    width: 300px;
-    height: 96px;
+    flex: 1;
+    width: 450px;
   }
 
   .container {
-    height: 340px;
-    flex: 2;
+    flex: 1;
+    width: 450px;
   }
 }

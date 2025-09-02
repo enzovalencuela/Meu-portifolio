@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { DarkModeContext } from "./components/ui/DarkModeContext";
 import "./App.css";
-import Main from "./pages/Main/Main";
 import Nav from "./pages/Nav/Nav";
-import Projects from "./pages/Projects/Projects";
-import Footer from "./pages/Footer/Footer";
-import Contacts from "./pages/Contacts/Contacts";
+import Main from "./pages/Main/Main";
 import About from "./pages/About/About";
+import Skills from "./pages/Skills/Skills";
+import Projects from "./pages/Projects/Projects";
+import Contacts from "./pages/Contacts/Contacts";
+import Footer from "./pages/Footer/Footer";
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -31,8 +32,9 @@ function App() {
       <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
         <Nav />
         <Main />
-        <Projects />
         <About />
+        <Skills />
+        <Projects />
         <Contacts />
         <Footer />
       </DarkModeContext.Provider>

@@ -1,119 +1,25 @@
-.apresentation {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 8rem;
-  margin-inline: 7rem;
+/* About Section */
+.about-section {
+  background-color: var(--bg);
 }
 
-.apresentation__text-content {
-  margin-top: 60px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
   text-align: center;
-  gap: 10px;
-
-  & p {
-    max-width: 600px;
-    margin-top: 50px;
-    font-size: 1.3rem;
-    font-weight: 500;
-    line-height: 30px;
-  }
-
-  & ul {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-  }
 }
 
-.apresentation-text-button {
+.about-container p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--fontColorLight);
+}
+
+.div__curriculo {
   display: flex;
-  flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
-}
-
-.title__about {
-  color: #f4f4f4;
-  border: 1px solid var(--bgGitHub);
-  background-color: var(--bgGitHub);
-  border-radius: 10px;
-  padding: 7px;
   width: 100%;
-
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-/*Minhas habilidades===========================================*/
-
-.main-skills {
-  display: flex;
-  flex-direction: column;
-  margin: 50px 120px 120px;
-  justify-content: center;
-  align-items: center;
-}
-
-.main-skills h3 {
-  color: var(--pColor);
-}
-
-.title-main-skills {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2rem;
-  text-transform: uppercase;
-}
-
-.skills-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: start;
-  gap: 20px;
-  width: 80%;
-}
-
-.skills-content {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  gap: 15px;
-  width: 100%;
-}
-
-.skill {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: start;
-  border-radius: 10px;
-  gap: 20px;
-  background-color: #222;
-  padding: 8px 30px;
-
-  h3 {
-    min-width: 20%;
-  }
-
-  img {
-    max-width: 80%;
-    height: 45px;
-  }
-}
-
-.div_curriculo {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
 .btn__curriculo {
@@ -142,124 +48,12 @@
   background-color: var(--btnCurriculoHover);
 }
 
-.img_principal {
-  display: flex;
-  position: relative;
-  text-align: center;
-  justify-content: center;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: linear-gradient(transparent) padding-box,
-    linear-gradient(
-        145deg,
-        transparent 35%,
-        var(--primaryGradient),
-        var(--secondaryGradient)
-      )
-      border-box;
-  border: 2px solid transparent;
-}
-
-.my-img {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-}
-
 /*?-------------------------------------------MOBILE----------------------------------------------------------*/
 
 @media only screen and (max-width: 708px) {
-  .apresentation {
-    margin-inline: 2rem;
-  }
-
-  .apresentation__text-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .title__about {
-    font-size: 2rem;
-  }
-
-  .example-2 {
-    display: none;
-  }
-
-  .my-pages {
-    display: none;
-  }
-
-  .apresentation {
-    justify-content: center;
-    align-items: center;
-    margin: 8rem 2rem 2rem;
-    max-width: 100%;
-
-    & p {
-      text-align: justify;
-      font-size: 0.8rem;
-    }
-  }
-
-  .img_principal {
-    width: 240px;
-    height: 240px;
-  }
-
-  .main-skills {
-    margin: 4rem 0rem 10rem;
-  }
-
-  .skills-container {
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-
-  .skills-level-content {
-    width: 100%;
-  }
-
-  .skill {
-    margin-inline: 0rem;
-    gap: 2rem;
-    align-items: center;
-
-    h3 {
-      font-size: 0.8rem;
-    }
-
-    & img {
-      height: 1.3rem;
-    }
-  }
 }
 
 /*?-------------------------------------------TABLETS----------------------------------------------------------*/
 
 @media (min-width: 709px) and (max-width: 1024px) {
-  .apresentation {
-    margin-inline: 2rem;
-  }
-
-  .apresentation__text-content {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .apresentation-text-button p {
-    font-size: 16px;
-  }
-
-  .title__about {
-    font-size: 2rem;
-  }
-
-  .img_principal {
-    width: 280px;
-    height: 280px;
-  }
 }

@@ -4,26 +4,31 @@ import minhaFoto from "/minha_foto_cinza_3d.png";
 
 const Main = () => {
   return (
-    <main>
-      <section className="section-pricipal" id="home">
-        <div className="div-principal">
-          <div className="texts-principal">
-            <h2 className="title__principal">
-              Eu sou Enzo <br />
-              Valençuela
-            </h2>
-            <p>
-              Seja bem vindo ao meu portifólio! Sou
-              <span className="span-p"> Desenvolvedor Front End</span> e curso
-              Sistemas de Informação.
-            </p>
-          </div>
-          <div className="img_principal">
-            <img className="my-img" src={minhaFoto} alt="Minha foto" />
-          </div>
+    <section id="home" class="section home-section">
+      <div class="home-text">
+        <h1>
+          Olá, eu sou <span class="highlight">Edilson Enzo</span>.
+        </h1>
+        <p>
+          Desenvolvedor Full Stack apaixonado por criar soluções inovadoras e
+          funcionais.
+        </p>
+        <a href="#contact" class="btn-primary">
+          Vamos Conversar?
+        </a>
+        <div class="social-links">
+          <a href="https://github.com/enzovalencuela" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/enzo-silva10/" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
         </div>
-      </section>
-    </main>
+      </div>
+      <div class="home-image">
+        <img src={minhaFoto} alt="Foto de Perfil" />
+      </div>
+    </section>
   );
 };
 
