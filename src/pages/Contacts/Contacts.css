@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   padding: 150px 300px;
-  background: rgba(51, 51, 51, 0.44);
+  background: rgba(74, 74, 74, 0.44);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2.9px);
   -webkit-backdrop-filter: blur(2.9px);

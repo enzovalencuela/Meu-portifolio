@@ -1,6 +1,5 @@
 .projects {
   background-color: var(--bg);
-  min-height: 100vh;
 }
 
 .div__projects {
@@ -8,7 +7,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 40px 0;
+  padding-bottom: 180px;
   gap: 40px;
 }
 
@@ -16,6 +15,7 @@
 .card {
   position: relative;
   width: 300px;
+  max-width: 100%;
   height: auto;
   background-color: #f2f2f2;
   border-radius: 10px;
