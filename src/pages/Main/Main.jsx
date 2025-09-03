@@ -7,7 +7,7 @@ const Main = () => {
     <section id="home" class="section home-section">
       <div class="home-text">
         <h1>
-          Olá, eu sou <span class="highlight">Edilson Enzo</span>.
+          Olá, eu sou <span class="highlight">Enzo Valençuela</span>.
         </h1>
         <p>
           Desenvolvedor Full Stack apaixonado por criar soluções inovadoras e
