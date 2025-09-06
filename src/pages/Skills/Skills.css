@@ -18,24 +18,19 @@
 
 .skill-item:hover {
   transform: translateY(-10px);
-  color: var(--primary-color);
 }
 
 .skill-item i {
   font-size: 3.5rem;
-  color: var(--dark-color);
+  color: var(--fontColor);
   margin-bottom: 0.5rem;
   transition: color 0.3s ease;
-}
-
-.skill-item:hover i {
-  color: var(--primary-color);
 }
 
 .skill-item p {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #444;
+  color: var(--fontColorLight);
 }
 
 @media (max-width: 768px) {

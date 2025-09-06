@@ -19,10 +19,8 @@
   margin-bottom: 1rem;
 }
 
-.home-text p {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 2rem;
+.home-text a img {
+  margin-bottom: 25px;
 }
 
 .highlight {
@@ -31,7 +29,7 @@
 
 .btn-primary {
   display: inline-block;
-  background: var(--blue);
+  background: var(--btnBg);
   color: var(--pColor);
   padding: 12px 25px;
   border-radius: 5px;
@@ -42,7 +40,7 @@
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  background: #0056b3;
+  background: var(--hoverBtn);
 }
 
 .social-links {
@@ -135,6 +133,13 @@ h2::after {
     text-align: center;
     padding-top: 120px;
     min-height: auto;
+  }
+
+  .home-text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .home-text h1 {

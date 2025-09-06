@@ -1,18 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Main.css";
-import minhaFoto from "/minha_foto_cinza_3d.png";
+import minhaFoto from "/minha_foto.png";
 
 const Main = () => {
+  const [link, setLink] = useState();
+
+  useEffect(() => {
+    const updateLink = () => {
+      const tela = window.innerWidth;
+      const baseLink = "https://readme-typing-svg.herokuapp.com?font=Poppins";
+      const defaultParams =
+        "&duration=3000&pause=1000&color=555555&vCenter=true&multiline=true&width=500&height=70&lines=Desenvolvedor+Full-Stack+%7C+Solucionando";
+
+      if (tela < 428) {
+        setLink(`${baseLink}&size=22&center=true${defaultParams};problemas+`);
+      } else if (tela < 1128) {
+        setLink(`${baseLink}&size=19&center=true${defaultParams}+problemas;`);
+      } else {
+        setLink(`${baseLink}&size=19&center=false${defaultParams}+problemas;`);
+      }
+    };
+
+    updateLink();
+
+    window.addEventListener("resize", updateLink);
+
+    return () => {
+      window.removeEventListener("resize", updateLink);
+    };
+  }, []);
+
   return (
     <section id="home" class="section home-section">
       <div class="home-text">
         <h1>
           Olá, eu sou <span class="highlight">Enzo Valençuela</span>.
         </h1>
-        <p>
-          Desenvolvedor Full Stack apaixonado por criar soluções inovadoras e
-          funcionais.
-        </p>
+        <a>
+          <img
+            src={`https://readme-typing-svg.herokuapp.com?font=Poppins&size=${link}com+c%C3%B3digo+e+tecnologia.`}
+            alt="Typing SVG"
+          />
+        </a>
         <a href="#contact" class="btn-primary">
           Vamos Conversar?
         </a>

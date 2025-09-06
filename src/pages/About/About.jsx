@@ -13,8 +13,8 @@ function About() {
           usuário responsivas e intuitivas. Especialista em otimização de
           desempenho e implementação de soluções web modernas, resultando em
           aumento de engajamento e satisfação do cliente. Atualmente curso
-          Bacharelado em Sistemas de Informação e Formação Técnica em
-          Desenvolvimento Front End.
+          Bacharelado em Sistemas de Informação e Cursei Desenvolvimento Front
+          End.
         </p>
       </div>
       <div className="div__curriculo">

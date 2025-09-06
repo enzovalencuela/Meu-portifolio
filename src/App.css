@@ -17,11 +17,11 @@ html {
   --lightGray: #e2e2e2;
   --gray: #d9d9d9;
   --mediumGray: #44475a;
-  --highGray: #2b2e37;
+  --highGray: #484f63;
   --gitGray: #282a36;
   --blue: #001f84;
-  --lightBlue: #204371;
-  --blue: #66b1fd;
+  --lightBlue: #439fbe;
+  --blue: #57abfe;
   --highblue: rgb(62, 117, 255);
 }
 
@@ -35,12 +35,9 @@ html {
   --bg: var(--gray);
   --h2Color: var(--gray);
   --fontColor: var(--gitGray);
-  --fontColorLight: #4d4d4d;
-  --h2Bg: var(--gray);
+  --fontColorLight: #4b4b4b;
   --btnBg: var(--blue);
-  --hoverBtn: var(--lightBlue);
-  --btnCurriculo: var(--blue);
-  --btnCurriculoHover: var(--highblue);
+  --hoverBtn: var(--highblue);
   --btnFontColor: #e4e4e4;
   --borderColor: var(--mediumGray);
   --pColor: var(--gitGray);
@@ -56,11 +53,9 @@ html {
   --bg: var(--gitGray);
   --h2color: var(--gray);
   --fontColor: var(--white);
-  --fontColorLight: #cecece;
-  --btnBg: var(--mediumGray);
-  --hoverBtn: var(--gitGray);
-  --btnCurriculo: var(--mediumGray);
-  --btnCurriculoHover: #3c4350;
+  --fontColorLight: #bababa;
+  --btnBg: var(--highblue);
+  --hoverBtn: var(--blue);
   --btnFontColor: var(--gitGray);
   --borderColor: var(--gitGray);
   --pColor: var(--white);

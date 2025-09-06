@@ -104,10 +104,10 @@
   justify-content: center;
   align-self: flex-start;
   font-family: inherit;
-  color: #919191;
+  color: var(pColor);
   font-weight: 600;
   width: 40%;
-  background: #313131;
+  background: var(--btnBg);
   border: 1px solid #414141;
   padding: 12px 16px;
   font-size: inherit;
@@ -115,11 +115,13 @@
   margin-top: 8px;
   cursor: pointer;
   border-radius: 6px;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .form-container .form-submit-btn:hover {
-  background-color: #fff;
-  border-color: #fff;
+  background-color: var(--hoverBtn);
+  border-color: var(--bg);
+  transform: translateY(-3px);
 }
 
 /*===========================================================================*/
