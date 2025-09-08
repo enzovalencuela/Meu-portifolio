@@ -19,7 +19,10 @@ function About() {
       </div>
       <div className="div__curriculo">
         <button className="btn__curriculo">
-          <a href="https://drive.google.com/file/d/1jYaH9VWQhAl5rn8Fpi5pQCZyXDAjysl8/view?usp=sharing">
+          <a
+            href="https://drive.google.com/file/d/1gGBF3UVhTztDwmOzWLctDhLVhA6Qann_/view?usp=drive_link"
+            target="_blank"
+          >
             Currículo
           </a>
           <FontAwesomeIcon icon={faDownload} />
