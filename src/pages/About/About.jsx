@@ -20,7 +20,7 @@ function About() {
       <div className="div__curriculo">
         <button className="btn__curriculo">
           <a
-            href="https://drive.google.com/file/d/1ceWDO4pTspUFuIjqGZDdmvC96HhN73MJ/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1ZFeOCWJQ8BmIeCQOdetKyKXsd0hsjku_/view?usp=drive_link"
             target="_blank"
           >
             Currículo
