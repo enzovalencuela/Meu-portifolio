@@ -68,7 +68,7 @@ export const projectsData = [
     ],
     name: "E-Commerce gamer",
     github: "https://github.com/enzovalencuela/pagamento-plataforma",
-    deploy: "https://pagamento-plataforma.vercel.app/login",
+    deploy: "https://pagamento-plataforma.vercel.app",
     img: "/4.png",
     description:
       "Este é um projeto de um e-commerce para o público gamer. A aplicação oferece um sistema de compras, login e cadastro, permitindo aos usuários criar e gerenciar suas contas.",
