@@ -2,7 +2,6 @@ import React from "react";
 import { projectsData } from "./ProjectsData";
 import ProjectCard from "../../components/ProjectCard";
 import "./Projects.css";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 function Projects() {
   const projectsToShow = projectsData.slice(0, 4);

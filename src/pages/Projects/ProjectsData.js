@@ -56,17 +56,22 @@ export const projectsData = [
   {
     id: 4,
     stack: [
-      { name: "HTML", icon: "/html.png" },
+      { name: "React", icon: "/react.png" },
+      { name: "Vite", icon: "/vite.png" },
       { name: "Javascript", icon: "/javascript.svg" },
+      { name: "Typescript", icon: "/typescript.svg" },
       { name: "Css", icon: "/css.png" },
       { name: "Swiper Js", icon: "/swiperjs.svg" },
+      { name: "PostgreSQL", icon: "/postgresql.svg" },
+      { name: "Express", icon: "/express.svg" },
+      { name: "Mercado Pago", icon: "/mercado_pago.png" },
     ],
-    name: "Projeto Avanti",
-    github: "https://github.com/enzovalencuela/Projeto-Avanti",
-    deploy: "https://enzovalencuela-projeto-avanti.netlify.app",
+    name: "E-Commerce gamer",
+    github: "https://github.com/enzovalencuela/pagamento-plataforma",
+    deploy: "https://pagamento-plataforma.vercel.app/login",
     img: "/4.png",
     description:
-      "Este projeto é uma página web de uma loja de roupas chamada AVANTI, criada com o objetivo de apresentar produtos de forma moderna, interativa e responsiva.",
+      "Este é um projeto de um e-commerce para o público gamer. A aplicação oferece um sistema de compras, login e cadastro, permitindo aos usuários criar e gerenciar suas contas.",
   },
   {
     id: 5,
