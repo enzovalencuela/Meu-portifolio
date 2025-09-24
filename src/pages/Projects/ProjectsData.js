@@ -29,10 +29,11 @@ export const projectsData = [
       { name: "Node Js", icon: "/nodejs.svg" },
       { name: "Express", icon: "/express.svg" },
       { name: "PostgreSQL", icon: "/postgresql.svg" },
+      { name: "Dnd Kit", icon: "/dnd_kit.jpg" },
     ],
     name: "Jubitasks",
-    github: "https://github.com/enzovalencuela/JubiTasks-TodoList",
-    deploy: "https://enzovalencuela-jubitasks-todolist.netlify.app",
+    github: "https://github.com/MEGA-JR-Grupo-3/megajr-front-end",
+    deploy: "https://jubitasks.netlify.app",
     img: "/7.png",
     description:
       "Sua Lista de Tarefas! O Jubitasks é a solução perfeita para você! Desenvolvido para ser intuitivo e eficiente, ele te ajuda a gerenciar suas atividades diárias, projetos e ideias de forma simples e visual.",
