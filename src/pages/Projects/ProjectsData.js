@@ -93,15 +93,16 @@ export const projectsData = [
   {
     id: 6,
     stack: [
-      { name: "HTML", icon: "/html.png" },
+      { name: "React", icon: "/react.png" },
+      { name: "Next.js", icon: "/next.js.png" },
       { name: "Javascript", icon: "/javascript.svg" },
       { name: "Css", icon: "/css.png" },
     ],
     name: "World Football Players",
     github: "https://github.com/enzovalencuela/World-Football-Players",
-    deploy: "https://enzovalencuela-world-football-players.netlify.app",
+    deploy: "https://world-football-players.vercel.app",
     description:
-      "O World Football Players é um site desenvolvido com HTML, CSS e JavaScript que permite visualizar informações sobre jogadores de futebol, técnicos, clubes e seleções.",
+      "O World Football Players é um site que permite visualizar informações sobre jogadores de futebol, técnicos, clubes e seleções.",
     img: "/2.png",
   },
   {
@@ -116,7 +117,7 @@ export const projectsData = [
     ],
     name: "Projeto Proxion",
     github: "https://github.com/enzovalencuela/Projeto-Proxion",
-    deploy: "/",
+    deploy: "",
     img: "/5.png",
     description:
       "Proxion é uma plataforma web desenvolvida como uma ferramenta preventiva de vistoria de equipamentos, voltada à otimização de processos internos e ao monitoramento detalhado de inspeções técnicas.",

@@ -30,7 +30,9 @@ const ProjectCard = ({ project }) => {
               </button>
             </a>
             <a href={project.deploy} target="_blank" rel="noopener noreferrer">
-              <button className="button">Acessar</button>
+              <button className="button" disabled={project.deploy === ""}>
+                Acessar
+              </button>
             </a>
           </div>
         </div>

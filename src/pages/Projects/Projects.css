@@ -124,6 +124,11 @@
   transform: scale(0.98);
 }
 
+.button:disabled {
+  background-color: #333;
+  cursor: not-allowed;
+}
+
 .btn-github {
   cursor: pointer;
   display: flex;
