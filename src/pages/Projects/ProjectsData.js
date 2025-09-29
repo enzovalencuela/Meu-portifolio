@@ -38,21 +38,20 @@ export const projectsData = [
     description:
       "Sua Lista de Tarefas! O Jubitasks é a solução perfeita para você! Desenvolvido para ser intuitivo e eficiente, ele te ajuda a gerenciar suas atividades diárias, projetos e ideias de forma simples e visual.",
   },
-
   {
     id: 3,
     stack: [
-      { name: "React", icon: "/react.png" },
-      { name: "Vite", icon: "/vite.png" },
+      { name: "HTML", icon: "/html.png" },
       { name: "Javascript", icon: "/javascript.svg" },
-      { name: "Css", icon: "/css.png" },
+      { name: "css", icon: "/css.png" },
+      { name: "Swiper Js", icon: "/swiperjs.svg" },
     ],
-    name: "Projeto Github API",
-    github: "https://github.com/enzovalencuela/Projeto-Github-API",
-    deploy: "https://enzovalencuela-projeto-github-api.netlify.app",
-    img: "/3.png",
+    name: "Landing Page",
+    github: "https://github.com/enzovalencuela/landing-page",
+    deploy: "https://enzovalencuela-landing-page-dnc.netlify.app",
+    img: "/10.png",
     description:
-      "Aplicação web construída com React que consome a GitHub API para buscar informações públicas de usuários. Basta digitar o nome de usuário do GitHub para visualizar os dados como: Nome, Bio, Foto de perfil",
+      "Este projeto é uma landing page fictícia. A página foi desenvolvida com foco em design visual atraente e experiência do usuário, utilizando boas práticas de HTML, CSS, Javascript e Swiper Js.",
   },
   {
     id: 4,
@@ -77,17 +76,17 @@ export const projectsData = [
   {
     id: 5,
     stack: [
-      { name: "HTML", icon: "/html.png" },
+      { name: "React", icon: "/react.png" },
+      { name: "Vite", icon: "/vite.png" },
       { name: "Javascript", icon: "/javascript.svg" },
-      { name: "css", icon: "/css.png" },
-      { name: "Swiper Js", icon: "/swiperjs.svg" },
+      { name: "Css", icon: "/css.png" },
     ],
-    name: "Landing Page",
-    github: "https://github.com/enzovalencuela/landing-page",
-    deploy: "https://enzovalencuela-landing-page-dnc.netlify.app",
-    img: "/10.png",
+    name: "Projeto Github API",
+    github: "https://github.com/enzovalencuela/Projeto-Github-API",
+    deploy: "https://enzovalencuela-projeto-github-api.netlify.app",
+    img: "/3.png",
     description:
-      "Este projeto é uma landing page fictícia. A página foi desenvolvida com foco em design visual atraente e experiência do usuário, utilizando boas práticas de HTML, CSS, Javascript e Swiper Js.",
+      "Aplicação web construída com React que consome a GitHub API para buscar informações públicas de usuários. Basta digitar o nome de usuário do GitHub para visualizar os dados como: Nome, Bio, Foto de perfil",
   },
   {
     id: 6,

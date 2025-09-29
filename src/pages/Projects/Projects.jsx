@@ -4,7 +4,7 @@ import ProjectCard from "../../components/ProjectCard";
 import "./Projects.css";
 
 function Projects() {
-  const projectsToShow = projectsData.slice(0, 8);
+  const projectsToShow = projectsData.slice(0, 4);
 
   return (
     <section id="projects">
