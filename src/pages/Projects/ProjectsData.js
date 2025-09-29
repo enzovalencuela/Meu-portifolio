@@ -77,18 +77,17 @@ export const projectsData = [
   {
     id: 5,
     stack: [
-      { name: "React", icon: "/react.png" },
-      { name: "Vite", icon: "/vite.png" },
+      { name: "HTML", icon: "/html.png" },
       { name: "Javascript", icon: "/javascript.svg" },
       { name: "css", icon: "/css.png" },
-      { name: "Chakra UI", icon: "/chakra-ui.png" },
+      { name: "Swiper Js", icon: "/swiperjs.svg" },
     ],
-    name: "Meu Portifólio",
-    github: "https://github.com/enzovalencuela/Meu-portifolio",
-    deploy: "https://enzovalencuela-meu-portifolio.netlify.app",
-    img: "/1.png",
+    name: "Landing Page",
+    github: "https://github.com/enzovalencuela/landing-page",
+    deploy: "https://enzovalencuela-landing-page-dnc.netlify.app",
+    img: "/10.png",
     description:
-      "Este é o meu portfólio profissional, desenvolvido com tecnologias modernas para apresentar meus projetos e habilidades na área de desenvolvimento Full Stack.",
+      "Este projeto é uma landing page fictícia. A página foi desenvolvida com foco em design visual atraente e experiência do usuário, utilizando boas práticas de HTML, CSS, Javascript e Swiper Js.",
   },
   {
     id: 6,
