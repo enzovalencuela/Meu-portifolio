@@ -41,17 +41,17 @@ export const projectsData = [
   {
     id: 3,
     stack: [
-      { name: "HTML", icon: "/html.png" },
+      { name: "React", icon: "/react.png" },
+      { name: "Next.js", icon: "/next.js.png" },
       { name: "Javascript", icon: "/javascript.svg" },
-      { name: "css", icon: "/css.png" },
-      { name: "Swiper Js", icon: "/swiperjs.svg" },
+      { name: "Css", icon: "/css.png" },
     ],
-    name: "Landing Page",
-    github: "https://github.com/enzovalencuela/landing-page",
-    deploy: "https://enzovalencuela-landing-page-dnc.netlify.app",
-    img: "/10.png",
+    name: "World Football Players",
+    github: "https://github.com/enzovalencuela/World-Football-Players",
+    deploy: "https://world-football-players.vercel.app",
     description:
-      "Este projeto é uma landing page fictícia. A página foi desenvolvida com foco em design visual atraente e experiência do usuário, utilizando boas práticas de HTML, CSS, Javascript e Swiper Js.",
+      "O World Football Players é um site que permite visualizar informações sobre jogadores de futebol, técnicos, clubes e seleções.",
+    img: "/2.png",
   },
   {
     id: 4,
@@ -91,17 +91,17 @@ export const projectsData = [
   {
     id: 6,
     stack: [
-      { name: "React", icon: "/react.png" },
-      { name: "Next.js", icon: "/next.js.png" },
+      { name: "HTML", icon: "/html.png" },
       { name: "Javascript", icon: "/javascript.svg" },
-      { name: "Css", icon: "/css.png" },
+      { name: "css", icon: "/css.png" },
+      { name: "Swiper Js", icon: "/swiperjs.svg" },
     ],
-    name: "World Football Players",
-    github: "https://github.com/enzovalencuela/World-Football-Players",
-    deploy: "https://world-football-players.vercel.app",
+    name: "Landing Page",
+    github: "https://github.com/enzovalencuela/landing-page",
+    deploy: "https://enzovalencuela-landing-page-dnc.netlify.app",
+    img: "/10.png",
     description:
-      "O World Football Players é um site que permite visualizar informações sobre jogadores de futebol, técnicos, clubes e seleções.",
-    img: "/2.png",
+      "Este projeto é uma landing page fictícia. A página foi desenvolvida com foco em design visual atraente e experiência do usuário, utilizando boas práticas de HTML, CSS, Javascript e Swiper Js.",
   },
   {
     id: 7,
