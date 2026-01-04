@@ -9,12 +9,12 @@ function About() {
       <h2>Sobre Mim</h2>
       <div class="about-container">
         <p>
-          Desenvolvedor Full Stack com experiência em criação de interfaces de
-          usuário responsivas e intuitivas. Especialista em otimização de
-          desempenho e implementação de soluções web modernas, resultando em
-          aumento de engajamento e satisfação do cliente. Atualmente curso
-          Bacharelado em Sistemas de Informação e Cursei Desenvolvimento Front
-          End.
+          Como Desenvolvedor Full Stack, transformo problemas complexos em
+          interfaces intuitivas e soluções web de alto impacto. Meu trabalho
+          foca na otimização de sistemas para maximizar o engajamento e a
+          satisfação do cliente final. Bacharelando em Sistemas de Informação,
+          busco alinhar as melhores práticas de desenvolvimento à visão
+          estratégica de tecnologia.
         </p>
       </div>
       <div className="div__curriculo">
