@@ -4,6 +4,46 @@ export const projectsData = [
     stack: [
       { name: "React", icon: "/react.png" },
       { name: "Vite", icon: "/vite.png" },
+      { name: "Javascript", icon: "/javascript.svg" },
+      { name: "Node Js", icon: "/nodejs.svg" },
+      { name: "Css", icon: "/css.png" },
+      { name: "Tailwind", icon: "/tailwind.png" },
+      { name: "Material UI", icon: "/material-ui.svg" },
+      { name: "Swiper Js", icon: "/swiperjs.svg" },
+      { name: "Framer Motion", icon: "/framer-motion.png" },
+      { name: "Chart Js", icon: "/chartjs.svg" },
+    ],
+    name: "COP 15 UFMS",
+    deploy: "https://cop15.ufms.br",
+    description:
+      "Desenvolvimento da Landing Page oficial do evento em parceria com a Mega Júnior - UFMS. O projeto focou em entregar uma solução de alta performance e design refinado, servindo como o hub digital principal para discussões globais sobre biodiversidade.",
+    img: "/11.png",
+  },
+  {
+    id: 2,
+    stack: [
+      { name: "React", icon: "/react.png" },
+      { name: "Vite", icon: "/vite.png" },
+      { name: "Javascript", icon: "/javascript.svg" },
+      { name: "Typescript", icon: "/typescript.svg" },
+      { name: "Css", icon: "/css.png" },
+      { name: "Swiper Js", icon: "/swiperjs.svg" },
+      { name: "PostgreSQL", icon: "/postgresql.svg" },
+      { name: "Express", icon: "/express.svg" },
+      { name: "Mercado Pago", icon: "/mercado_pago.png" },
+    ],
+    name: "E-Commerce gamer",
+    github: "https://github.com/enzovalencuela/e-commerce-gamer",
+    deploy: "https://enzovalencuela-e-commerce.vercel.app",
+    img: "/4.png",
+    description:
+      "E-commerce completo com fluxo de pagamento automatizado, autenticação segura e design responsivo. Focado em resolver desafios reais de integração de APIs financeiras e segurança de dados do usuário.",
+  },
+  {
+    id: 3,
+    stack: [
+      { name: "React", icon: "/react.png" },
+      { name: "Vite", icon: "/vite.png" },
       { name: "Typescript", icon: "/typescript.svg" },
       { name: "styled-components", icon: "/styled-components.svg" },
       { name: "Material UI", icon: "/material-ui.svg" },
@@ -16,10 +56,10 @@ export const projectsData = [
     deploy: "https://projeto-sales-dashboard.vercel.app/",
     img: "/9.png",
     description:
-      "Desenvolvi um Sales Dashboard, para gerenciamento de vendas. Este projeto foi uma ótima oportunidade para aprofundar minhas habilidades e trabalhar com uma stack super moderna e requisitada no mercado.",
+      "Sales Dashboard, para gerenciamento de vendas. Este projeto foi uma ótima oportunidade para aprofundar minhas habilidades e trabalhar com uma stack super moderna e requisitada no mercado.",
   },
   {
-    id: 2,
+    id: 4,
     stack: [
       { name: "React", icon: "/react.png" },
       { name: "Next.js", icon: "/next.js.png" },
@@ -39,7 +79,7 @@ export const projectsData = [
       "Sua Lista de Tarefas! O Jubitasks é a solução perfeita para você! Desenvolvido para ser intuitivo e eficiente, ele te ajuda a gerenciar suas atividades diárias, projetos e ideias de forma simples e visual.",
   },
   {
-    id: 3,
+    id: 5,
     stack: [
       { name: "React", icon: "/react.png" },
       { name: "Next.js", icon: "/next.js.png" },
@@ -54,27 +94,7 @@ export const projectsData = [
     img: "/2.png",
   },
   {
-    id: 4,
-    stack: [
-      { name: "React", icon: "/react.png" },
-      { name: "Vite", icon: "/vite.png" },
-      { name: "Javascript", icon: "/javascript.svg" },
-      { name: "Typescript", icon: "/typescript.svg" },
-      { name: "Css", icon: "/css.png" },
-      { name: "Swiper Js", icon: "/swiperjs.svg" },
-      { name: "PostgreSQL", icon: "/postgresql.svg" },
-      { name: "Express", icon: "/express.svg" },
-      { name: "Mercado Pago", icon: "/mercado_pago.png" },
-    ],
-    name: "E-Commerce gamer",
-    github: "https://github.com/enzovalencuela/e-commerce-gamer",
-    deploy: "https://enzovalencuela-e-commerce.vercel.app",
-    img: "/4.png",
-    description:
-      "Este é um projeto de um e-commerce para o público gamer. A aplicação oferece um sistema de compras, login e cadastro, permitindo aos usuários criar e gerenciar suas contas.",
-  },
-  {
-    id: 5,
+    id: 6,
     stack: [
       { name: "React", icon: "/react.png" },
       { name: "Vite", icon: "/vite.png" },
@@ -89,7 +109,7 @@ export const projectsData = [
       "Aplicação web construída com React que consome a GitHub API para buscar informações públicas de usuários. Basta digitar o nome de usuário do GitHub para visualizar os dados como: Nome, Bio, Foto de perfil",
   },
   {
-    id: 6,
+    id: 7,
     stack: [
       { name: "HTML", icon: "/html.png" },
       { name: "Javascript", icon: "/javascript.svg" },
@@ -104,7 +124,7 @@ export const projectsData = [
       "Este projeto é uma landing page fictícia. A página foi desenvolvida com foco em design visual atraente e experiência do usuário, utilizando boas práticas de HTML, CSS, Javascript e Swiper Js.",
   },
   {
-    id: 7,
+    id: 8,
     stack: [
       { name: "React", icon: "/react.png" },
       { name: "Next.js", icon: "/next.js.png" },
@@ -121,7 +141,7 @@ export const projectsData = [
       "Proxion é uma plataforma web desenvolvida como uma ferramenta preventiva de vistoria de equipamentos, voltada à otimização de processos internos e ao monitoramento detalhado de inspeções técnicas.",
   },
   {
-    id: 8,
+    id: 9,
     stack: [
       { name: "React", icon: "/react.png" },
       { name: "Vite", icon: "/vite.png" },
