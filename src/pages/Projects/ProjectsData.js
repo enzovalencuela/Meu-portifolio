@@ -155,4 +155,24 @@ export const projectsData = [
       "Este projeto foi desenvolvido utilizando React e Vite. Ele simula uma página de arquitetura fictícia, funcionando como uma landing page com múltiplas seções, e demonstra a aplicação de diversos conceitos fundamentais do React.",
     img: "/8.png",
   },
+
+  {
+    id: 12,
+    stack: [
+      { name: "React", icon: "/react.png" },
+      { name: "Vite", icon: "/vite.png" },
+      { name: "Typescript", icon: "/typescript.svg" },
+      { name: "styled-components", icon: "/styled-components.svg" },
+      { name: "Material UI", icon: "/material-ui.svg" },
+      { name: "Chart Js", icon: "/chartjs.svg" },
+      { name: "Axios", icon: "/axios.svg" },
+      { name: "Cypress", icon: "/cypress.svg" },
+    ],
+    name: "Dashboard de Vendas",
+    github: "https://github.com/enzovalencuela/projeto-sales-dashboard",
+    deploy: "https://projeto-sales-dashboard.vercel.app/",
+    img: "/9.png",
+    description:
+      "Sales Dashboard, para gerenciamento de vendas. Este projeto foi uma ótima oportunidade para aprofundar minhas habilidades e trabalhar com uma stack super moderna e requisitada no mercado.",
+  },
 ];
