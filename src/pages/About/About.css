@@ -1,44 +1,120 @@
-/* About Section */
+/* SECTION */
+
 .about-section {
+  display: flex;
+  flex-direction: column;
   background-color: var(--bg);
+  gap: 60px;
+  padding: 4rem 1rem;
 }
 
-.about-container {
-  max-width: 800px;
-  margin: 0 auto;
+/* HEADER */
+
+.about-header {
   text-align: center;
 }
 
-.about-container p {
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
+.about-header h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+/* CONTAINER */
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 850px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+/* LINHA LATERAL */
+
+.about-div-vertical {
+  min-height: 200px;
+  width: 4px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--btnBg),
+    transparent
+  );
+  border-radius: 10px;
+}
+
+/* TEXTO */
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.about-text p {
+  text-align: start;
+  font-size: 1.05rem;
+  line-height: 1.7;
   color: var(--fontColorLight);
 }
+
+/* HIGHLIGHTS */
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.highlight {
+  display: flex;
+  flex-direction: column;
+  background: var(--cardBg);
+  padding: 16px;
+  border-radius: 10px;
+
+  border: 1px solid var(--BorderCard);
+
+  transition: all 0.25s ease;
+}
+
+.highlight:hover {
+  transform: translateY(-4px);
+  border-color: var(--btnBg);
+}
+
+.highlight strong {
+  font-size: 1.2rem;
+}
+
+.highlight span {
+  font-size: 0.85rem;
+  color: var(--fontColorLight);
+}
+
+/* CURRÍCULO */
 
 .div__curriculo {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
 }
 
 .btn__curriculo {
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  flex-direction: row;
-  padding: 10px 20px;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  font-weight: 600;
-  background-color: var(--btnBg);
   gap: 10px;
-  transition: transform 0.3s ease, background 0.3s ease;
 
-  a {
-    color: var(--fontColor);
-    text-decoration: none;
-  }
+  padding: 12px 24px;
+  border-radius: 8px;
+
+  font-weight: 600;
+  text-decoration: none;
+
+  background-color: var(--btnBg);
+  color: white;
+
+  transition: all 0.25s ease;
 }
 
 .btn__curriculo:hover {
@@ -50,12 +126,24 @@
   color: white;
 }
 
-/*?-------------------------------------------MOBILE----------------------------------------------------------*/
+/* MOBILE */
 
-@media only screen and (max-width: 708px) {
-}
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
 
-/*?-------------------------------------------TABLETS----------------------------------------------------------*/
+  .about-div-vertical {
+    width: 60px;
+    height: 4px;
+    min-height: unset;
+  }
 
-@media (min-width: 709px) and (max-width: 1024px) {
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .about-text p {
+    text-align: left;
+  }
 }

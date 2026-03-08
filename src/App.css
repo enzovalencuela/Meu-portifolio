@@ -46,6 +46,7 @@ html {
   --secondaryGradient: #38b6ff;
   --bgGitHub: var(--gitGray);
   --bgCard: var(--lightGray);
+  --BorderCard: rgba(0, 0, 0, 0.05);
 }
 
 .dark-mode {
@@ -64,4 +65,5 @@ html {
   --secondaryGradient: #e2e2e2;
   --bgGitHub: var(--mediumGray);
   --bgCard: var(--highGray);
+  --BorderCard: rgba(255, 255, 255, 0.05);
 }

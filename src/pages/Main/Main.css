@@ -23,7 +23,7 @@
   margin-bottom: 25px;
 }
 
-.highlight {
+.my-name {
   color: var(--blue);
 }
 
@@ -35,7 +35,9 @@
   border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
 }
 
 .btn-primary:hover {
@@ -51,7 +53,9 @@
   font-size: 1.5rem;
   color: var(--h2color);
   margin-right: 1.5rem;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .social-links a:hover {

@@ -8,6 +8,7 @@ import Skills from "./pages/Skills/Skills";
 import Projects from "./pages/Projects/Projects";
 import Contacts from "./pages/Contacts/Contacts";
 import Footer from "./pages/Footer/Footer";
+import Experience from "./pages/Experience/Experience";
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -35,6 +36,7 @@ function App() {
         <About />
         <Skills />
         <Projects />
+        <Experience />
         <Contacts />
         <Footer />
       </DarkModeContext.Provider>

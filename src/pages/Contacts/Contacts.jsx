@@ -1,43 +1,63 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
+import { motion } from "framer-motion";
 import "./Contacts.css";
 
 function Contacts() {
   return (
     <section className="section contacts" id="contact">
-      <h2>Contatos</h2>
+      <motion.h2
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        Contatos
+      </motion.h2>
+
       <div className="forms">
-        <div className="form-container">
+        {/* FORMULÁRIO */}
+        <motion.div
+          className="form-container"
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
           <form
             className="form"
             action="https://formsubmit.co/39faa3fcb02952ebcd0a31aa7224676a"
             method="POST"
           >
             <div className="form-group">
-              <label for="email">Email</label>
-              <input type="text" id="email" name="email" required="" />
+              <label htmlFor="email">Email</label>
+              <input type="email" id="email" name="email" required />
             </div>
+
             <div className="form-group">
-              <label for="textarea">Como posso te ajudar?</label>
-              <textarea
-                name="textarea"
-                id="textarea"
-                rows="10"
-                cols="50"
-                required=""
-              ></textarea>
+              <label htmlFor="textarea">Como posso te ajudar?</label>
+              <textarea name="message" id="textarea" rows="10" required />
             </div>
+
             <button className="form-submit-btn" type="submit">
-              Enviar
+              Enviar mensagem
             </button>
           </form>
-        </div>
-        <div className="container">
+        </motion.div>
+
+        {/* CARD DE CONTATO */}
+        <motion.div
+          className="container"
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
           <div className="card-contact">
             <div className="front">
               <div className="card-top">
                 <p className="card-top-para">Perfil</p>
               </div>
-
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="100"
@@ -55,9 +75,9 @@ function Contacts() {
               <p className="heading"> Enzo Valençuela </p>
               <p className="follow">Me siga para mais...</p>
             </div>
-            <div className="back">
-              <p className="heading">Minhas redes</p>
 
+            <div className="back">
+              <p className="heading">Minhas redes</p>{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="100"
@@ -69,62 +89,34 @@ function Contacts() {
                 <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path>
                 <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"></path>
               </svg>
-
               <div className="icons">
-                <a
+                <motion.a
                   href="https://github.com/enzovalencuela"
-                  aria-label="Github"
-                  data-social="github"
                   target="_blank"
+                  whileHover={{ scale: 1.2 }}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 30 30"
-                    width="32"
-                    height="32"
-                    fill="currentColor"
-                    class="github"
-                  >
-                    <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
-                  </svg>
-                </a>
-                <a
+                  <i className="fab fa-github"></i>
+                </motion.a>
+
+                <motion.a
                   href="https://wa.me/qr/HKVHSXGNBYRSF1"
-                  aria-label="Whatsapp"
-                  data-social="whatsapp"
                   target="_blank"
+                  whileHover={{ scale: 1.2 }}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    fill="currentColor"
-                    class="bi bi-whatsapp"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
-                  </svg>
-                </a>
-                <a
+                  <i className="fab fa-whatsapp"></i>
+                </motion.a>
+
+                <motion.a
                   href="https://www.linkedin.com/in/enzo-silva10/"
-                  aria-label="Linkedin"
-                  data-social="linkedin"
                   target="_blank"
+                  whileHover={{ scale: 1.2 }}
                 >
-                  <svg
-                    viewBox="0 0 448 512"
-                    width="32"
-                    height="32"
-                    fill="currentColor"
-                    class="socialSvg linkdinSvg"
-                  >
-                    <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
-                  </svg>
-                </a>
+                  <i className="fab fa-linkedin"></i>
+                </motion.a>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

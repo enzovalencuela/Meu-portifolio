@@ -50,6 +50,7 @@ function Nav() {
           <a href="#about">Sobre</a>
           <a href="#skills">Habilidades</a>
           <a href="#projects">Projetos</a>
+          <a href="#experience">Experiência</a>
           <a href="#contact">Contato</a>
         </nav>
       </div>
