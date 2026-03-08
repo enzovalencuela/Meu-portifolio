@@ -254,6 +254,10 @@
     flex: 1;
   }
 
+  .form-container .form-submit-btn {
+    width: auto;
+  }
+
   .container {
     flex: 1;
   }
