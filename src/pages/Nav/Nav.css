@@ -4,6 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  max-width: 100%;
   height: 80px;
   background: var(--bg);
   backdrop-filter: blur(10px);
@@ -14,6 +15,31 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   transition: transform 0.3s ease-in-out;
+  overflow: visible;
+}
+
+.header h1 {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.header h1 a {
+  display: block;
+  color: var(--pColor);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.menu {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
@@ -59,6 +85,7 @@
 }
 
 .nav-controls {
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -279,10 +306,20 @@ input:checked + .slider:before {
 
   .header {
     padding: 0 20px;
+    gap: 0.75rem;
   }
 
   .nav-controls {
     gap: 0.75rem;
+  }
+
+  .header h1 {
+    max-width: calc(100% - 130px);
+  }
+
+  .header h1 a {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .lang-current {
@@ -291,6 +328,7 @@ input:checked + .slider:before {
   }
 
   .lang-menu {
-    right: -10px;
+    right: 0;
+    min-width: 150px;
   }
 }

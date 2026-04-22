@@ -6,6 +6,7 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2.9px);
   -webkit-backdrop-filter: blur(2.9px);
+  overflow-x: hidden;
 }
 
 .forms {
@@ -13,6 +14,7 @@
   flex-direction: row;
   width: 100%;
   gap: 40px;
+  min-width: 0;
 }
 
 /* From Uiverse.io by gharsh11032000 */
@@ -246,8 +248,8 @@
   }
 
   .forms {
-    height: 100vh;
     flex-direction: column;
+    height: auto;
   }
 
   .form-container {
@@ -260,6 +262,7 @@
 
   .container {
     flex: 1;
+    min-height: 420px;
   }
 }
 

@@ -5,11 +5,13 @@
   justify-content: space-between;
   gap: 2rem;
   background: linear-gradient(to right, var(--bg) 60%, var(--bg) 40%);
+  overflow-x: clip;
 }
 
 .home-text {
   flex: 1;
   max-width: 600px;
+  min-width: 0;
   animation: fadeInLeft 1s ease-out;
 }
 
@@ -17,6 +19,7 @@
   font-size: 4rem;
   line-height: 1.1;
   margin-bottom: 1rem;
+  overflow-wrap: anywhere;
 }
 
 .my-name {
@@ -28,6 +31,7 @@
   font-weight: 600;
   line-height: 1.5;
   margin-bottom: 0.75rem;
+  overflow-wrap: anywhere;
 }
 
 .home-description {
@@ -35,6 +39,7 @@
   line-height: 1.7;
   margin-bottom: 1.75rem;
   color: var(--pColor);
+  overflow-wrap: anywhere;
 }
 
 .btn-primary {
@@ -147,6 +152,7 @@ h2::after {
     text-align: center;
     padding-top: 120px;
     min-height: auto;
+    gap: 3rem;
   }
 
   .home-text {
@@ -154,6 +160,8 @@ h2::after {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    max-width: 100%;
   }
 
   .home-text h1 {
@@ -163,6 +171,35 @@ h2::after {
   .home-image {
     margin-top: 2rem;
     justify-content: center;
+    width: 100%;
+  }
+
+  .home-image img {
+    max-width: min(320px, 80vw);
+  }
+}
+
+@media (max-width: 708px) {
+  .home-section {
+    padding-top: 110px;
+  }
+
+  .home-text h1 {
+    font-size: clamp(2.8rem, 13vw, 4rem);
+    line-height: 1.05;
+  }
+
+  .home-role {
+    font-size: 1.05rem;
+  }
+
+  .home-description {
+    font-size: 0.98rem;
+  }
+
+  .btn-primary {
+    width: min(100%, 320px);
+    text-align: center;
   }
 }
 
