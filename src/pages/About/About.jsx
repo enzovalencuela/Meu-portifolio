@@ -4,6 +4,7 @@ import "./About.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/components/ui/LanguageContext";
 
 const container = {
   hidden: {},
@@ -27,6 +28,8 @@ const item = {
 };
 
 function About() {
+  const { copy } = useLanguage();
+
   return (
     <section id="about" className="section about-section">
       <motion.div
@@ -36,7 +39,7 @@ function About() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2>Sobre Mim</h2>
+        <h2>{copy.about.title}</h2>
       </motion.div>
 
       <motion.div
@@ -50,38 +53,19 @@ function About() {
 
         <motion.div className="about-text" variants={item}>
           <p>
-            Sou desenvolvedor Full Stack com foco em JavaScript, TypeScript,
-            React, Node.js, Express e PostgreSQL. Atualmente curso Sistemas de
-            Informação e atuo como desenvolvedor na empresa júnior de computação
-            da minha faculdade, participando do desenvolvimento de aplicações
-            web e soluções para clientes.
+            {copy.about.paragraph1}
             <br />
             <br />
-            Tenho experiência na construção de aplicações completas, desde
-            interfaces modernas e responsivas até APIs robustas e integração com
-            banco de dados.
+            {copy.about.paragraph2}
           </p>
 
           <motion.div className="about-highlights" variants={container}>
-            <motion.div className="highlight" variants={item}>
-              <strong>+1 ano</strong>
-              <span>Estudando desenvolvimento web</span>
-            </motion.div>
-
-            <motion.div className="highlight" variants={item}>
-              <strong>3º semestre</strong>
-              <span>Sistemas de Informação</span>
-            </motion.div>
-
-            <motion.div className="highlight" variants={item}>
-              <strong>Empresa Júnior</strong>
-              <span>Projetos reais para clientes</span>
-            </motion.div>
-
-            <motion.div className="highlight" variants={item}>
-              <strong>Full Stack</strong>
-              <span>React • Node • PostgreSQL</span>
-            </motion.div>
+            {copy.about.highlights.map((highlight) => (
+              <motion.div className="highlight" variants={item} key={highlight.title}>
+                <strong>{highlight.title}</strong>
+                <span>{highlight.text}</span>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
       </motion.div>
@@ -99,9 +83,9 @@ function About() {
           href="https://drive.google.com/file/d/1ZFeOCWJQ8BmIeCQOdetKyKXsd0hsjku_/view"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Abrir currículo de Enzo Valençuela"
+          aria-label={copy.about.resumeAria}
         >
-          Ver currículo
+          {copy.about.resume}
           <FontAwesomeIcon icon={faDownload} />
         </a>
       </motion.div>

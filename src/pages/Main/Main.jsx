@@ -3,8 +3,11 @@ import React from "react";
 import "./Main.css";
 import minhaFoto from "/minha_foto.png";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/components/ui/LanguageContext";
 
 const Main = () => {
+  const { copy } = useLanguage();
+
   const container = {
     hidden: {},
     show: {
@@ -32,21 +35,19 @@ const Main = () => {
         animate="show"
       >
         <motion.h1 variants={item}>
-          Olá, eu sou <span className="my-name">Enzo Valençuela</span>.
+          {copy.hero.greeting} <span className="my-name">Enzo Valençuela</span>.
         </motion.h1>
 
         <motion.p className="home-role" variants={item}>
-          Desenvolvedor Full Stack com foco em React, Node.js, JavaScript,
-          TypeScript e PostgreSQL.
+          {copy.hero.role}
         </motion.p>
 
         <motion.p className="home-description" variants={item}>
-          Construo aplicacoes web completas, responsivas e orientadas a
-          performance para empresas, projetos digitais e produtos reais.
+          {copy.hero.description}
         </motion.p>
 
         <motion.a href="#contact" className="btn-primary" variants={item}>
-          Vamos Conversar?
+          {copy.hero.cta}
         </motion.a>
 
         <motion.div className="social-links" variants={item}>
@@ -54,7 +55,7 @@ const Main = () => {
             href="https://github.com/enzovalencuela"
             target="_blank"
             rel="noreferrer"
-            aria-label="Abrir GitHub de Enzo Valençuela"
+            aria-label={copy.hero.githubAria}
           >
             <i className="fab fa-github"></i>
           </a>
@@ -63,7 +64,7 @@ const Main = () => {
             href="https://www.linkedin.com/in/enzo-silva10/"
             target="_blank"
             rel="noreferrer"
-            aria-label="Abrir LinkedIn de Enzo Valençuela"
+            aria-label={copy.hero.linkedinAria}
           >
             <i className="fab fa-linkedin"></i>
           </a>
@@ -78,7 +79,7 @@ const Main = () => {
       >
         <img
           src={minhaFoto}
-          alt="Foto de perfil de Enzo Valençuela, desenvolvedor full stack"
+          alt={copy.hero.imageAlt}
         />
       </motion.div>
     </section>

@@ -2,8 +2,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./Contacts.css";
+import { useLanguage } from "@/components/ui/LanguageContext";
 
 function Contacts() {
+  const { copy } = useLanguage();
+
   return (
     <section className="section contacts" id="contact">
       <motion.h2
@@ -13,7 +16,7 @@ function Contacts() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        Contatos
+        {copy.contact.title}
       </motion.h2>
 
       <div className="forms">
@@ -29,7 +32,7 @@ function Contacts() {
             action="https://formsubmit.co/39faa3fcb02952ebcd0a31aa7224676a"
             method="POST"
           >
-            <input type="hidden" name="_subject" value="Novo contato pelo portfólio" />
+            <input type="hidden" name="_subject" value={copy.contact.subject} />
             <input type="hidden" name="_captcha" value="false" />
             <input
               type="hidden"
@@ -37,30 +40,30 @@ function Contacts() {
               value="https://enzovalencuela.com/"
             />
             <div className="form-group">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">{copy.contact.email}</label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 autoComplete="email"
-                placeholder="seuemail@exemplo.com"
+                placeholder={copy.contact.emailPlaceholder}
                 required
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="textarea">Como posso te ajudar?</label>
+              <label htmlFor="textarea">{copy.contact.message}</label>
               <textarea
                 name="message"
                 id="textarea"
                 rows="10"
-                placeholder="Descreva seu projeto, ideia ou necessidade."
+                placeholder={copy.contact.messagePlaceholder}
                 required
               />
             </div>
 
             <button className="form-submit-btn" type="submit">
-              Enviar mensagem
+              {copy.contact.submit}
             </button>
           </form>
         </motion.div>
@@ -75,7 +78,7 @@ function Contacts() {
           <div className="card-contact">
             <div className="front">
               <div className="card-top">
-                <p className="card-top-para">Perfil</p>
+                <p className="card-top-para">{copy.contact.profile}</p>
               </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -92,11 +95,11 @@ function Contacts() {
                 ></path>
               </svg>
               <p className="heading"> Enzo Valençuela </p>
-              <p className="follow">Me siga para mais...</p>
+              <p className="follow">{copy.contact.follow}</p>
             </div>
 
             <div className="back">
-              <p className="heading">Minhas redes</p>{" "}
+              <p className="heading">{copy.contact.networks}</p>{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="100"
@@ -113,7 +116,7 @@ function Contacts() {
                   href="https://github.com/enzovalencuela"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Abrir GitHub de Enzo Valençuela"
+                  aria-label={copy.contact.githubAria}
                   whileHover={{ scale: 1.2 }}
                 >
                   <i className="fab fa-github"></i>
@@ -123,7 +126,7 @@ function Contacts() {
                   href="https://wa.me/qr/HKVHSXGNBYRSF1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Abrir WhatsApp de Enzo Valençuela"
+                  aria-label={copy.contact.whatsappAria}
                   whileHover={{ scale: 1.2 }}
                 >
                   <i className="fab fa-whatsapp"></i>
@@ -133,7 +136,7 @@ function Contacts() {
                   href="https://www.linkedin.com/in/enzo-silva10/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Abrir LinkedIn de Enzo Valençuela"
+                  aria-label={copy.contact.linkedinAria}
                   whileHover={{ scale: 1.2 }}
                 >
                   <i className="fab fa-linkedin"></i>

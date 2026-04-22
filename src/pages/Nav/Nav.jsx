@@ -1,14 +1,16 @@
-import React, { useRef, useContext, useEffect } from "react";
+import React, { useRef, useContext, useEffect, useState } from "react";
 import { DarkModeContext } from "../../components/ui/DarkModeContext";
-import { LanguageContext } from "../../components/ui/LanguageContext";
+import { useLanguage } from "../../components/ui/LanguageContext";
 import "./Nav.css";
 
 function Nav() {
   const menuMobileRef = useRef(null);
   const navbarRef = useRef(null);
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
-  const { language, setLanguage, t } = useContext(LanguageContext);
+  const { currentLanguage, languageOptions, setLanguage, t } = useLanguage();
   const navMenuRef = useRef(null); // Ref para o elemento <nav>
+  const languageMenuRef = useRef(null);
+  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
 
   useEffect(() => {
     const navLinks = navMenuRef.current.querySelectorAll("a");
@@ -41,10 +43,24 @@ function Nav() {
     };
   }, []); // O array vazio [] garante que o efeito só rode na montagem do componente
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!languageMenuRef.current?.contains(event.target)) {
+        setIsLanguageMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <header className="header" ref={navbarRef}>
       <h1>
-        <a href="#home" aria-label="Ir para o início do portfólio de Enzo Valençuela">
+        <a href="#home" aria-label={t("nav.brandAriaLabel")}>
           Enzo Valençuela
         </a>
       </h1>
@@ -52,7 +68,7 @@ function Nav() {
         <nav
           className="nav-menu"
           ref={navMenuRef}
-          aria-label="Navegação principal do portfólio"
+          aria-label={t("nav.mainNavigation")}
         >
           <a href="#home">{t("nav.home")}</a>
           <a href="#about">{t("nav.about")}</a>
@@ -64,28 +80,43 @@ function Nav() {
       </div>
 
       <div className="nav-controls">
-        <div className="lang-switch">
-          <button 
-            className={`lang-btn ${language === "pt" ? "active" : ""}`} 
-            onClick={() => setLanguage("pt")}
-            title="Português"
+        <div className="lang-switch" ref={languageMenuRef}>
+          <button
+            className="lang-current"
+            type="button"
+            onClick={() => setIsLanguageMenuOpen((current) => !current)}
+            aria-label={t("nav.openLanguageMenu")}
+            aria-expanded={isLanguageMenuOpen}
+            aria-haspopup="menu"
           >
-            🇧🇷
+            <span className="lang-current-flag">{currentLanguage.flag}</span>
+            <span className={`lang-current-arrow ${isLanguageMenuOpen ? "open" : ""}`}>
+              ▾
+            </span>
           </button>
-          <button 
-            className={`lang-btn ${language === "en" ? "active" : ""}`} 
-            onClick={() => setLanguage("en")}
-            title="English"
-          >
-            🇺🇸
-          </button>
-          <button 
-            className={`lang-btn ${language === "es" ? "active" : ""}`} 
-            onClick={() => setLanguage("es")}
-            title="Español"
-          >
-            🇪🇸
-          </button>
+
+          {isLanguageMenuOpen ? (
+            <div className="lang-menu" role="menu" aria-label={t("nav.languageMenu")}>
+              {languageOptions
+                .filter((option) => option.code !== currentLanguage.code)
+                .map((option) => (
+                  <button
+                    key={option.code}
+                    className="lang-menu-item"
+                    type="button"
+                    onClick={() => {
+                      setLanguage(option.code);
+                      setIsLanguageMenuOpen(false);
+                    }}
+                    role="menuitem"
+                    title={option.label}
+                  >
+                    <span>{option.flag}</span>
+                    <span>{option.label}</span>
+                  </button>
+                ))}
+            </div>
+          ) : null}
         </div>
 
         <label className="btn">
@@ -94,7 +125,7 @@ function Nav() {
             id="dark-mode-toggle"
             checked={darkMode}
             onChange={toggleDarkMode}
-            aria-label="Alternar modo escuro"
+            aria-label={t("nav.darkMode")}
           />
           <span className="slider"></span>
         </label>

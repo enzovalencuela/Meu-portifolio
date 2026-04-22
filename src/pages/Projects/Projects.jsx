@@ -1,12 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { projectsWithSlug } from "./ProjectsData";
+import { getProjectTranslation, projectsWithSlug } from "./ProjectsData";
 import ProjectCard from "../../components/ProjectCard";
 import { motion } from "framer-motion";
 import "./Projects.css";
+import { useLanguage } from "@/components/ui/LanguageContext";
 
 function Projects() {
-  const projectsToShow = projectsWithSlug.slice(0, 4);
+  const { language, copy } = useLanguage();
+  const projectsToShow = projectsWithSlug
+    .slice(0, 4)
+    .map((project) => getProjectTranslation(project, language));
 
   const container = {
     hidden: {},
@@ -37,12 +41,11 @@ function Projects() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        Projetos
+        {copy.projects.title}
       </motion.h2>
 
       <p className="projects-intro">
-        Seleção de projetos desenvolvidos com foco em performance, experiência
-        do usuário e resolução de problemas reais.
+        {copy.projects.intro}
       </p>
 
       <motion.div

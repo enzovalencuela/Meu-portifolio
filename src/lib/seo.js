@@ -3,6 +3,14 @@ import { projectsWithSlug } from "@/pages/Projects/ProjectsData";
 export const siteUrl = "https://enzovalencuela.com";
 export const defaultOgImage = `${siteUrl}/og-image.png`;
 
+function getTextByLanguage(value, language = "pt") {
+  if (typeof value === "string") {
+    return value;
+  }
+
+  return value?.[language] || value?.pt || "";
+}
+
 export function getHomeSeo() {
   return {
     title: "Enzo Valençuela | Portifólio",
@@ -34,21 +42,23 @@ export function getHomeSeo() {
   };
 }
 
-export function getProjectSeo(project) {
-  const description = `${project.description} Tecnologias principais: ${project.stack
+export function getProjectSeo(project, language = "pt") {
+  const projectName = getTextByLanguage(project.name, language);
+  const projectDescription = getTextByLanguage(project.description, language);
+  const description = `${projectDescription} Tecnologias principais: ${project.stack
     .map((tech) => tech.name)
     .join(", ")}.`;
 
   return {
-    title: `${project.name} | Projeto Full Stack de Enzo Valençuela`,
+    title: `${projectName} | Projeto Full Stack de Enzo Valençuela`,
     description,
     canonical: `${siteUrl}/projetos/${project.slug}`,
     image: defaultOgImage,
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "SoftwareSourceCode",
-      name: project.name,
-      description: project.description,
+      name: projectName,
+      description: projectDescription,
       url: `${siteUrl}/projetos/${project.slug}`,
       codeRepository: project.github || undefined,
       programmingLanguage: project.stack.map((tech) => tech.name),

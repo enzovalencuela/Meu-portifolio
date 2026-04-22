@@ -3,10 +3,12 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import Seo from "@/components/Seo";
 import { getProjectSeo } from "@/lib/seo";
 import Footer from "../Footer/Footer";
-import { projectsWithSlug } from "../Projects/ProjectsData";
+import { getProjectTranslation, projectsWithSlug } from "../Projects/ProjectsData";
+import { useLanguage } from "@/components/ui/LanguageContext";
 import "./ProjectDetails.css";
 
 function ProjectDetails() {
+  const { language, copy, t } = useLanguage();
   const { slug } = useParams();
   const project = projectsWithSlug.find((item) => item.slug === slug);
 
@@ -14,17 +16,21 @@ function ProjectDetails() {
     return <Navigate to="/" replace />;
   }
 
-  const seo = getProjectSeo(project);
+  const translatedProject = getProjectTranslation(project, language);
+  const seo = getProjectSeo(translatedProject, language);
   const currentIndex = projectsWithSlug.findIndex((item) => item.slug === slug);
   const previousProject =
-    currentIndex > 0 ? projectsWithSlug[currentIndex - 1] : null;
+    currentIndex > 0
+      ? getProjectTranslation(projectsWithSlug[currentIndex - 1], language)
+      : null;
   const nextProject =
     currentIndex < projectsWithSlug.length - 1
-      ? projectsWithSlug[currentIndex + 1]
+      ? getProjectTranslation(projectsWithSlug[currentIndex + 1], language)
       : null;
   const relatedProjects = projectsWithSlug
     .filter((item) => item.slug !== project.slug)
-    .slice(0, 3);
+    .slice(0, 3)
+    .map((item) => getProjectTranslation(item, language));
 
   return (
     <>
@@ -34,59 +40,63 @@ function ProjectDetails() {
         <section className="project-shell">
           <div className="project-breadcrumbs">
             <Link className="project-back-link" to="/">
-              Portfólio
+              {copy.projectDetails.portfolio}
             </Link>
             <span>/</span>
-            <span>{project.name}</span>
+            <span>{translatedProject.name}</span>
           </div>
 
           <section className="project-hero-card">
             <div className="project-copy">
-              <p className="project-eyebrow">{project.category}</p>
-              <h1>{project.name}</h1>
-              <p className="project-highlight">{project.highlight}</p>
-              <p className="project-description">{project.description}</p>
+              <p className="project-eyebrow">{translatedProject.category}</p>
+              <h1>{translatedProject.name}</h1>
+              <p className="project-highlight">{translatedProject.highlight}</p>
+              <p className="project-description">{translatedProject.description}</p>
 
               <div className="project-meta-grid">
                 <div className="project-meta-item">
-                  <span>Tipo</span>
-                  <strong>{project.category}</strong>
+                  <span>{copy.projectDetails.type}</span>
+                  <strong>{translatedProject.category}</strong>
                 </div>
                 <div className="project-meta-item">
-                  <span>Stack principal</span>
-                  <strong>{project.stack.slice(0, 3).map((tech) => tech.name).join(" • ")}</strong>
+                  <span>{copy.projectDetails.mainStack}</span>
+                  <strong>{translatedProject.stack.slice(0, 3).map((tech) => tech.name).join(" • ")}</strong>
                 </div>
                 <div className="project-meta-item">
-                  <span>Status</span>
-                  <strong>{project.deploy ? "Publicado" : "Sem deploy público"}</strong>
+                  <span>{copy.projectDetails.status}</span>
+                  <strong>
+                    {translatedProject.deploy
+                      ? copy.projectDetails.published
+                      : copy.projectDetails.noPublicDeploy}
+                  </strong>
                 </div>
               </div>
 
               <div className="project-actions">
-                {project.deploy ? (
+                {translatedProject.deploy ? (
                   <a
-                    href={project.deploy}
+                    href={translatedProject.deploy}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="project-action-primary"
                   >
-                    Ver projeto online
+                    {copy.projectDetails.viewOnline}
                   </a>
                 ) : null}
 
-                {project.github ? (
+                {translatedProject.github ? (
                   <a
-                    href={project.github}
+                    href={translatedProject.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="project-action-secondary"
                   >
-                    Ver repositório
+                    {copy.projectDetails.viewRepository}
                   </a>
                 ) : null}
 
                 <Link className="project-action-ghost" to="/#projects">
-                  Voltar para projetos
+                  {copy.projectDetails.backToProjects}
                 </Link>
               </div>
             </div>
@@ -94,16 +104,16 @@ function ProjectDetails() {
             <div className="project-visual-column">
               <div className="project-media-card">
                 <img
-                  src={project.img}
-                  alt={`Imagem de apresentação do projeto ${project.name}`}
+                  src={translatedProject.img}
+                  alt={t("projectDetails.imageAlt", { name: translatedProject.name })}
                   className="project-image"
                 />
               </div>
 
               <div className="project-tech-card">
-                <p className="project-card-title">Tecnologias utilizadas</p>
+                <p className="project-card-title">{copy.projectDetails.technologies}</p>
                 <ul className="project-tech-list">
-                  {project.stack.map((tech) => (
+                  {translatedProject.stack.map((tech) => (
                     <li key={tech.name}>{tech.name}</li>
                   ))}
                 </ul>
@@ -114,79 +124,71 @@ function ProjectDetails() {
 
         <section className="project-content-grid">
           <article className="project-section project-section-main">
-            <p className="project-section-label">Contexto</p>
-            <h2>O que este projeto entrega</h2>
+            <p className="project-section-label">{copy.projectDetails.context}</p>
+            <h2>{copy.projectDetails.deliveryTitle}</h2>
             <p>
-              {project.name} foi desenvolvido com foco em resolver uma necessidade
-              específica de produto, unindo interface clara, navegação objetiva e
-              implementação alinhada a boas práticas de desenvolvimento web.
+              {t("projectDetails.deliveryText1", { name: translatedProject.name })}
             </p>
-            <p>
-              O projeto reforça minha atuação como desenvolvedor full stack ao
-              combinar experiência do usuário, organização de componentes,
-              integração entre camadas da aplicação e cuidado com entrega visual.
-            </p>
+            <p>{copy.projectDetails.deliveryText2}</p>
           </article>
 
           <aside className="project-section project-section-side">
-            <p className="project-section-label">Resumo rápido</p>
+            <p className="project-section-label">{copy.projectDetails.quickSummary}</p>
             <ul className="project-summary-list">
-              <li>{project.highlight}</li>
-              <li>{project.deploy ? "Possui versão pública acessível." : "Sem versão pública no momento."}</li>
-              <li>{project.github ? "Código-fonte disponível para consulta." : "Código-fonte privado ou indisponível."}</li>
+              <li>{translatedProject.highlight}</li>
+              <li>
+                {translatedProject.deploy
+                  ? copy.projectDetails.publicVersion
+                  : copy.projectDetails.noPublicVersion}
+              </li>
+              <li>
+                {translatedProject.github
+                  ? copy.projectDetails.sourceAvailable
+                  : copy.projectDetails.sourceUnavailable}
+              </li>
             </ul>
           </aside>
         </section>
 
         <section className="project-section project-section-wide">
-          <p className="project-section-label">Abordagem</p>
-          <h2>Decisões técnicas e foco de implementação</h2>
+          <p className="project-section-label">{copy.projectDetails.approach}</p>
+          <h2>{copy.projectDetails.technicalTitle}</h2>
           <div className="project-columns">
-            <p>
-              A construção desta solução priorizou consistência visual,
-              organização técnica e uma stack coerente com o objetivo do produto.
-              A seleção das tecnologias foi pensada para sustentar performance,
-              manutenção e boa experiência em diferentes tamanhos de tela.
-            </p>
-            <p>
-              Além da interface, o projeto demonstra capacidade de estruturar
-              fluxos reais de uso, lidar com integrações externas quando
-              necessário e transformar requisitos em entregas navegáveis e
-              funcionais.
-            </p>
+            <p>{copy.projectDetails.technicalText1}</p>
+            <p>{copy.projectDetails.technicalText2}</p>
           </div>
         </section>
 
         <section className="project-section project-section-wide">
           <div className="project-navigation-header">
             <div>
-              <p className="project-section-label">Navegação</p>
-              <h2>Continue explorando</h2>
+              <p className="project-section-label">{copy.projectDetails.navigation}</p>
+              <h2>{copy.projectDetails.continueExploring}</h2>
             </div>
           </div>
 
           <div className="project-prev-next">
             {previousProject ? (
               <Link to={`/projetos/${previousProject.slug}`} className="project-nav-card">
-                <span>Projeto anterior</span>
+                <span>{copy.projectDetails.previousProject}</span>
                 <strong>{previousProject.name}</strong>
               </Link>
             ) : (
               <div className="project-nav-card project-nav-card-muted">
-                <span>Projeto anterior</span>
-                <strong>Início da lista</strong>
+                <span>{copy.projectDetails.previousProject}</span>
+                <strong>{copy.projectDetails.startOfList}</strong>
               </div>
             )}
 
             {nextProject ? (
               <Link to={`/projetos/${nextProject.slug}`} className="project-nav-card">
-                <span>Próximo projeto</span>
+                <span>{copy.projectDetails.nextProject}</span>
                 <strong>{nextProject.name}</strong>
               </Link>
             ) : (
               <div className="project-nav-card project-nav-card-muted">
-                <span>Próximo projeto</span>
-                <strong>Fim da lista</strong>
+                <span>{copy.projectDetails.nextProject}</span>
+                <strong>{copy.projectDetails.endOfList}</strong>
               </div>
             )}
           </div>

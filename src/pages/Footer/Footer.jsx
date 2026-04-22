@@ -1,19 +1,20 @@
 import React from "react";
 import "./Footer.css";
+import { useLanguage } from "@/components/ui/LanguageContext";
 
 function Footer() {
   const year = new Date().getFullYear();
+  const { copy } = useLanguage();
 
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-about">
           <p className="footer-text">
-            Construindo aplicações web modernas e resolvendo problemas com
-            código. 👨‍💻
+            {copy.footer.text}
           </p>
           <p className="footer-quote">
-            “A melhor maneira de prever o futuro é inventá-lo.”
+            "{copy.footer.quote}"
           </p>
         </div>
 
@@ -22,7 +23,7 @@ function Footer() {
             href="https://github.com/enzovalencuela"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Abrir GitHub de Enzo Valençuela"
+            aria-label={copy.footer.githubAria}
           >
             GitHub
           </a>
@@ -31,14 +32,14 @@ function Footer() {
             href="https://linkedin.com/in/enzo-silva10"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Abrir LinkedIn de Enzo Valençuela"
+            aria-label={copy.footer.linkedinAria}
           >
             LinkedIn
           </a>
 
           <a
             href="mailto:esilvavlencuela@gmail.com"
-            aria-label="Enviar email para Enzo Valençuela"
+            aria-label={copy.footer.emailAria}
           >
             Email
           </a>
@@ -46,7 +47,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© {year} Enzo Valençuela. Todos os direitos reservados.</p>
+        <p>© {year} Enzo Valençuela. {copy.footer.rights}</p>
       </div>
     </footer>
   );

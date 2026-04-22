@@ -2,8 +2,11 @@
 import React from "react";
 import "./Skills.css";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/components/ui/LanguageContext";
 
 function Habilidades() {
+  const { copy } = useLanguage();
+
   const container = {
     hidden: {},
     show: {
@@ -23,14 +26,14 @@ function Habilidades() {
   };
 
   const skills = [
-    { icon: "fab fa-react", name: "React & Next.js" },
-    { icon: "fab fa-js-square", name: "JavaScript & TypeScript" },
-    { icon: "fab fa-node-js", name: "Node.js & Express" },
-    { icon: "fas fa-database", name: "SQL & NoSQL" },
-    { icon: "fas fa-magic", name: "Tailwind CSS & Material UI" },
-    { icon: "fas fa-cloud-upload-alt", name: "Firebase" },
-    { icon: "fab fa-git-alt", name: "Git & GitHub" },
-    { icon: "fas fa-vial", name: "Cypress" },
+    { icon: "fab fa-react", name: copy.skills.items[0] },
+    { icon: "fab fa-js-square", name: copy.skills.items[1] },
+    { icon: "fab fa-node-js", name: copy.skills.items[2] },
+    { icon: "fas fa-database", name: copy.skills.items[3] },
+    { icon: "fas fa-magic", name: copy.skills.items[4] },
+    { icon: "fas fa-cloud-upload-alt", name: copy.skills.items[5] },
+    { icon: "fab fa-git-alt", name: copy.skills.items[6] },
+    { icon: "fas fa-vial", name: copy.skills.items[7] },
   ];
 
   return (
@@ -42,7 +45,7 @@ function Habilidades() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        Minhas Habilidades
+        {copy.skills.title}
       </motion.h2>
 
       <motion.div
