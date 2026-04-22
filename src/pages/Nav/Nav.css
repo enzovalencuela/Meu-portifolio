@@ -58,6 +58,41 @@
   display: none;
 }
 
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(128, 128, 128, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 20px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.2rem;
+  border-radius: 50%;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  filter: grayscale(100%) opacity(0.5);
+}
+
+.lang-btn:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%) opacity(1);
+}
+
+.lang-btn.active {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.1);
+}
+
 .btn {
   display: block;
   --width-of-switch: 3.5em;

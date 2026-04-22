@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { DarkModeContext } from "./components/ui/DarkModeContext";
+import { LanguageProvider } from "./components/ui/LanguageContext";
 import AppRoutes from "./AppRoutes";
 
 function AppShell() {
@@ -33,7 +34,9 @@ function AppShell() {
   return (
     <div className={darkMode ? "dark-mode" : "light-mode"}>
       <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
-        <AppRoutes />
+        <LanguageProvider>
+          <AppRoutes />
+        </LanguageProvider>
       </DarkModeContext.Provider>
     </div>
   );

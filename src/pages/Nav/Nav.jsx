@@ -1,11 +1,13 @@
 import React, { useRef, useContext, useEffect } from "react";
 import { DarkModeContext } from "../../components/ui/DarkModeContext";
+import { LanguageContext } from "../../components/ui/LanguageContext";
 import "./Nav.css";
 
 function Nav() {
   const menuMobileRef = useRef(null);
   const navbarRef = useRef(null);
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+  const { language, setLanguage, t } = useContext(LanguageContext);
   const navMenuRef = useRef(null); // Ref para o elemento <nav>
 
   useEffect(() => {
@@ -52,25 +54,51 @@ function Nav() {
           ref={navMenuRef}
           aria-label="Navegação principal do portfólio"
         >
-          <a href="#home">Início</a>
-          <a href="#about">Sobre</a>
-          <a href="#skills">Habilidades</a>
-          <a href="#projects">Projetos</a>
-          <a href="#experience">Experiência</a>
-          <a href="#contact">Contato</a>
+          <a href="#home">{t("nav.home")}</a>
+          <a href="#about">{t("nav.about")}</a>
+          <a href="#skills">{t("nav.skills")}</a>
+          <a href="#projects">{t("nav.projects")}</a>
+          <a href="#experience">{t("nav.experience")}</a>
+          <a href="#contact">{t("nav.contact")}</a>
         </nav>
       </div>
 
-      <label className="btn">
-        <input
-          type="checkbox"
-          id="dark-mode-toggle"
-          checked={darkMode}
-          onChange={toggleDarkMode}
-          aria-label="Alternar modo escuro"
-        />
-        <span className="slider"></span>
-      </label>
+      <div className="nav-controls">
+        <div className="lang-switch">
+          <button 
+            className={`lang-btn ${language === "pt" ? "active" : ""}`} 
+            onClick={() => setLanguage("pt")}
+            title="Português"
+          >
+            🇧🇷
+          </button>
+          <button 
+            className={`lang-btn ${language === "en" ? "active" : ""}`} 
+            onClick={() => setLanguage("en")}
+            title="English"
+          >
+            🇺🇸
+          </button>
+          <button 
+            className={`lang-btn ${language === "es" ? "active" : ""}`} 
+            onClick={() => setLanguage("es")}
+            title="Español"
+          >
+            🇪🇸
+          </button>
+        </div>
+
+        <label className="btn">
+          <input
+            type="checkbox"
+            id="dark-mode-toggle"
+            checked={darkMode}
+            onChange={toggleDarkMode}
+            aria-label="Alternar modo escuro"
+          />
+          <span className="slider"></span>
+        </label>
+      </div>
     </header>
   );
 }
