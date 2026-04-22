@@ -37,7 +37,7 @@ const translations = {
     about: {
       title: "Sobre mim",
       paragraph1:
-        "Sou desenvolvedor Full Stack com foco em JavaScript, TypeScript, React, Node.js, Express e PostgreSQL. Atualmente curso Sistemas de Informação e atuo como desenvolvedor na empresa júnior de computação da minha faculdade, participando do desenvolvimento de aplicações web e soluções para clientes.",
+        "Meu nome completo é Edilson Enzo da Silva Valençuela, também conhecido profissionalmente como Enzo Valençuela. Sou desenvolvedor Full Stack com foco em JavaScript, TypeScript, React, Node.js, Express e PostgreSQL. Atualmente curso Sistemas de Informação e atuo como desenvolvedor na empresa júnior de computação da minha faculdade, participando do desenvolvimento de aplicações web e soluções para clientes.",
       paragraph2:
         "Tenho experiência na construção de aplicações completas, desde interfaces modernas e responsivas até APIs robustas e integração com banco de dados.",
       highlights: [
@@ -246,7 +246,7 @@ const translations = {
     about: {
       title: "About me",
       paragraph1:
-        "I am a Full Stack Developer focused on JavaScript, TypeScript, React, Node.js, Express and PostgreSQL. I am currently studying Information Systems and working as a developer at my college's junior computing company, contributing to web applications and client solutions.",
+        "My full name is Edilson Enzo da Silva Valençuela, and I am also professionally known as Enzo Valençuela. I am a Full Stack Developer focused on JavaScript, TypeScript, React, Node.js, Express and PostgreSQL. I am currently studying Information Systems and working as a developer at my college's junior computing company, contributing to web applications and client solutions.",
       paragraph2:
         "I have experience building complete applications, from modern responsive interfaces to robust APIs and database integration.",
       highlights: [
@@ -455,7 +455,7 @@ const translations = {
     about: {
       title: "Sobre mí",
       paragraph1:
-        "Soy desarrollador Full Stack con enfoque en JavaScript, TypeScript, React, Node.js, Express y PostgreSQL. Actualmente estudio Sistemas de Información y trabajo como desarrollador en la empresa júnior de computación de mi facultad, participando en el desarrollo de aplicaciones web y soluciones para clientes.",
+        "Mi nombre completo es Edilson Enzo da Silva Valençuela y también soy conocido profesionalmente como Enzo Valençuela. Soy desarrollador Full Stack con enfoque en JavaScript, TypeScript, React, Node.js, Express y PostgreSQL. Actualmente estudio Sistemas de Información y trabajo como desarrollador en la empresa júnior de computación de mi facultad, participando en el desarrollo de aplicaciones web y soluciones para clientes.",
       paragraph2:
         "Tengo experiencia en la construcción de aplicaciones completas, desde interfaces modernas y responsivas hasta APIs robustas e integración con bases de datos.",
       highlights: [

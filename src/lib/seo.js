@@ -15,13 +15,14 @@ export function getHomeSeo() {
   return {
     title: "Enzo Valençuela | Portifólio",
     description:
-      "Portfólio de Enzo Valençuela, desenvolvedor Full Stack com foco em React, Node.js, JavaScript, TypeScript e PostgreSQL. Conheça projetos, experiência e contatos.",
+      "Portfólio de Edilson Enzo da Silva Valençuela, também conhecido como Enzo Valençuela, desenvolvedor Full Stack com foco em React, Node.js, JavaScript, TypeScript e PostgreSQL. Conheça projetos, experiência e contatos.",
     canonical: `${siteUrl}/`,
     image: defaultOgImage,
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "Person",
-      name: "Enzo Valençuela",
+      name: "Edilson Enzo da Silva Valençuela",
+      alternateName: ["Enzo Valençuela", "Edilson Enzo Valençuela"],
       url: `${siteUrl}/`,
       image: `${siteUrl}/minha_foto.png`,
       jobTitle: "Desenvolvedor Full Stack",
@@ -101,7 +102,7 @@ export function buildHeadElements(seo) {
     { type: "meta", props: { property: "og:url", content: seo.canonical } },
     {
       type: "meta",
-      props: { property: "og:site_name", content: "Portfólio Enzo Valençuela" },
+      props: { property: "og:site_name", content: "Portfólio de Edilson Enzo da Silva Valençuela" },
     },
     { type: "meta", props: { property: "og:image", content: seo.image } },
     {
