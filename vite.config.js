@@ -13,5 +13,15 @@ export default defineConfig({
       prerenderScript: "/src/prerender.jsx",
       additionalPrerenderRoutes: ["/"],
     }),
+    {
+      name: "force-close",
+      closeBundle() {
+        console.log("Forcing process exit after closeBundle...");
+        setTimeout(() => process.exit(0), 1000);
+      }
+    }
   ],
+  build: {
+    sourcemap: false,
+  }
 });
