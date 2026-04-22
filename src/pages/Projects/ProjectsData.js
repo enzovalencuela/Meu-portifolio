@@ -1,6 +1,8 @@
 export const projectsData = [
   {
     id: 1,
+    category: "Landing page institucional",
+    highlight: "Alta performance e comunicação visual para evento oficial.",
     stack: [
       { name: "React", icon: "/react.png" },
       { name: "Vite", icon: "/vite.png" },
@@ -21,6 +23,8 @@ export const projectsData = [
   },
   {
     id: 2,
+    category: "Aplicação full stack",
+    highlight: "Fluxo de compra com pagamento, autenticação e catálogo gamer.",
     stack: [
       { name: "React", icon: "/react.png" },
       { name: "Vite", icon: "/vite.png" },
@@ -41,6 +45,8 @@ export const projectsData = [
   },
   {
     id: 3,
+    category: "Sistema de gestão",
+    highlight: "Controle de oficina, clientes e inventário em um painel único.",
     name: "Pedal de Prata",
     description:
       "Gerenciamento para oficina de bicicletas. Possui controle de ordens de serviço, catálogo de serviços, gestão de clientes e inventário de bikes à venda. Implementa segurança rigorosa com Firebase Admin SDK e banco de dados relacional com Prisma.",
@@ -60,6 +66,8 @@ export const projectsData = [
   },
   {
     id: 4,
+    category: "Produtividade web",
+    highlight: "Organização visual de tarefas com foco em simplicidade de uso.",
     stack: [
       { name: "React", icon: "/react.png" },
       { name: "Next.js", icon: "/next.js.png" },
@@ -80,6 +88,8 @@ export const projectsData = [
   },
   {
     id: 5,
+    category: "Plataforma de consulta",
+    highlight: "Busca e visualização de dados sobre futebol mundial.",
     stack: [
       { name: "React", icon: "/react.png" },
       { name: "Next.js", icon: "/next.js.png" },
@@ -95,6 +105,8 @@ export const projectsData = [
   },
   {
     id: 6,
+    category: "Consumo de API",
+    highlight: "Busca de perfis públicos com integração à GitHub API.",
     stack: [
       { name: "React", icon: "/react.png" },
       { name: "Vite", icon: "/vite.png" },
@@ -110,6 +122,8 @@ export const projectsData = [
   },
   {
     id: 7,
+    category: "Landing page",
+    highlight: "Página promocional com foco em apresentação e conversão visual.",
     stack: [
       { name: "HTML", icon: "/html.png" },
       { name: "Javascript", icon: "/javascript.svg" },
@@ -125,6 +139,8 @@ export const projectsData = [
   },
   {
     id: 8,
+    category: "Dashboard operacional",
+    highlight: "Ferramenta de vistoria preventiva para processos internos.",
     stack: [
       { name: "React", icon: "/react.png" },
       { name: "Next.js", icon: "/next.js.png" },
@@ -142,6 +158,8 @@ export const projectsData = [
   },
   {
     id: 9,
+    category: "Landing page temática",
+    highlight: "Projeto React/Vite com múltiplas seções e proposta editorial.",
     stack: [
       { name: "React", icon: "/react.png" },
       { name: "Vite", icon: "/vite.png" },
@@ -158,6 +176,8 @@ export const projectsData = [
 
   {
     id: 12,
+    category: "Dashboard analítico",
+    highlight: "Painel de vendas com visualização de métricas e gráficos.",
     stack: [
       { name: "React", icon: "/react.png" },
       { name: "Vite", icon: "/vite.png" },
@@ -176,3 +196,17 @@ export const projectsData = [
       "Sales Dashboard, para gerenciamento de vendas. Este projeto foi uma ótima oportunidade para aprofundar minhas habilidades e trabalhar com uma stack super moderna e requisitada no mercado.",
   },
 ];
+
+export function slugifyProjectName(name) {
+  return name
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export const projectsWithSlug = projectsData.map((project) => ({
+  ...project,
+  slug: slugifyProjectName(project.name),
+}));

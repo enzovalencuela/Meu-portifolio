@@ -34,7 +34,7 @@ function Contacts() {
             <input
               type="hidden"
               name="_next"
-              value="https://enzovalencuela-meu-portifolio.netlify.app/"
+              value="https://enzovalencuela.com/"
             />
             <div className="form-group">
               <label htmlFor="email">Email</label>

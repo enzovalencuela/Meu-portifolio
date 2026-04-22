@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { projectsData } from "./ProjectsData";
+import { projectsWithSlug } from "./ProjectsData";
 import ProjectCard from "../../components/ProjectCard";
 import { motion } from "framer-motion";
 import "./Projects.css";
 
 function Projects() {
-  const projectsToShow = projectsData.slice(0, 4);
+  const projectsToShow = projectsWithSlug.slice(0, 4);
 
   const container = {
     hidden: {},

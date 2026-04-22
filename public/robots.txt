@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://enzovalencuela-meu-portifolio.netlify.app/sitemap.xml
+Sitemap: https://enzovalencuela.com/sitemap.xml
