@@ -5,8 +5,7 @@ export const defaultOgImage = `${siteUrl}/og-image.png`;
 
 export function getHomeSeo() {
   return {
-    title:
-      "Enzo Valençuela | Desenvolvedor Full Stack em React, Node.js e PostgreSQL",
+    title: "Enzo Valençuela | Portifólio",
     description:
       "Portfólio de Enzo Valençuela, desenvolvedor Full Stack com foco em React, Node.js, JavaScript, TypeScript e PostgreSQL. Conheça projetos, experiência e contatos.",
     canonical: `${siteUrl}/`,
