@@ -96,6 +96,41 @@ function Contacts() {
               </svg>
               <p className="heading"> Enzo Valençuela </p>
               <p className="follow">{copy.contact.follow}</p>
+
+              <div className="mobile-contact-actions">
+                <p className="mobile-contact-title">{copy.contact.networks}</p>
+                <div className="icons mobile-icons">
+                  <motion.a
+                    href="https://github.com/enzovalencuela"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={copy.contact.githubAria}
+                    whileHover={{ scale: 1.2 }}
+                  >
+                    <i className="fab fa-github"></i>
+                  </motion.a>
+
+                  <motion.a
+                    href="https://wa.me/qr/HKVHSXGNBYRSF1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={copy.contact.whatsappAria}
+                    whileHover={{ scale: 1.2 }}
+                  >
+                    <i className="fab fa-whatsapp"></i>
+                  </motion.a>
+
+                  <motion.a
+                    href="https://www.linkedin.com/in/enzo-silva10/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={copy.contact.linkedinAria}
+                    whileHover={{ scale: 1.2 }}
+                  >
+                    <i className="fab fa-linkedin"></i>
+                  </motion.a>
+                </div>
+              </div>
             </div>
 
             <div className="back">

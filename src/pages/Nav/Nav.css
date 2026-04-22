@@ -300,7 +300,7 @@ input:checked + .slider:before {
     position: relative;
   }
 
-  nav {
+  .menu {
     display: none;
   }
 
@@ -314,7 +314,7 @@ input:checked + .slider:before {
   }
 
   .header h1 {
-    max-width: calc(100% - 130px);
+    max-width: calc(100% - 145px);
   }
 
   .header h1 a {

@@ -1,7 +1,7 @@
 .contacts {
   display: flex;
   flex-direction: column;
-  padding: 150px 300px;
+  padding: 140px 5% 100px;
   background: rgba(74, 74, 74, 0.44);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2.9px);
@@ -10,16 +10,18 @@
 }
 
 .forms {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.9fr);
   width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  align-items: stretch;
   gap: 40px;
   min-width: 0;
 }
 
 /* From Uiverse.io by gharsh11032000 */
 .form-container {
-  flex: 1.5;
   background:
     linear-gradient(var(--bg), var(--bg)) padding-box,
     linear-gradient(
@@ -39,6 +41,7 @@
   gap: 20px;
   box-sizing: border-box;
   border-radius: 16px;
+  min-width: 0;
 }
 
 .form-container button:active {
@@ -109,7 +112,7 @@
   font-family: inherit;
   color: var(pColor);
   font-weight: 600;
-  width: 40%;
+  min-width: 220px;
   background: var(--btnBg);
   border: 1px solid #414141;
   padding: 12px 16px;
@@ -133,7 +136,7 @@
 
 /* From Uiverse.io by IWhat1 */
 .container {
-  flex: 1;
+  min-width: 0;
   color: #e81cff;
   perspective: 800px;
   font-family:
@@ -144,6 +147,7 @@
 .card-contact {
   width: 100%;
   height: 100%;
+  min-height: 520px;
   background: var(--bg);
   border-radius: 2rem;
   position: relative;
@@ -240,29 +244,99 @@
   color: var(--btnBg);
 }
 
+.mobile-contact-actions {
+  display: none;
+}
+
+.mobile-contact-title {
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
 /*?-------------------------------------------MOBILE----------------------------------------------------------*/
 
 @media only screen and (max-width: 708px) {
   .contacts {
-    padding: 030px 20px;
+    padding: 120px 20px 70px;
   }
 
   .forms {
-    flex-direction: column;
-    height: auto;
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .form-container {
-    flex: 1;
+    padding: 24px 18px;
   }
 
   .form-container .form-submit-btn {
-    width: auto;
+    width: 100%;
+    justify-content: center;
+    min-width: 0;
   }
 
   .container {
-    flex: 1;
-    min-height: 420px;
+    min-height: 340px;
+    perspective: none;
+  }
+
+  .card-contact {
+    min-height: 340px;
+    height: auto;
+  }
+
+  .container:hover > .card-contact {
+    transform: none;
+  }
+
+  .front,
+  .back {
+    position: relative;
+    min-height: 340px;
+    height: auto;
+    padding: 32px 20px;
+  }
+
+  .back {
+    display: none;
+    transform: none;
+  }
+
+  .mobile-contact-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .mobile-icons {
+    margin-top: 0;
+  }
+
+  .card-top {
+    position: relative;
+    top: 0;
+    width: fit-content;
+    min-width: 120px;
+    height: auto;
+    padding: 10px 18px;
+    margin: 0 auto 4px;
+  }
+
+  .heading {
+    text-align: center;
+  }
+
+  .follow {
+    text-align: center;
+  }
+
+  .icons {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
 
@@ -270,26 +344,21 @@
 
 @media (min-width: 709px) and (max-width: 1024px) {
   .contacts {
-    padding: 030px 20px;
-    display: flex;
+    padding: 130px 32px 80px;
   }
 
   .forms {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    height: 800px;
-    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    max-width: 720px;
   }
 
   .form-container {
-    flex: 1;
-    width: 450px;
+    width: 100%;
   }
 
   .container {
-    flex: 1;
-    width: 450px;
+    width: 100%;
+    min-height: 420px;
   }
 }
