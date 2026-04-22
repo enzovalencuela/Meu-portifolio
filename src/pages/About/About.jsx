@@ -29,7 +29,6 @@ const item = {
 function About() {
   return (
     <section id="about" className="section about-section">
-      {/* Header */}
       <motion.div
         className="about-header"
         initial={{ opacity: 0, y: 30 }}
@@ -40,7 +39,6 @@ function About() {
         <h2>Sobre Mim</h2>
       </motion.div>
 
-      {/* Container */}
       <motion.div
         className="about-container"
         variants={container}
@@ -64,7 +62,6 @@ function About() {
             banco de dados.
           </p>
 
-          {/* Highlights */}
           <motion.div className="about-highlights" variants={container}>
             <motion.div className="highlight" variants={item}>
               <strong>+1 ano</strong>
@@ -102,6 +99,7 @@ function About() {
           href="https://drive.google.com/file/d/1ZFeOCWJQ8BmIeCQOdetKyKXsd0hsjku_/view"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Abrir currículo de Enzo Valençuela"
         >
           Ver currículo
           <FontAwesomeIcon icon={faDownload} />

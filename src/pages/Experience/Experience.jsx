@@ -157,6 +157,7 @@ function Experience() {
   return (
     <section id="experience" className="section experience-section">
       <motion.h2
+        id="experience-title"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -167,13 +168,18 @@ function Experience() {
 
       <motion.div
         className="timeline"
+        aria-labelledby="experience-title"
         variants={container}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
       >
         {experiences.map((exp) => (
-          <motion.div className="timeline-item" key={exp.id} variants={item}>
+          <motion.article
+            className="timeline-item"
+            key={exp.id}
+            variants={item}
+          >
             <div className="timeline-dot"></div>
 
             <div className="timeline-content">
@@ -194,7 +200,7 @@ function Experience() {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </motion.article>
         ))}
       </motion.div>
     </section>

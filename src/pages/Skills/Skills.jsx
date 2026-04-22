@@ -36,6 +36,7 @@ function Habilidades() {
   return (
     <section id="skills" className="section skills-section">
       <motion.h2
+        id="skills-title"
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -46,6 +47,8 @@ function Habilidades() {
 
       <motion.div
         className="skills-grid-v2"
+        role="list"
+        aria-labelledby="skills-title"
         variants={container}
         initial="hidden"
         whileInView="show"
@@ -55,6 +58,7 @@ function Habilidades() {
           <motion.div
             key={index}
             className="skill-item"
+            role="listitem"
             variants={item}
             whileHover={{ scale: 1.08 }}
             transition={{ type: "spring", stiffness: 300 }}

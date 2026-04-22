@@ -7,6 +7,7 @@ function Contacts() {
   return (
     <section className="section contacts" id="contact">
       <motion.h2
+        id="contact-title"
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -16,7 +17,6 @@ function Contacts() {
       </motion.h2>
 
       <div className="forms">
-        {/* FORMULÁRIO */}
         <motion.div
           className="form-container"
           initial={{ opacity: 0, x: -60 }}
@@ -29,14 +29,34 @@ function Contacts() {
             action="https://formsubmit.co/39faa3fcb02952ebcd0a31aa7224676a"
             method="POST"
           >
+            <input type="hidden" name="_subject" value="Novo contato pelo portfólio" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://enzovalencuela-meu-portifolio.netlify.app/"
+            />
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" required />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autoComplete="email"
+                placeholder="seuemail@exemplo.com"
+                required
+              />
             </div>
 
             <div className="form-group">
               <label htmlFor="textarea">Como posso te ajudar?</label>
-              <textarea name="message" id="textarea" rows="10" required />
+              <textarea
+                name="message"
+                id="textarea"
+                rows="10"
+                placeholder="Descreva seu projeto, ideia ou necessidade."
+                required
+              />
             </div>
 
             <button className="form-submit-btn" type="submit">
@@ -45,7 +65,6 @@ function Contacts() {
           </form>
         </motion.div>
 
-        {/* CARD DE CONTATO */}
         <motion.div
           className="container"
           initial={{ opacity: 0, x: 60 }}
@@ -68,7 +87,7 @@ function Contacts() {
               >
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
                 ></path>
               </svg>
@@ -93,6 +112,8 @@ function Contacts() {
                 <motion.a
                   href="https://github.com/enzovalencuela"
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir GitHub de Enzo Valençuela"
                   whileHover={{ scale: 1.2 }}
                 >
                   <i className="fab fa-github"></i>
@@ -101,6 +122,8 @@ function Contacts() {
                 <motion.a
                   href="https://wa.me/qr/HKVHSXGNBYRSF1"
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir WhatsApp de Enzo Valençuela"
                   whileHover={{ scale: 1.2 }}
                 >
                   <i className="fab fa-whatsapp"></i>
@@ -109,6 +132,8 @@ function Contacts() {
                 <motion.a
                   href="https://www.linkedin.com/in/enzo-silva10/"
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir LinkedIn de Enzo Valençuela"
                   whileHover={{ scale: 1.2 }}
                 >
                   <i className="fab fa-linkedin"></i>

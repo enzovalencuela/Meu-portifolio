@@ -42,10 +42,16 @@ function Nav() {
   return (
     <header className="header" ref={navbarRef}>
       <h1>
-        <a href="/">Meu Portifólio</a>
+        <a href="#home" aria-label="Ir para o início do portfólio de Enzo Valençuela">
+          Enzo Valençuela
+        </a>
       </h1>
       <div className="menu" ref={menuMobileRef}>
-        <nav className="nav-menu" ref={navMenuRef}>
+        <nav
+          className="nav-menu"
+          ref={navMenuRef}
+          aria-label="Navegação principal do portfólio"
+        >
           <a href="#home">Início</a>
           <a href="#about">Sobre</a>
           <a href="#skills">Habilidades</a>
@@ -60,7 +66,8 @@ function Nav() {
           type="checkbox"
           id="dark-mode-toggle"
           checked={darkMode}
-          onClick={toggleDarkMode}
+          onChange={toggleDarkMode}
+          aria-label="Alternar modo escuro"
         />
         <span className="slider"></span>
       </label>

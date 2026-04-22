@@ -19,12 +19,22 @@
   margin-bottom: 1rem;
 }
 
-.home-text a img {
-  margin-bottom: 25px;
-}
-
 .my-name {
   color: var(--blue);
+}
+
+.home-role {
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.home-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+  color: var(--pColor);
 }
 
 .btn-primary {

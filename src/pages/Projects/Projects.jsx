@@ -29,8 +29,9 @@ function Projects() {
   };
 
   return (
-    <section id="projects">
+    <section id="projects" className="section projects" aria-labelledby="projects-title">
       <motion.h2
+        id="projects-title"
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -38,6 +39,11 @@ function Projects() {
       >
         Projetos
       </motion.h2>
+
+      <p className="projects-intro">
+        Seleção de projetos desenvolvidos com foco em performance, experiência
+        do usuário e resolução de problemas reais.
+      </p>
 
       <motion.div
         className="div__projects"

@@ -1,43 +1,10 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Main.css";
 import minhaFoto from "/minha_foto.png";
 import { motion } from "framer-motion";
 
 const Main = () => {
-  const [link, setLink] = useState("");
-
-  useEffect(() => {
-    const updateLink = () => {
-      const tela = window.innerWidth;
-      const baseLink = "https://readme-typing-svg.herokuapp.com?font=Poppins";
-
-      const defaultParams =
-        "&duration=3000&pause=1000&color=555555&vCenter=true&multiline=true&width=600";
-
-      if (tela < 428) {
-        setLink(
-          `${baseLink}&size=30&center=true${defaultParams}&height=160&lines=Desenvolvedor+Full+Stack;React+•+Node+•+PostgreSQL;Construindo+aplicações+web+completas`,
-        );
-      } else if (tela < 1128) {
-        setLink(
-          `${baseLink}&size=19&center=true${defaultParams}&height=70&lines=Desenvolvedor+Full+Stack+|+React+•+Node+•+PostgreSQL;Construindo+aplicações+web+completas+do+front+ao+back`,
-        );
-      } else {
-        setLink(
-          `${baseLink}&size=19&center=false${defaultParams}&height=70&lines=Desenvolvedor+Full+Stack+|+React+•+Node+•+PostgreSQL;Construindo+aplicações+web+completas+do+front+ao+back`,
-        );
-      }
-    };
-
-    updateLink();
-    window.addEventListener("resize", updateLink);
-
-    return () => window.removeEventListener("resize", updateLink);
-  }, []);
-
-  /* animações */
-
   const container = {
     hidden: {},
     show: {
@@ -68,9 +35,15 @@ const Main = () => {
           Olá, eu sou <span className="my-name">Enzo Valençuela</span>.
         </motion.h1>
 
-        <motion.div variants={item}>
-          <img src={link} alt="Typing SVG" />
-        </motion.div>
+        <motion.p className="home-role" variants={item}>
+          Desenvolvedor Full Stack com foco em React, Node.js, JavaScript,
+          TypeScript e PostgreSQL.
+        </motion.p>
+
+        <motion.p className="home-description" variants={item}>
+          Construo aplicacoes web completas, responsivas e orientadas a
+          performance para empresas, projetos digitais e produtos reais.
+        </motion.p>
 
         <motion.a href="#contact" className="btn-primary" variants={item}>
           Vamos Conversar?
@@ -81,6 +54,7 @@ const Main = () => {
             href="https://github.com/enzovalencuela"
             target="_blank"
             rel="noreferrer"
+            aria-label="Abrir GitHub de Enzo Valençuela"
           >
             <i className="fab fa-github"></i>
           </a>
@@ -89,6 +63,7 @@ const Main = () => {
             href="https://www.linkedin.com/in/enzo-silva10/"
             target="_blank"
             rel="noreferrer"
+            aria-label="Abrir LinkedIn de Enzo Valençuela"
           >
             <i className="fab fa-linkedin"></i>
           </a>
@@ -101,7 +76,10 @@ const Main = () => {
         animate={{ opacity: 1, scale: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <img src={minhaFoto} alt="Foto de Perfil" />
+        <img
+          src={minhaFoto}
+          alt="Foto de perfil de Enzo Valençuela, desenvolvedor full stack"
+        />
       </motion.div>
     </section>
   );

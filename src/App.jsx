@@ -32,12 +32,14 @@ function App() {
     <div className={darkMode ? "dark-mode" : "light-mode"}>
       <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
         <Nav />
-        <Main />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Contacts />
+        <main>
+          <Main />
+          <About />
+          <Skills />
+          <Projects />
+          <Experience />
+          <Contacts />
+        </main>
         <Footer />
       </DarkModeContext.Provider>
     </div>

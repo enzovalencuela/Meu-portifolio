@@ -22,6 +22,7 @@ function Footer() {
             href="https://github.com/enzovalencuela"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Abrir GitHub de Enzo Valençuela"
           >
             GitHub
           </a>
@@ -30,11 +31,17 @@ function Footer() {
             href="https://linkedin.com/in/enzo-silva10"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Abrir LinkedIn de Enzo Valençuela"
           >
             LinkedIn
           </a>
 
-          <a href="mailto:esilvavlencuela@gmail.com">Email</a>
+          <a
+            href="mailto:esilvavlencuela@gmail.com"
+            aria-label="Enviar email para Enzo Valençuela"
+          >
+            Email
+          </a>
         </div>
       </div>
 

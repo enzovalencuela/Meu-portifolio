@@ -11,14 +11,14 @@ function StackIcons({ stack }) {
           display: "flex",
           paddingInline: "10px",
         }}
-      >
-        {stack.map((tech, index) => (
-          <SwiperSlide key={index}>
-            <button className="tech-icon" aria-color={tech.name}>
-              <img src={tech.icon} alt="" className="tech-image" />
-            </button>
-          </SwiperSlide>
-        ))}
+        >
+          {stack.map((tech, index) => (
+            <SwiperSlide key={index}>
+              <button className="tech-icon" aria-label={tech.name} type="button">
+                <img src={tech.icon} alt={tech.name} className="tech-image" />
+              </button>
+            </SwiperSlide>
+          ))}
       </Swiper>
     </div>
   );

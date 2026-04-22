@@ -6,7 +6,7 @@ import "../pages/Projects/Projects.css";
 
 const ProjectCard = ({ project }) => {
   return (
-    <motion.div
+    <motion.article
       className="card"
       whileHover={{ y: -8 }}
       transition={{ duration: 0.2 }}
@@ -22,11 +22,22 @@ const ProjectCard = ({ project }) => {
 
         <div className="title-btn">
           <div className="buttons-project">
-            <a href={project.github} target="_blank" rel="noopener noreferrer">
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Abrir repositório do projeto ${project.name} no GitHub`}
+            >
               <button className="btn-github">Github</button>
             </a>
 
-            <a href={project.deploy} target="_blank" rel="noopener noreferrer">
+            <a
+              href={project.deploy || undefined}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Abrir projeto ${project.name}`}
+              aria-disabled={project.deploy === ""}
+            >
               <button className="button" disabled={project.deploy === ""}>
                 Acessar
               </button>
@@ -34,7 +45,7 @@ const ProjectCard = ({ project }) => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </motion.article>
   );
 };
 
