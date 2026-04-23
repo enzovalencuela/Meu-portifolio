@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import Seo from "@/components/Seo";
 import { getProjectSeo } from "@/lib/seo";
@@ -11,6 +11,13 @@ function ProjectDetails() {
   const { language, copy, t } = useLanguage();
   const { slug } = useParams();
   const project = projectsWithSlug.find((item) => item.slug === slug);
+
+  // Garante que, ao abrir a página de projeto, o scroll comece do topo
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+  }, [slug]);
 
   if (!project) {
     return <Navigate to="/" replace />;
