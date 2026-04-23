@@ -123,6 +123,15 @@
   line-height: 1;
 }
 
+/* Ícones de bandeira (quando usando <img>) */
+.lang-flag-img {
+  display: inline-block;
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
 .lang-current-arrow {
   font-size: 0.75rem;
   opacity: 0.8;

@@ -89,7 +89,18 @@ function Nav() {
             aria-expanded={isLanguageMenuOpen}
             aria-haspopup="menu"
           >
-            <span className="lang-current-flag">{currentLanguage.flag}</span>
+            {currentLanguage.icon ? (
+              <img
+                src={currentLanguage.icon}
+                alt={currentLanguage.label}
+                className="lang-flag-img"
+                width={20}
+                height={14}
+                loading="lazy"
+              />
+            ) : (
+              <span className="lang-current-flag">{currentLanguage.flag}</span>
+            )}
             <span className={`lang-current-arrow ${isLanguageMenuOpen ? "open" : ""}`}>
               ▾
             </span>
@@ -111,7 +122,18 @@ function Nav() {
                     role="menuitem"
                     title={option.label}
                   >
-                    <span>{option.flag}</span>
+                    {option.icon ? (
+                      <img
+                        src={option.icon}
+                        alt={option.label}
+                        className="lang-flag-img"
+                        width={20}
+                        height={14}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <span className="lang-current-flag">{option.flag}</span>
+                    )}
                     <span>{option.label}</span>
                   </button>
                 ))}

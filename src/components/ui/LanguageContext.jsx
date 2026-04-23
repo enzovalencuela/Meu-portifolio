@@ -1,11 +1,39 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
 
+// Nota: alguns dispositivos/sistemas não renderizam emojis de bandeira e
+// exibem apenas as letras (ex.: "BR"). Para garantir consistência, usamos
+// ícones de bandeira via CDN com fallback para emoji se a rede falhar.
 export const languageOptions = [
-  { code: "pt", flag: "🇧🇷", label: "Português" },
-  { code: "en", flag: "🇺🇸", label: "English" },
-  { code: "es", flag: "🇪🇸", label: "Español" },
-  { code: "de", flag: "🇩🇪", label: "Deutsch" },
-  { code: "it", flag: "🇮🇹", label: "Italiano" },
+  {
+    code: "pt",
+    flag: "🇧🇷",
+    icon: "https://flagcdn.com/w20/br.png",
+    label: "Português",
+  },
+  {
+    code: "en",
+    flag: "🇺🇸",
+    icon: "https://flagcdn.com/w20/us.png",
+    label: "English",
+  },
+  {
+    code: "es",
+    flag: "🇪🇸",
+    icon: "https://flagcdn.com/w20/es.png",
+    label: "Español",
+  },
+  {
+    code: "de",
+    flag: "🇩🇪",
+    icon: "https://flagcdn.com/w20/de.png",
+    label: "Deutsch",
+  },
+  {
+    code: "it",
+    flag: "🇮🇹",
+    icon: "https://flagcdn.com/w20/it.png",
+    label: "Italiano",
+  },
 ];
 
 export const LanguageContext = createContext(null);
