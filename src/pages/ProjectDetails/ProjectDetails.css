@@ -310,3 +310,48 @@
     text-align: center;
   }
 }
+
+/* Ajustes finos para telas pequenas */
+@media (max-width: 480px) {
+  .project-page {
+    padding: 100px 16px 48px;
+  }
+
+  .project-copy h1 {
+    font-size: 1.7rem; /* reduzir título principal no mobile pequeno */
+  }
+
+  .project-highlight {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .project-description,
+  .project-section p,
+  .project-summary-list li,
+  .project-related-card p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .project-card-title {
+    font-size: 0.88rem;
+  }
+
+  .project-actions a {
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .project-copy h1 {
+    font-size: 1.55rem;
+  }
+
+  .project-description,
+  .project-section p,
+  .project-summary-list li,
+  .project-related-card p {
+    font-size: 0.92rem;
+  }
+}
