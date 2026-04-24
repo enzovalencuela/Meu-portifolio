@@ -141,7 +141,8 @@
   perspective: 800px;
   position: relative; /* isola o contexto para evitar empurrar layout */
   overflow: hidden; /* evita protrusão durante a animação causar scroll */
-  min-height: 520px; /* estabiliza a altura durante o flip no desktop */
+  min-height: 560px; /* reserva área extra para o flip no desktop */
+  padding-block: 12px; /* margem interna para não cortar nas bordas */
   contain: layout paint; /* evita reflow fora do container ao animar */
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
@@ -191,7 +192,7 @@
 
 .container:hover > .card-contact {
   cursor: pointer;
-  transform: rotateX(180deg) rotateZ(-180deg);
+  transform: rotateX(180deg) rotateZ(-180deg) scale(0.97); /* reduz leve para evitar overflow visual */
 }
 
 .front,
