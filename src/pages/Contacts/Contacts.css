@@ -139,11 +139,6 @@
   min-width: 0;
   color: #e81cff;
   perspective: 800px;
-  position: relative; /* isola o contexto para evitar empurrar layout */
-  overflow: hidden; /* evita protrusão durante a animação causar scroll */
-  min-height: 560px; /* reserva área extra para o flip no desktop */
-  padding-block: 12px; /* margem interna para não cortar nas bordas */
-  contain: layout paint; /* evita reflow fora do container ao animar */
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
     Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -152,14 +147,12 @@
 .card-contact {
   width: 100%;
   height: 100%;
-  min-height: 520px;
+  min-height: 400px;
   background: var(--bg);
   border-radius: 2rem;
   position: relative;
   transition: transform 1500ms;
   transform-style: preserve-3d;
-  will-change: transform; /* melhora estabilidade da animação */
-  transform: translateZ(0); /* evita jitter e mudanças de caixa */
 }
 
 .card-top {
@@ -192,7 +185,7 @@
 
 .container:hover > .card-contact {
   cursor: pointer;
-  transform: rotateX(180deg) rotateZ(-180deg) scale(0.97); /* reduz leve para evitar overflow visual */
+  transform: rotateX(180deg) rotateZ(-180deg);
 }
 
 .front,
@@ -286,7 +279,6 @@
   .container {
     min-height: 340px;
     perspective: none;
-    overflow: visible; /* no mobile já desativamos o flip */
   }
 
   .card-contact {
