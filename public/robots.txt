@@ -2,3 +2,30 @@ User-agent: *
 Allow: /
 
 Sitemap: https://enzovalencuela.com/sitemap.xml
+
+# Evita que ícones de stack apareçam no Google Images
+User-agent: Googlebot-Image
+Disallow: /react.png
+Disallow: /vite.png
+Disallow: /javascript.svg
+Disallow: /nodejs.svg
+Disallow: /css.png
+Disallow: /tailwind.png
+Disallow: /material-ui.svg
+Disallow: /swiperjs.svg
+Disallow: /framer-motion.png
+Disallow: /chartjs.svg
+Disallow: /next.js.png
+Disallow: /typescript.svg
+Disallow: /postgresql.svg
+Disallow: /express.svg
+Disallow: /mercado_pago.png
+Disallow: /prisma.png
+Disallow: /firebase.svg
+Disallow: /threejs.svg
+Disallow: /mongodb.png
+Disallow: /dnd_kit.jpg
+Disallow: /html.png
+Disallow: /axios.svg
+Disallow: /styled-components.svg
+Disallow: /cypress.svg
