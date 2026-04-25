@@ -1,6 +1,6 @@
 import { Provider } from "@/components/ui/provider";
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import App from "./App.jsx";
@@ -13,7 +13,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+const app = (
   <React.StrictMode>
     <Provider>
       <BrowserRouter>
@@ -22,3 +22,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </Provider>
   </React.StrictMode>
 );
+
+const rootElement = document.getElementById("root");
+
+if (rootElement?.hasChildNodes()) {
+  hydrateRoot(rootElement, app);
+} else if (rootElement) {
+  createRoot(rootElement).render(app);
+}
