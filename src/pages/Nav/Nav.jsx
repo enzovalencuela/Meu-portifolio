@@ -13,35 +13,45 @@ function Nav() {
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
 
   useEffect(() => {
-    const navLinks = navMenuRef.current.querySelectorAll("a");
-    const sections = document.querySelectorAll("section");
+    const navLinks = navMenuRef.current?.querySelectorAll("a");
+    const sections = document.querySelectorAll("section[id]");
     const header = navbarRef.current;
+    if (!navLinks?.length || !sections.length || !header) return undefined;
 
-    const handleScroll = () => {
-      let current = "";
+    const linkMap = new Map();
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href") || "";
+      if (href.startsWith("#")) {
+        linkMap.set(href.slice(1), link);
+      }
+    });
 
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (window.pageYOffset >= sectionTop - header.clientHeight) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.href.includes(current)) {
-          link.classList.add("active");
-        }
-      });
+    const setActive = (id) => {
+      navLinks.forEach((link) => link.classList.remove("active"));
+      const activeLink = linkMap.get(id);
+      if (activeLink) activeLink.classList.add("active");
     };
 
-    window.addEventListener("scroll", handleScroll);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-    // Limpeza do listener quando o componente é desmontado
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []); // O array vazio [] garante que o efeito só rode na montagem do componente
+        if (visible?.target?.id) {
+          setActive(visible.target.id);
+        }
+      },
+      {
+        root: null,
+        rootMargin: `-${header.offsetHeight}px 0px -55% 0px`,
+        threshold: [0.15, 0.35, 0.55, 0.75],
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event) => {

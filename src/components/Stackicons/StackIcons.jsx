@@ -15,7 +15,14 @@ function StackIcons({ stack }) {
           {stack.map((tech, index) => (
             <SwiperSlide key={index}>
               <button className="tech-icon" aria-label={tech.name} type="button">
-                <img src={tech.icon} alt={tech.name} className="tech-image" />
+                <img
+                  src={tech.icon}
+                  alt={tech.name}
+                  className="tech-image"
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
+                />
               </button>
             </SwiperSlide>
           ))}

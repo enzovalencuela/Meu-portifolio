@@ -30,7 +30,13 @@ const ProjectCard = ({ project }) => {
         }
       }}
     >
-      <img src={project.img} alt={`${copy.projects.imageAlt} ${project.name}`} />
+      <img
+        src={project.img}
+        alt={`${copy.projects.imageAlt} ${project.name}`}
+        loading="lazy"
+        decoding="async"
+        fetchPriority="low"
+      />
 
       <div className="card__content">
         <h2 className="name">{project.name}</h2>

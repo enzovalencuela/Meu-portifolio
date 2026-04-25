@@ -32,7 +32,7 @@ const Main = () => {
       <motion.div
         className="home-text"
         variants={container}
-        initial="hidden"
+        initial={false}
         animate="show"
       >
         <motion.h1 variants={item}>
@@ -74,13 +74,15 @@ const Main = () => {
 
       <motion.div
         className="home-image"
-        initial={{ opacity: 0, scale: 0.9, x: 40 }}
+        initial={false}
         animate={{ opacity: 1, scale: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
         <img
           src={minhaFoto}
           alt={copy.hero.imageAlt}
+          fetchPriority="high"
+          decoding="async"
         />
       </motion.div>
     </section>
