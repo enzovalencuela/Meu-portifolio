@@ -142,16 +142,16 @@ export const projectsData = [
       { name: "PostgreSQL", icon: "/postgresql.svg" },
       { name: "Dnd Kit", icon: "/dnd_kit.webp" },
     ],
-    name: "Jubitasks",
-    github: "https://github.com/MEGA-JR-Grupo-3/megajr-front-end",
-    deploy: "https://jubitasks.netlify.app",
-    img: "/7.webp",
+    name: "Nexgen Tasks",
+    github: "https://github.com/enzovalencuela/MyToDoList",
+    deploy: "https://tasks.enzovalencuela.com",
+    img: "/13.webp",
     description: {
-      pt: "Sua Lista de Tarefas! O Jubitasks é a solução perfeita para você! Desenvolvido para ser intuitivo e eficiente, ele te ajuda a gerenciar suas atividades diárias, projetos e ideias de forma simples e visual.",
-      en: "Your task list! Jubitasks is the perfect solution for you. Built to be intuitive and efficient, it helps you manage your daily activities, projects and ideas in a simple and visual way.",
-      es: "¡Tu lista de tareas! Jubitasks es la solución perfecta para ti. Desarrollado para ser intuitivo y eficiente, te ayuda a gestionar tus actividades diarias, proyectos e ideas de forma simple y visual.",
-      de: "Deine Aufgabenliste! Jubitasks ist die ideale Loesung: intuitiv und effizient, um taegliche Aktivitaeten, Projekte und Ideen einfach und visuell zu organisieren.",
-      it: "La tua lista di attivita! Jubitasks e la soluzione perfetta: intuitivo ed efficiente, ti aiuta a gestire attivita quotidiane, progetti e idee in modo semplice e visivo.",
+      pt: "Sua Lista de Tarefas! O Nexgen Tasks é a solução perfeita para você! Desenvolvido para ser intuitivo e eficiente, ele te ajuda a gerenciar suas atividades diárias, projetos e ideias de forma simples e visual.",
+      en: "Your task list! Nexgen Tasks is the perfect solution for you. Built to be intuitive and efficient, it helps you manage your daily activities, projects and ideas in a simple and visual way.",
+      es: "¡Tu lista de tareas! Nexgen Tasks es la solución perfecta para ti. Desarrollado para ser intuitivo y eficiente, te ayuda a gestionar tus actividades diarias, proyectos e ideas de forma simple y visual.",
+      de: "Deine Aufgabenliste! Nexgen Tasks ist die ideale Loesung: intuitiv und effizient, um taegliche Aktivitaeten, Projekte und Ideen einfach und visuell zu organisieren.",
+      it: "La tua lista di attivita! Nexgen Tasks e la soluzione perfetta: intuitivo ed efficiente, ti aiuta a gestire attivita quotidiane, progetti e idee in modo semplice e visivo.",
     },
   },
   {
@@ -384,6 +384,7 @@ export function getProjectTranslation(project, language = "pt") {
     ...project,
     category: project.category?.[language] || project.category?.pt || "",
     highlight: project.highlight?.[language] || project.highlight?.pt || "",
-    description: project.description?.[language] || project.description?.pt || "",
+    description:
+      project.description?.[language] || project.description?.pt || "",
   };
 }
