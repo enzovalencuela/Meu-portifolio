@@ -189,7 +189,12 @@ const translations = {
       ],
     },
     contact: {
-      title: "Contatos",
+      title: "Contato & Feedback",
+      tabs: {
+        ariaLabel: "Alternar entre mensagem e feedback",
+        message: "Enviar mensagem",
+        feedback: "Deixar feedback",
+      },
       subject: "Novo contato pelo portfólio",
       email: "Email",
       emailPlaceholder: "seuemail@exemplo.com",
@@ -431,7 +436,12 @@ const translations = {
       ],
     },
     contact: {
-      title: "Contact",
+      title: "Contact & Feedback",
+      tabs: {
+        ariaLabel: "Switch between message and feedback",
+        message: "Send message",
+        feedback: "Leave feedback",
+      },
       subject: "New contact through portfolio",
       email: "Email",
       emailPlaceholder: "your@email.com",
@@ -673,7 +683,12 @@ const translations = {
       ],
     },
     contact: {
-      title: "Contacto",
+      title: "Contacto y Feedback",
+      tabs: {
+        ariaLabel: "Cambiar entre mensaje y feedback",
+        message: "Enviar mensaje",
+        feedback: "Dejar feedback",
+      },
       subject: "Nuevo contacto desde el portafolio",
       email: "Email",
       emailPlaceholder: "tuemail@ejemplo.com",
@@ -915,7 +930,12 @@ const translations = {
       ],
     },
     contact: {
-      title: "Kontakt",
+      title: "Kontakt & Feedback",
+      tabs: {
+        ariaLabel: "Zwischen Nachricht und Feedback wechseln",
+        message: "Nachricht senden",
+        feedback: "Feedback hinterlassen",
+      },
       subject: "Neue Kontaktanfrage über das Portfolio",
       email: "E‑Mail",
       emailPlaceholder: "dein@email.com",
@@ -1157,7 +1177,12 @@ const translations = {
       ],
     },
     contact: {
-      title: "Contatti",
+      title: "Contatti e Feedback",
+      tabs: {
+        ariaLabel: "Passa tra messaggio e feedback",
+        message: "Invia messaggio",
+        feedback: "Lascia feedback",
+      },
       subject: "Nuovo contatto dal portfolio",
       email: "Email",
       emailPlaceholder: "tua@email.com",

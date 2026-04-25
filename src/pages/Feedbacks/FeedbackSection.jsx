@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import { useLanguage } from "@/components/ui/LanguageContext";
-import FeedbackForm from "./FeedbackForm";
 import "./FeedbackSection.css";
 
 function formatDate(dateValue, language) {
@@ -86,6 +85,7 @@ function FeedbackSection() {
             modules={[Pagination]}
             pagination={{ clickable: true }}
             breakpoints={slidesPerView}
+            autoHeight
             className="feedback-swiper"
           >
             {feedbacks.map((feedback) => (
@@ -110,12 +110,6 @@ function FeedbackSection() {
                 </article>
               </SwiperSlide>
             ))}
-
-            <SwiperSlide>
-              <div className="feedback-card feedback-form-card">
-                <FeedbackForm />
-              </div>
-            </SwiperSlide>
           </Swiper>
         </div>
       ) : null}

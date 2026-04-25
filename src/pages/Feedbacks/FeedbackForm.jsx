@@ -7,12 +7,37 @@ const INITIAL_STATE = {
   message: "",
 };
 
-function FeedbackForm({ onSubmitted }) {
+function FeedbackForm({ onSubmitted, variant = "feedback" }) {
   const { copy } = useLanguage();
   const [form, setForm] = useState(INITIAL_STATE);
   const [sending, setSending] = useState(false);
-  const [errors, setErrors] = useState([]);
-  const [success, setSuccess] = useState("");
+  const [errorCodes, setErrorCodes] = useState([]);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const isContactVariant = variant === "contact";
+  const classes = isContactVariant
+    ? {
+        form: "form",
+        title: "feedback-inline-title",
+        subtitle: "feedback-inline-subtitle",
+        label: "feedback-inline-label",
+        input: "feedback-inline-input",
+        textarea: "feedback-inline-textarea",
+        errors: "feedback-inline-errors",
+        success: "feedback-inline-success",
+        button: "form-submit-btn",
+      }
+    : {
+        form: "feedback-form",
+        title: "feedback-form-title",
+        subtitle: "feedback-form-subtitle",
+        label: "feedback-form-label",
+        input: "feedback-form-input",
+        textarea: "feedback-form-textarea",
+        errors: "feedback-form-errors",
+        success: "feedback-form-success",
+        button: "feedback-form-button",
+      };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -22,8 +47,8 @@ function FeedbackForm({ onSubmitted }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setSending(true);
-    setErrors([]);
-    setSuccess("");
+    setErrorCodes([]);
+    setIsSuccess(false);
 
     try {
       const response = await fetch("/api/feedbacks", {
@@ -35,39 +60,34 @@ function FeedbackForm({ onSubmitted }) {
       const result = await response.json();
 
       if (!response.ok) {
-        const translatedErrors = (result?.errors || []).map(
-          (code) => copy.feedback.errors[code] || copy.feedback.errors.GENERIC,
-        );
-        setErrors(
-          translatedErrors.length > 0
-            ? translatedErrors
-            : [copy.feedback.errors[result?.error] || copy.feedback.errors.GENERIC],
-        );
+        const codes = result?.errors?.length ? result.errors : [result?.error || "GENERIC"];
+        setErrorCodes(codes);
         return;
       }
 
       setForm(INITIAL_STATE);
-      setSuccess(copy.feedback.success);
+      setIsSuccess(true);
       onSubmitted?.(result.feedback);
     } catch {
-      setErrors([copy.feedback.errors.NETWORK]);
+      setErrorCodes(["NETWORK"]);
     } finally {
       setSending(false);
     }
   };
 
   return (
-    <form className="feedback-form" onSubmit={handleSubmit} noValidate>
-      <h3 className="feedback-form-title">{copy.feedback.form.title}</h3>
-      <p className="feedback-form-subtitle">{copy.feedback.form.subtitle}</p>
+    <form className={classes.form} onSubmit={handleSubmit} noValidate>
+      <h3 className={classes.title}>{copy.feedback.form.title}</h3>
+      <p className={classes.subtitle}>{copy.feedback.form.subtitle}</p>
 
-      <label className="feedback-form-label" htmlFor="feedback-name">
+      <div className={isContactVariant ? "form-group" : ""}>
+      <label className={classes.label} htmlFor="feedback-name">
         {copy.feedback.form.name}
       </label>
       <input
         id="feedback-name"
         name="name"
-        className="feedback-form-input"
+        className={classes.input}
         value={form.name}
         onChange={handleChange}
         minLength={2}
@@ -76,28 +96,32 @@ function FeedbackForm({ onSubmitted }) {
         placeholder={copy.feedback.form.namePlaceholder}
         autoComplete="name"
       />
+      </div>
 
-      <label className="feedback-form-label" htmlFor="feedback-project">
+      <div className={isContactVariant ? "form-group" : ""}>
+      <label className={classes.label} htmlFor="feedback-project">
         {copy.feedback.form.project}
       </label>
       <input
         id="feedback-project"
         name="project"
-        className="feedback-form-input"
+        className={classes.input}
         value={form.project}
         onChange={handleChange}
         maxLength={120}
         placeholder={copy.feedback.form.projectPlaceholder}
         autoComplete="organization-title"
       />
+      </div>
 
-      <label className="feedback-form-label" htmlFor="feedback-message">
+      <div className={isContactVariant ? "form-group" : ""}>
+      <label className={classes.label} htmlFor="feedback-message">
         {copy.feedback.form.message}
       </label>
       <textarea
         id="feedback-message"
         name="message"
-        className="feedback-form-textarea"
+        className={classes.textarea}
         value={form.message}
         onChange={handleChange}
         minLength={10}
@@ -105,22 +129,23 @@ function FeedbackForm({ onSubmitted }) {
         required
         placeholder={copy.feedback.form.messagePlaceholder}
       />
+      </div>
 
-      {errors.length > 0 ? (
-        <ul className="feedback-form-errors" role="alert">
-          {errors.map((error) => (
-            <li key={error}>{error}</li>
+      {errorCodes.length > 0 ? (
+        <ul className={classes.errors} role="alert">
+          {errorCodes.map((code) => (
+            <li key={code}>{copy.feedback.errors[code] || copy.feedback.errors.GENERIC}</li>
           ))}
         </ul>
       ) : null}
 
-      {success ? (
-        <p className="feedback-form-success" role="status">
-          {success}
+      {isSuccess ? (
+        <p className={classes.success} role="status">
+          {copy.feedback.success}
         </p>
       ) : null}
 
-      <button className="feedback-form-button" type="submit" disabled={sending}>
+      <button className={classes.button} type="submit" disabled={sending}>
         {sending ? copy.feedback.form.sending : copy.feedback.form.submit}
       </button>
     </form>

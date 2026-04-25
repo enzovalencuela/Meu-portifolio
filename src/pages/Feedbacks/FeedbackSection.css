@@ -34,8 +34,8 @@
 }
 
 .feedback-card {
-  min-height: 250px;
-  height: 100%;
+  min-height: 180px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -58,9 +58,9 @@
 
 .feedback-message {
   margin: 0;
-  color: var(--pColor);
-  line-height: 1.6;
-  font-size: 0.96rem;
+  color: var(--fontColor);
+  line-height: 1.65;
+  font-size: 0.98rem;
   position: relative;
   padding-left: 0.75rem;
 }
@@ -94,125 +94,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 0.8rem;
-  color: var(--fontColorLight);
-  font-size: 0.8rem;
-}
-
-.feedback-form-card {
-  background: linear-gradient(var(--bg), var(--bg)) padding-box;
-}
-
-.feedback-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  width: 100%;
-}
-
-.feedback-form-title {
-  margin: 0;
-  font-size: 1rem;
   color: var(--fontColor);
-  font-weight: 700;
-}
-
-.feedback-form-subtitle {
-  margin: 0 0 0.25rem;
-  color: var(--fontColorLight);
-  line-height: 1.4;
-  font-size: 0.84rem;
-}
-
-.feedback-form-label {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--h2color);
-}
-
-.feedback-form-input,
-.feedback-form-textarea {
-  width: 100%;
-  border-radius: 8px;
-  border: 1px solid #414141;
-  background: rgba(255, 255, 255, 0.35);
-  padding: 10px 14px;
-  font: inherit;
-  color: #4a4a4a;
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    background-color 0.2s ease;
-}
-
-.dark-mode .feedback-form-input,
-.dark-mode .feedback-form-textarea {
-  background: rgba(40, 42, 54, 0.5);
-  border-color: rgba(255, 255, 255, 0.12);
-  color: #f3f4f6;
-}
-
-.feedback-form-input:hover,
-.feedback-form-textarea:hover {
-  border-color: #525252;
-}
-
-.feedback-form-input:focus,
-.feedback-form-textarea:focus {
-  outline: none;
-  border-color: #e81cff;
-  box-shadow: 0 0 0 3px rgba(87, 171, 254, 0.22);
-}
-
-.feedback-form-textarea {
-  min-height: 88px;
-  resize: none;
-}
-
-.feedback-form-button {
-  margin-top: 0.45rem;
-  border: 1px solid #414141;
-  border-radius: 6px;
-  padding: 12px 16px;
-  min-width: 220px;
-  align-self: flex-start;
-  background: var(--btnBg);
-  color: var(--pColor);
-  cursor: pointer;
-  font-weight: 600;
-  font-size: inherit;
-  transition:
-    transform 0.3s ease,
-    background-color 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.feedback-form-button:hover {
-  transform: translateY(-3px);
-  background: var(--hoverBtn);
-  border-color: var(--bg);
-}
-
-.feedback-form-button:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(87, 171, 254, 0.3);
-}
-
-.feedback-form-button:disabled {
-  opacity: 0.75;
-  cursor: progress;
-}
-
-.feedback-form-errors {
-  margin: 0.15rem 0;
-  padding-left: 1rem;
-  color: #dc2626;
-  font-size: 0.88rem;
-}
-
-.feedback-form-success {
-  color: #15803d;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.8rem;
 }
 
 @media (max-width: 768px) {
@@ -221,18 +104,8 @@
   }
 
   .feedback-card {
-    min-height: 230px;
+    min-height: 170px;
     padding: 0.85rem;
-  }
-
-  .feedback-form {
-    gap: 0.42rem;
-  }
-
-  .feedback-form-button {
-    width: 100%;
-    min-width: 0;
-    justify-content: center;
   }
 
   .feedback-meta-row {

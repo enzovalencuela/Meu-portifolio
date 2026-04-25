@@ -4,9 +4,11 @@ import { motion } from "framer-motion";
 import "./Contacts.css";
 import { useLanguage } from "@/components/ui/LanguageContext";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import FeedbackForm from "../Feedbacks/FeedbackForm";
 
 function Contacts() {
   const { copy } = useLanguage();
+  const [activeTab, setActiveTab] = React.useState("message");
 
   return (
     <section className="section contacts" id="contact">
@@ -28,45 +30,70 @@ function Contacts() {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <form
-            className="form"
-            action="https://formsubmit.co/39faa3fcb02952ebcd0a31aa7224676a"
-            method="POST"
-          >
-            <input type="hidden" name="_subject" value={copy.contact.subject} />
-            <input type="hidden" name="_captcha" value="false" />
-            <input
-              type="hidden"
-              name="_next"
-              value="https://enzovalencuela.com/"
-            />
-            <div className="form-group">
-              <label htmlFor="email">{copy.contact.email}</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                autoComplete="email"
-                placeholder={copy.contact.emailPlaceholder}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="textarea">{copy.contact.message}</label>
-              <textarea
-                name="message"
-                id="textarea"
-                rows="10"
-                placeholder={copy.contact.messagePlaceholder}
-                required
-              />
-            </div>
-
-            <button className="form-submit-btn" type="submit">
-              {copy.contact.submit}
+          <div className="contact-tabs" role="tablist" aria-label={copy.contact.tabs.ariaLabel}>
+            <button
+              type="button"
+              role="tab"
+              className={`contact-tab ${activeTab === "message" ? "active" : ""}`}
+              aria-selected={activeTab === "message"}
+              onClick={() => setActiveTab("message")}
+            >
+              {copy.contact.tabs.message}
             </button>
-          </form>
+            <button
+              type="button"
+              role="tab"
+              className={`contact-tab ${activeTab === "feedback" ? "active" : ""}`}
+              aria-selected={activeTab === "feedback"}
+              onClick={() => setActiveTab("feedback")}
+            >
+              {copy.contact.tabs.feedback}
+            </button>
+          </div>
+
+          {activeTab === "message" ? (
+            <form
+              className="form"
+              action="https://formsubmit.co/39faa3fcb02952ebcd0a31aa7224676a"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value={copy.contact.subject} />
+              <input type="hidden" name="_captcha" value="false" />
+              <input
+                type="hidden"
+                name="_next"
+                value="https://enzovalencuela.com/"
+              />
+              <div className="form-group">
+                <label htmlFor="email">{copy.contact.email}</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autoComplete="email"
+                  placeholder={copy.contact.emailPlaceholder}
+                  required
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="textarea">{copy.contact.message}</label>
+                <textarea
+                  name="message"
+                  id="textarea"
+                  rows="10"
+                  placeholder={copy.contact.messagePlaceholder}
+                  required
+                />
+              </div>
+
+              <button className="form-submit-btn" type="submit">
+                {copy.contact.submit}
+              </button>
+            </form>
+          ) : (
+            <FeedbackForm variant="contact" />
+          )}
         </motion.div>
 
         <motion.div
