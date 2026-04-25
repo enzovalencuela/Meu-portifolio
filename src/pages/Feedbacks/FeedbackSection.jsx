@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
+import { FaCalendarAlt, FaEllipsisH, FaPaperclip } from "react-icons/fa";
 import { useLanguage } from "@/components/ui/LanguageContext";
 import "./FeedbackSection.css";
 
@@ -90,21 +91,31 @@ function FeedbackSection() {
           >
             {feedbacks.map((feedback) => (
               <SwiperSlide key={feedback.id}>
-                <article className="feedback-card">
+                <article className="feedback-card task-card">
+                  <div className="feedback-tags">
+                    <span className="feedback-tag">{feedback.name}</span>
+                    <span className="feedback-options" aria-hidden="true">
+                      <FaEllipsisH />
+                    </span>
+                  </div>
+
                   <p className="feedback-message">{feedback.message}</p>
-                  <div className="feedback-meta">
-                    <strong>{feedback.name}</strong>
-                    <div className="feedback-meta-row">
-                      {feedback.project ? (
-                        <span>
-                          {copy.feedback.projectLabel}: {feedback.project}
-                        </span>
-                      ) : (
-                        <span>{copy.feedback.approvedLabel}</span>
-                      )}
-                      <time dateTime={feedback.createdAt}>
+
+                  <div className="feedback-stats">
+                    <time className="feedback-stat-item" dateTime={feedback.createdAt}>
+                      <FaCalendarAlt />
+                      <span>
                         {copy.feedback.sentAtLabel} {formatDate(feedback.createdAt, language)}
-                      </time>
+                      </span>
+                    </time>
+
+                    <div className="feedback-stat-item">
+                      <FaPaperclip />
+                      <span>
+                        {feedback.project
+                          ? `${copy.feedback.projectLabel}: ${feedback.project}`
+                          : copy.feedback.approvedLabel}
+                      </span>
                     </div>
                   </div>
                 </article>
