@@ -73,31 +73,35 @@ function FeedbackSection() {
       {error ? <p className="feedback-info feedback-error">{error}</p> : null}
 
       {!loading && !error ? (
-        <Swiper
-          modules={[Pagination]}
-          pagination={{ clickable: true }}
-          breakpoints={slidesPerView}
-          className="feedback-swiper"
-        >
-          {feedbacks.map((feedback) => (
-            <SwiperSlide key={feedback.id}>
-              <article className="feedback-card">
-                <p className="feedback-message">"{feedback.message}"</p>
-                <div className="feedback-meta">
-                  <strong>{feedback.name}</strong>
-                  {feedback.project ? <span>Projeto: {feedback.project}</span> : null}
-                  <time dateTime={feedback.createdAt}>{formatDate(feedback.createdAt)}</time>
-                </div>
-              </article>
-            </SwiperSlide>
-          ))}
+        <div className="feedback-swiper-wrap">
+          <Swiper
+            modules={[Pagination]}
+            pagination={{ clickable: true }}
+            breakpoints={slidesPerView}
+            className="feedback-swiper"
+          >
+            {feedbacks.map((feedback) => (
+              <SwiperSlide key={feedback.id}>
+                <article className="feedback-card">
+                  <p className="feedback-message">{feedback.message}</p>
+                  <div className="feedback-meta">
+                    <strong>{feedback.name}</strong>
+                    <div className="feedback-meta-row">
+                      {feedback.project ? <span>Projeto: {feedback.project}</span> : <span>Feedback aprovado</span>}
+                      <time dateTime={feedback.createdAt}>{formatDate(feedback.createdAt)}</time>
+                    </div>
+                  </div>
+                </article>
+              </SwiperSlide>
+            ))}
 
-          <SwiperSlide>
-            <div className="feedback-card feedback-form-card">
-              <FeedbackForm />
-            </div>
-          </SwiperSlide>
-        </Swiper>
+            <SwiperSlide>
+              <div className="feedback-card feedback-form-card">
+                <FeedbackForm />
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
       ) : null}
     </section>
   );

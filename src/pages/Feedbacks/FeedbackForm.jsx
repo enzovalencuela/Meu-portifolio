@@ -48,7 +48,7 @@ function FeedbackForm({ onSubmitted }) {
   };
 
   return (
-    <form className="feedback-form" onSubmit={handleSubmit}>
+    <form className="feedback-form" onSubmit={handleSubmit} noValidate>
       <h3 className="feedback-form-title">Deixe seu feedback</h3>
       <p className="feedback-form-subtitle">
         Seu feedback sera enviado para aprovacao antes de aparecer no site.
@@ -67,6 +67,7 @@ function FeedbackForm({ onSubmitted }) {
         maxLength={80}
         required
         placeholder="Seu nome"
+        autoComplete="name"
       />
 
       <label className="feedback-form-label" htmlFor="feedback-project">
@@ -80,6 +81,7 @@ function FeedbackForm({ onSubmitted }) {
         onChange={handleChange}
         maxLength={120}
         placeholder="Ex: COP 15 UFMS"
+        autoComplete="organization-title"
       />
 
       <label className="feedback-form-label" htmlFor="feedback-message">
