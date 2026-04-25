@@ -210,6 +210,7 @@ const translations = {
       loadError: "Nao foi possivel carregar feedbacks agora.",
       projectLabel: "Projeto",
       approvedLabel: "Feedback aprovado",
+      sentAtLabel: "Enviado em:",
       success: "Feedback enviado! Obrigado por contribuir.",
       form: {
         title: "Deixe seu feedback",
@@ -451,6 +452,7 @@ const translations = {
       loadError: "Could not load feedback right now.",
       projectLabel: "Project",
       approvedLabel: "Approved feedback",
+      sentAtLabel: "Sent on:",
       success: "Feedback sent! Thank you for contributing.",
       form: {
         title: "Share your feedback",
@@ -692,6 +694,7 @@ const translations = {
       loadError: "No fue posible cargar los testimonios ahora.",
       projectLabel: "Proyecto",
       approvedLabel: "Testimonio aprobado",
+      sentAtLabel: "Enviado el:",
       success: "¡Feedback enviado! Gracias por contribuir.",
       form: {
         title: "Deja tu feedback",
@@ -933,6 +936,7 @@ const translations = {
       loadError: "Feedbacks konnten gerade nicht geladen werden.",
       projectLabel: "Projekt",
       approvedLabel: "Freigegebenes Feedback",
+      sentAtLabel: "Gesendet am:",
       success: "Feedback gesendet! Danke für deinen Beitrag.",
       form: {
         title: "Hinterlasse dein Feedback",
@@ -1174,6 +1178,7 @@ const translations = {
       loadError: "Impossibile caricare i feedback ora.",
       projectLabel: "Progetto",
       approvedLabel: "Feedback approvato",
+      sentAtLabel: "Inviato il:",
       success: "Feedback inviato! Grazie per il contributo.",
       form: {
         title: "Lascia il tuo feedback",

@@ -36,7 +36,7 @@ function FeedbackSection() {
 
     async function loadFeedbacks() {
       try {
-        const response = await fetch(`/api/feedbacks?locale=${language}`);
+        const response = await fetch("/api/feedbacks");
         const result = await response.json();
 
         if (!response.ok) {
@@ -61,7 +61,7 @@ function FeedbackSection() {
     return () => {
       active = false;
     };
-  }, [language, copy.feedback.loadError]);
+  }, [copy.feedback.loadError]);
 
   const slidesPerView = useMemo(
     () => ({
@@ -102,7 +102,9 @@ function FeedbackSection() {
                       ) : (
                         <span>{copy.feedback.approvedLabel}</span>
                       )}
-                      <time dateTime={feedback.createdAt}>{formatDate(feedback.createdAt, language)}</time>
+                      <time dateTime={feedback.createdAt}>
+                        {copy.feedback.sentAtLabel} {formatDate(feedback.createdAt, language)}
+                      </time>
                     </div>
                   </div>
                 </article>

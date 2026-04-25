@@ -8,7 +8,7 @@ const INITIAL_STATE = {
 };
 
 function FeedbackForm({ onSubmitted }) {
-  const { copy, language } = useLanguage();
+  const { copy } = useLanguage();
   const [form, setForm] = useState(INITIAL_STATE);
   const [sending, setSending] = useState(false);
   const [errors, setErrors] = useState([]);
@@ -29,7 +29,7 @@ function FeedbackForm({ onSubmitted }) {
       const response = await fetch("/api/feedbacks", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, locale: language }),
+        body: JSON.stringify(form),
       });
 
       const result = await response.json();

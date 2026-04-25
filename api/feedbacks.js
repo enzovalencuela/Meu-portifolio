@@ -5,13 +5,10 @@ function sendJson(res, statusCode, data) {
   res.send(JSON.stringify(data));
 }
 
-const SUPPORTED_LOCALES = new Set(["pt", "en", "es", "de", "it"]);
-
 function validatePayload(body) {
   const name = typeof body?.name === "string" ? body.name.trim() : "";
   const message = typeof body?.message === "string" ? body.message.trim() : "";
   const project = typeof body?.project === "string" ? body.project.trim() : "";
-  const locale = typeof body?.locale === "string" ? body.locale.trim().toLowerCase() : "";
 
   const errors = [];
 
@@ -27,10 +24,6 @@ function validatePayload(body) {
     errors.push("INVALID_PROJECT");
   }
 
-  if (locale && !SUPPORTED_LOCALES.has(locale)) {
-    errors.push("INVALID_LOCALE");
-  }
-
   return {
     valid: errors.length === 0,
     errors,
@@ -38,7 +31,6 @@ function validatePayload(body) {
       name,
       message,
       project: project || null,
-      locale: locale || null,
     },
   };
 }
@@ -46,46 +38,19 @@ function validatePayload(body) {
 export default async function handler(req, res) {
   if (req.method === "GET") {
     try {
-      const requestedLocale =
-        typeof req.query?.locale === "string" ? req.query.locale.toLowerCase() : "";
-      const locale = SUPPORTED_LOCALES.has(requestedLocale) ? requestedLocale : null;
-
-      const select = {
+      const feedbacks = await prisma.feedback.findMany({
+        where: { status: "APPROVED" },
+        orderBy: { createdAt: "desc" },
+        select: {
         id: true,
         name: true,
         message: true,
         project: true,
-        locale: true,
         createdAt: true,
-      };
+        },
+      });
 
-      if (!locale) {
-        const feedbacks = await prisma.feedback.findMany({
-          where: { status: "APPROVED" },
-          orderBy: { createdAt: "desc" },
-          select,
-        });
-
-        return sendJson(res, 200, { feedbacks });
-      }
-
-      const [preferred, fallback] = await Promise.all([
-        prisma.feedback.findMany({
-          where: { status: "APPROVED", locale },
-          orderBy: { createdAt: "desc" },
-          select,
-        }),
-        prisma.feedback.findMany({
-          where: {
-            status: "APPROVED",
-            OR: [{ locale: null }, { locale: { not: locale } }],
-          },
-          orderBy: { createdAt: "desc" },
-          select,
-        }),
-      ]);
-
-      return sendJson(res, 200, { feedbacks: [...preferred, ...fallback] });
+      return sendJson(res, 200, { feedbacks });
     } catch (error) {
       console.error("GET /api/feedbacks failed:", error);
       return sendJson(res, 500, { error: "LOAD_FAILED" });
@@ -110,7 +75,6 @@ export default async function handler(req, res) {
           name: true,
           message: true,
           project: true,
-          locale: true,
           status: true,
           createdAt: true,
         },
