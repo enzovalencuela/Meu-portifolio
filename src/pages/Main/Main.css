@@ -62,6 +62,8 @@
 
 .social-links {
   margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
 }
 
 .social-links a {
@@ -76,6 +78,10 @@
 .social-links a:hover {
   color: var(--blue);
   transform: translateY(-3px);
+}
+
+.social-links a svg {
+  display: block;
 }
 
 .home-image {

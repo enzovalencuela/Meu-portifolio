@@ -22,7 +22,7 @@
   transform: translateY(-10px);
 }
 
-.skill-item i {
+.skill-item svg {
   font-size: 3.5rem;
   color: var(--fontColor);
   margin-bottom: 0.5rem;
@@ -39,7 +39,7 @@
   .skills-grid-v2 {
     gap: 2rem;
   }
-  .skill-item i {
+  .skill-item svg {
     font-size: 2.5rem;
   }
   .skill-item p {

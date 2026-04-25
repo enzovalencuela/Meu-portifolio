@@ -4,6 +4,7 @@ import "./Main.css";
 import minhaFoto from "/minha_foto.png";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/components/ui/LanguageContext";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Main = () => {
   const { copy } = useLanguage();
@@ -57,7 +58,7 @@ const Main = () => {
             rel="noreferrer"
             aria-label={copy.hero.githubAria}
           >
-            <i className="fab fa-github"></i>
+            <FaGithub aria-hidden="true" />
           </a>
 
           <a
@@ -66,7 +67,7 @@ const Main = () => {
             rel="noreferrer"
             aria-label={copy.hero.linkedinAria}
           >
-            <i className="fab fa-linkedin"></i>
+            <FaLinkedin aria-hidden="true" />
           </a>
         </motion.div>
       </motion.div>

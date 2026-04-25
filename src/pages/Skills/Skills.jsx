@@ -3,6 +3,16 @@ import React from "react";
 import "./Skills.css";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/components/ui/LanguageContext";
+import {
+  FaCloudUploadAlt,
+  FaDatabase,
+  FaGitAlt,
+  FaJsSquare,
+  FaMagic,
+  FaNodeJs,
+  FaReact,
+  FaVial,
+} from "react-icons/fa";
 
 function Habilidades() {
   const { copy } = useLanguage();
@@ -26,14 +36,14 @@ function Habilidades() {
   };
 
   const skills = [
-    { icon: "fab fa-react", name: copy.skills.items[0] },
-    { icon: "fab fa-js-square", name: copy.skills.items[1] },
-    { icon: "fab fa-node-js", name: copy.skills.items[2] },
-    { icon: "fas fa-database", name: copy.skills.items[3] },
-    { icon: "fas fa-magic", name: copy.skills.items[4] },
-    { icon: "fas fa-cloud-upload-alt", name: copy.skills.items[5] },
-    { icon: "fab fa-git-alt", name: copy.skills.items[6] },
-    { icon: "fas fa-vial", name: copy.skills.items[7] },
+    { icon: FaReact, name: copy.skills.items[0] },
+    { icon: FaJsSquare, name: copy.skills.items[1] },
+    { icon: FaNodeJs, name: copy.skills.items[2] },
+    { icon: FaDatabase, name: copy.skills.items[3] },
+    { icon: FaMagic, name: copy.skills.items[4] },
+    { icon: FaCloudUploadAlt, name: copy.skills.items[5] },
+    { icon: FaGitAlt, name: copy.skills.items[6] },
+    { icon: FaVial, name: copy.skills.items[7] },
   ];
 
   return (
@@ -57,7 +67,9 @@ function Habilidades() {
         whileInView="show"
         viewport={{ once: true }}
       >
-        {skills.map((skill, index) => (
+        {skills.map((skill, index) => {
+          const Icon = skill.icon;
+          return (
           <motion.div
             key={index}
             className="skill-item"
@@ -66,10 +78,11 @@ function Habilidades() {
             whileHover={{ scale: 1.08 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <i className={skill.icon}></i>
+            <Icon aria-hidden="true" />
             <p>{skill.name}</p>
           </motion.div>
-        ))}
+          );
+        })}
       </motion.div>
     </section>
   );

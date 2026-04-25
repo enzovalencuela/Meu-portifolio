@@ -4,6 +4,11 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import App from "./App.jsx";
+import "@fontsource/poppins/300.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/600.css";
+import "@fontsource/poppins/700.css";
+import "@fontsource/bebas-neue";
 
 // import function to register Swiper custom elements
 import { register } from "swiper/element/bundle";

@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./Contacts.css";
 import { useLanguage } from "@/components/ui/LanguageContext";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 function Contacts() {
   const { copy } = useLanguage();
@@ -107,7 +108,7 @@ function Contacts() {
                     aria-label={copy.contact.githubAria}
                     whileHover={{ scale: 1.2 }}
                   >
-                    <i className="fab fa-github"></i>
+                    <FaGithub aria-hidden="true" />
                   </motion.a>
 
                   <motion.a
@@ -117,7 +118,7 @@ function Contacts() {
                     aria-label={copy.contact.whatsappAria}
                     whileHover={{ scale: 1.2 }}
                   >
-                    <i className="fab fa-whatsapp"></i>
+                    <FaWhatsapp aria-hidden="true" />
                   </motion.a>
 
                   <motion.a
@@ -127,7 +128,7 @@ function Contacts() {
                     aria-label={copy.contact.linkedinAria}
                     whileHover={{ scale: 1.2 }}
                   >
-                    <i className="fab fa-linkedin"></i>
+                    <FaLinkedin aria-hidden="true" />
                   </motion.a>
                 </div>
               </div>
@@ -154,7 +155,7 @@ function Contacts() {
                   aria-label={copy.contact.githubAria}
                   whileHover={{ scale: 1.2 }}
                 >
-                  <i className="fab fa-github"></i>
+                  <FaGithub aria-hidden="true" />
                 </motion.a>
 
                 <motion.a
@@ -164,7 +165,7 @@ function Contacts() {
                   aria-label={copy.contact.whatsappAria}
                   whileHover={{ scale: 1.2 }}
                 >
-                  <i className="fab fa-whatsapp"></i>
+                  <FaWhatsapp aria-hidden="true" />
                 </motion.a>
 
                 <motion.a
@@ -174,7 +175,7 @@ function Contacts() {
                   aria-label={copy.contact.linkedinAria}
                   whileHover={{ scale: 1.2 }}
                 >
-                  <i className="fab fa-linkedin"></i>
+                  <FaLinkedin aria-hidden="true" />
                 </motion.a>
               </div>
             </div>
