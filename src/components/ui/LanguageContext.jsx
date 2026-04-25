@@ -211,7 +211,7 @@ const translations = {
     },
     feedback: {
       title: "Depoimentos",
-      description: "Feedbacks aprovados de pessoas e clientes que acompanharam meus projetos.",
+      description: "Feedbacks de pessoas e clientes que acompanharam meus projetos.",
       loading: "Carregando feedbacks...",
       loadError: "Nao foi possivel carregar feedbacks agora.",
       projectLabel: "Projeto",
@@ -460,7 +460,7 @@ const translations = {
     },
     feedback: {
       title: "Testimonials",
-      description: "Approved feedback from people and clients who followed my projects.",
+      description: "Feedback from people and clients who followed my projects.",
       loading: "Loading feedback...",
       loadError: "Could not load feedback right now.",
       projectLabel: "Project",
@@ -709,7 +709,7 @@ const translations = {
     },
     feedback: {
       title: "Testimonios",
-      description: "Opiniones aprobadas de personas y clientes que siguieron mis proyectos.",
+      description: "Opiniones de personas y clientes que siguieron mis proyectos.",
       loading: "Cargando testimonios...",
       loadError: "No fue posible cargar los testimonios ahora.",
       projectLabel: "Proyecto",
@@ -958,7 +958,7 @@ const translations = {
     },
     feedback: {
       title: "Feedbacks",
-      description: "Freigegebene Rückmeldungen von Personen und Kund*innen zu meinen Projekten.",
+      description: "Rückmeldungen von Personen und Kund*innen zu meinen Projekten.",
       loading: "Feedbacks werden geladen...",
       loadError: "Feedbacks konnten gerade nicht geladen werden.",
       projectLabel: "Projekt",
@@ -1207,7 +1207,7 @@ const translations = {
     },
     feedback: {
       title: "Feedback",
-      description: "Feedback approvati da persone e clienti che hanno seguito i miei progetti.",
+      description: "Feedback da persone e clienti che hanno seguito i miei progetti.",
       loading: "Caricamento feedback...",
       loadError: "Impossibile caricare i feedback ora.",
       projectLabel: "Progetto",

@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
-import { FaCalendarAlt, FaEllipsisH, FaPaperclip } from "react-icons/fa";
+import { FaCalendarAlt, FaPaperclip } from "react-icons/fa";
 import { useLanguage } from "@/components/ui/LanguageContext";
 import "./FeedbackSection.css";
 
