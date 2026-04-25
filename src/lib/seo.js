@@ -1,7 +1,7 @@
 import { projectsWithSlug } from "@/pages/Projects/ProjectsData";
 
 export const siteUrl = "https://enzovalencuela.com";
-export const defaultOgImage = `${siteUrl}/og-image.png`;
+export const defaultOgImage = `${siteUrl}/og-image.webp`;
 
 function getTextByLanguage(value, language = "pt") {
   if (typeof value === "string") {
@@ -24,7 +24,7 @@ export function getHomeSeo() {
       name: "Edilson Enzo da Silva Valençuela",
       alternateName: ["Enzo Valençuela", "Edilson Enzo Valençuela"],
       url: `${siteUrl}/`,
-      image: `${siteUrl}/minha_foto.png`,
+      image: `${siteUrl}/minha_foto.webp`,
       jobTitle: "Desenvolvedor Full Stack",
       email: "mailto:esilvavlencuela@gmail.com",
       sameAs: [
@@ -112,7 +112,7 @@ export function buildHeadElements(seo) {
         content: "Imagem de compartilhamento do portfólio de Enzo Valençuela",
       },
     },
-    { type: "meta", props: { property: "og:image:type", content: "image/png" } },
+    { type: "meta", props: { property: "og:image:type", content: "image/webp" } },
     { type: "meta", props: { name: "twitter:card", content: "summary_large_image" } },
     { type: "meta", props: { name: "twitter:title", content: seo.title } },
     {

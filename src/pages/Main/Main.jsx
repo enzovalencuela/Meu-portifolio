@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import "./Main.css";
-import minhaFoto from "/minha_foto.png";
+import minhaFoto from "/minha_foto.webp";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/components/ui/LanguageContext";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
