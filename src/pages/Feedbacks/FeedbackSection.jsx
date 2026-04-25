@@ -117,11 +117,13 @@ function FeedbackSection() {
                     </time>
 
                     <div className="feedback-stat-item">
-                      <FaPaperclip />
                       {feedback.project && (
-                        <span>
-                          `${copy.feedback.projectLabel}: ${feedback.project}`
-                        </span>
+                        <>
+                          <FaPaperclip />
+                          <span>
+                            {`${copy.feedback.projectLabel}: ${feedback.project}`}
+                          </span>
+                        </>
                       )}
                     </div>
                   </div>
