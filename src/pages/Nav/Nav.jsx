@@ -3,7 +3,7 @@ import { DarkModeContext } from "../../components/ui/DarkModeContext";
 import { useLanguage } from "../../components/ui/LanguageContext";
 import "./Nav.css";
 
-function Nav() {
+function Nav({ showFeedbackLink = false }) {
   const menuMobileRef = useRef(null);
   const navbarRef = useRef(null);
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
@@ -84,6 +84,7 @@ function Nav() {
           <a href="#about">{t("nav.about")}</a>
           <a href="#skills">{t("nav.skills")}</a>
           <a href="#projects">{t("nav.projects")}</a>
+          {showFeedbackLink ? <a href="#feedbacks">{t("nav.feedbacks")}</a> : null}
           <a href="#experience">{t("nav.experience")}</a>
           <a href="#contact">{t("nav.contact")}</a>
         </nav>

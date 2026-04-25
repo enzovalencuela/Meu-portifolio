@@ -38,6 +38,14 @@ function validatePayload(body) {
 export default async function handler(req, res) {
   if (req.method === "GET") {
     try {
+      if (req.query?.exists === "1") {
+        const approvedCount = await prisma.feedback.count({
+          where: { status: "APPROVED" },
+        });
+
+        return sendJson(res, 200, { hasFeedbacks: approvedCount > 0 });
+      }
+
       const feedbacks = await prisma.feedback.findMany({
         where: { status: "APPROVED" },
         orderBy: { createdAt: "desc" },
@@ -53,7 +61,7 @@ export default async function handler(req, res) {
       return sendJson(res, 200, { feedbacks });
     } catch (error) {
       console.error("GET /api/feedbacks failed:", error);
-      return sendJson(res, 500, { error: "LOAD_FAILED" });
+      return sendJson(res, 200, req.query?.exists === "1" ? { hasFeedbacks: false } : { feedbacks: [] });
     }
   }
 

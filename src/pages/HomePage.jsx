@@ -15,6 +15,7 @@ const FeedbackSection = lazy(() => import("./Feedbacks/FeedbackSection"));
 function HomePage() {
   const seo = getHomeSeo();
   const [loadFeedbacks, setLoadFeedbacks] = useState(false);
+  const [hasFeedbacks, setHasFeedbacks] = useState(false);
 
   useEffect(() => {
     const deferLoad = () => setLoadFeedbacks(true);
@@ -28,11 +29,34 @@ function HomePage() {
     return () => window.clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    let active = true;
+
+    async function checkFeedbacksAvailability() {
+      try {
+        const response = await fetch("/api/feedbacks?exists=1");
+        const result = await response.json();
+        if (active) {
+          setHasFeedbacks(Boolean(result?.hasFeedbacks));
+        }
+      } catch {
+        if (active) {
+          setHasFeedbacks(false);
+        }
+      }
+    }
+
+    checkFeedbacksAvailability();
+    return () => {
+      active = false;
+    };
+  }, []);
+
   return (
     <>
       <Seo {...seo} />
 
-      <Nav />
+      <Nav showFeedbackLink={hasFeedbacks} />
       <main>
         <Main />
         <About />
@@ -40,7 +64,7 @@ function HomePage() {
         <Projects />
         <Experience />
         <Contacts />
-        {loadFeedbacks ? (
+        {hasFeedbacks && loadFeedbacks ? (
           <Suspense fallback={null}>
             <FeedbackSection />
           </Suspense>
