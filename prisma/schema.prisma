@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum FeedbackStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model Feedback {
+  id        String         @id @default(uuid())
+  name      String
+  message   String
+  project   String?
+  status    FeedbackStatus @default(PENDING)
+  createdAt DateTime       @default(now())
+
+  @@index([status, createdAt(sort: Desc)])
+}

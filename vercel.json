@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/(react|vite|javascript|nodejs|css|tailwind|material-ui|swiperjs|framer-motion|chartjs|nextjs|typescript|postgresql|express|mercado_pago|prisma|firebase|threejs|mongodb|dnd_kit|html|axios|styled-components|cypress).(png|svg|jpg)",
+      "source": "/(react|vite|javascript|nodejs|css|tailwind|material-ui|swiperjs|framer-motion|chartjs|nextjs|typescript|postgresql|express|mercado_pago|prisma|firebase|threejs|mongodb|dnd_kit|html|axios|styled-components|cypress).(webp|svg)",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, noimageindex" },
         {
