@@ -19,8 +19,9 @@ model Feedback {
   name      String
   message   String
   project   String?
+  locale    String?
   status    FeedbackStatus @default(PENDING)
   createdAt DateTime       @default(now())
 
-  @@index([status, createdAt(sort: Desc)])
+  @@index([status, locale, createdAt(sort: Desc)])
 }

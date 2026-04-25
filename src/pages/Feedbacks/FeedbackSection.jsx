@@ -1,12 +1,21 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
+import { useLanguage } from "@/components/ui/LanguageContext";
 import FeedbackForm from "./FeedbackForm";
 import "./FeedbackSection.css";
 
-function formatDate(dateValue) {
+function formatDate(dateValue, language) {
   try {
-    return new Intl.DateTimeFormat("pt-BR", {
+    const localeMap = {
+      pt: "pt-BR",
+      en: "en-US",
+      es: "es-ES",
+      de: "de-DE",
+      it: "it-IT",
+    };
+
+    return new Intl.DateTimeFormat(localeMap[language] || "pt-BR", {
       day: "2-digit",
       month: "short",
       year: "numeric",
@@ -17,6 +26,7 @@ function formatDate(dateValue) {
 }
 
 function FeedbackSection() {
+  const { copy, language } = useLanguage();
   const [feedbacks, setFeedbacks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -26,7 +36,7 @@ function FeedbackSection() {
 
     async function loadFeedbacks() {
       try {
-        const response = await fetch("/api/feedbacks");
+        const response = await fetch(`/api/feedbacks?locale=${language}`);
         const result = await response.json();
 
         if (!response.ok) {
@@ -38,7 +48,7 @@ function FeedbackSection() {
         }
       } catch {
         if (active) {
-          setError("Nao foi possivel carregar feedbacks agora.");
+          setError(copy.feedback.loadError);
         }
       } finally {
         if (active) {
@@ -51,7 +61,7 @@ function FeedbackSection() {
     return () => {
       active = false;
     };
-  }, []);
+  }, [language, copy.feedback.loadError]);
 
   const slidesPerView = useMemo(
     () => ({
@@ -64,12 +74,10 @@ function FeedbackSection() {
 
   return (
     <section id="feedbacks" className="section feedback-section" aria-labelledby="feedbacks-title">
-      <h2 id="feedbacks-title">Feedbacks</h2>
-      <p className="feedback-intro">
-        Depoimentos aprovados de pessoas e clientes que acompanharam meus projetos.
-      </p>
+      <h2 id="feedbacks-title">{copy.feedback.title}</h2>
+      <p className="feedback-intro">{copy.feedback.description}</p>
 
-      {loading ? <p className="feedback-info">Carregando feedbacks...</p> : null}
+      {loading ? <p className="feedback-info">{copy.feedback.loading}</p> : null}
       {error ? <p className="feedback-info feedback-error">{error}</p> : null}
 
       {!loading && !error ? (
@@ -87,8 +95,14 @@ function FeedbackSection() {
                   <div className="feedback-meta">
                     <strong>{feedback.name}</strong>
                     <div className="feedback-meta-row">
-                      {feedback.project ? <span>Projeto: {feedback.project}</span> : <span>Feedback aprovado</span>}
-                      <time dateTime={feedback.createdAt}>{formatDate(feedback.createdAt)}</time>
+                      {feedback.project ? (
+                        <span>
+                          {copy.feedback.projectLabel}: {feedback.project}
+                        </span>
+                      ) : (
+                        <span>{copy.feedback.approvedLabel}</span>
+                      )}
+                      <time dateTime={feedback.createdAt}>{formatDate(feedback.createdAt, language)}</time>
                     </div>
                   </div>
                 </article>

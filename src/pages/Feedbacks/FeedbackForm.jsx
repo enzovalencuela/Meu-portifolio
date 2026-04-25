@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLanguage } from "@/components/ui/LanguageContext";
 
 const INITIAL_STATE = {
   name: "",
@@ -7,6 +8,7 @@ const INITIAL_STATE = {
 };
 
 function FeedbackForm({ onSubmitted }) {
+  const { copy, language } = useLanguage();
   const [form, setForm] = useState(INITIAL_STATE);
   const [sending, setSending] = useState(false);
   const [errors, setErrors] = useState([]);
@@ -27,21 +29,28 @@ function FeedbackForm({ onSubmitted }) {
       const response = await fetch("/api/feedbacks", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, locale: language }),
       });
 
       const result = await response.json();
 
       if (!response.ok) {
-        setErrors(result?.errors || [result?.error || "Erro ao enviar feedback."]);
+        const translatedErrors = (result?.errors || []).map(
+          (code) => copy.feedback.errors[code] || copy.feedback.errors.GENERIC,
+        );
+        setErrors(
+          translatedErrors.length > 0
+            ? translatedErrors
+            : [copy.feedback.errors[result?.error] || copy.feedback.errors.GENERIC],
+        );
         return;
       }
 
       setForm(INITIAL_STATE);
-      setSuccess("Feedback enviado! Obrigado por contribuir.");
+      setSuccess(copy.feedback.success);
       onSubmitted?.(result.feedback);
     } catch {
-      setErrors(["Erro de conexao. Tente novamente."]);
+      setErrors([copy.feedback.errors.NETWORK]);
     } finally {
       setSending(false);
     }
@@ -49,13 +58,11 @@ function FeedbackForm({ onSubmitted }) {
 
   return (
     <form className="feedback-form" onSubmit={handleSubmit} noValidate>
-      <h3 className="feedback-form-title">Deixe seu feedback</h3>
-      <p className="feedback-form-subtitle">
-        Seu feedback sera enviado para aprovacao antes de aparecer no site.
-      </p>
+      <h3 className="feedback-form-title">{copy.feedback.form.title}</h3>
+      <p className="feedback-form-subtitle">{copy.feedback.form.subtitle}</p>
 
       <label className="feedback-form-label" htmlFor="feedback-name">
-        Nome
+        {copy.feedback.form.name}
       </label>
       <input
         id="feedback-name"
@@ -66,12 +73,12 @@ function FeedbackForm({ onSubmitted }) {
         minLength={2}
         maxLength={80}
         required
-        placeholder="Seu nome"
+        placeholder={copy.feedback.form.namePlaceholder}
         autoComplete="name"
       />
 
       <label className="feedback-form-label" htmlFor="feedback-project">
-        Projeto (opcional)
+        {copy.feedback.form.project}
       </label>
       <input
         id="feedback-project"
@@ -80,12 +87,12 @@ function FeedbackForm({ onSubmitted }) {
         value={form.project}
         onChange={handleChange}
         maxLength={120}
-        placeholder="Ex: COP 15 UFMS"
+        placeholder={copy.feedback.form.projectPlaceholder}
         autoComplete="organization-title"
       />
 
       <label className="feedback-form-label" htmlFor="feedback-message">
-        Feedback
+        {copy.feedback.form.message}
       </label>
       <textarea
         id="feedback-message"
@@ -96,7 +103,7 @@ function FeedbackForm({ onSubmitted }) {
         minLength={10}
         maxLength={800}
         required
-        placeholder="Conte como foi sua experiencia..."
+        placeholder={copy.feedback.form.messagePlaceholder}
       />
 
       {errors.length > 0 ? (
@@ -114,7 +121,7 @@ function FeedbackForm({ onSubmitted }) {
       ) : null}
 
       <button className="feedback-form-button" type="submit" disabled={sending}>
-        {sending ? "Enviando..." : "Enviar feedback"}
+        {sending ? copy.feedback.form.sending : copy.feedback.form.submit}
       </button>
     </form>
   );
