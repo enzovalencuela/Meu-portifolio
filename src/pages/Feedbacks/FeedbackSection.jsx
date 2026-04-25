@@ -73,11 +73,17 @@ function FeedbackSection() {
   );
 
   return (
-    <section id="feedbacks" className="section feedback-section" aria-labelledby="feedbacks-title">
+    <section
+      id="feedbacks"
+      className="section feedback-section"
+      aria-labelledby="feedbacks-title"
+    >
       <h2 id="feedbacks-title">{copy.feedback.title}</h2>
       <p className="feedback-intro">{copy.feedback.description}</p>
 
-      {loading ? <p className="feedback-info">{copy.feedback.loading}</p> : null}
+      {loading ? (
+        <p className="feedback-info">{copy.feedback.loading}</p>
+      ) : null}
       {error ? <p className="feedback-info feedback-error">{error}</p> : null}
 
       {!loading && !error ? (
@@ -94,28 +100,29 @@ function FeedbackSection() {
                 <article className="feedback-card task-card">
                   <div className="feedback-tags">
                     <span className="feedback-tag">{feedback.name}</span>
-                    <span className="feedback-options" aria-hidden="true">
-                      <FaEllipsisH />
-                    </span>
                   </div>
 
                   <p className="feedback-message">{feedback.message}</p>
 
                   <div className="feedback-stats">
-                    <time className="feedback-stat-item" dateTime={feedback.createdAt}>
+                    <time
+                      className="feedback-stat-item"
+                      dateTime={feedback.createdAt}
+                    >
                       <FaCalendarAlt />
                       <span>
-                        {copy.feedback.sentAtLabel} {formatDate(feedback.createdAt, language)}
+                        {copy.feedback.sentAtLabel}{" "}
+                        {formatDate(feedback.createdAt, language)}
                       </span>
                     </time>
 
                     <div className="feedback-stat-item">
                       <FaPaperclip />
-                      <span>
-                        {feedback.project
-                          ? `${copy.feedback.projectLabel}: ${feedback.project}`
-                          : copy.feedback.approvedLabel}
-                      </span>
+                      {feedback.project && (
+                        <span>
+                          `${copy.feedback.projectLabel}: ${feedback.project}`
+                        </span>
+                      )}
                     </div>
                   </div>
                 </article>
