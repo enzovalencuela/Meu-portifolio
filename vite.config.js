@@ -33,42 +33,6 @@ export default defineConfig({
       },
     },
     {
-      name: "strip-prerender-assets-from-html",
-      closeBundle() {
-        try {
-          const distDir = path.resolve(process.cwd(), "dist");
-          if (!fs.existsSync(distDir)) return;
-
-          const walk = (dir) => {
-            const entries = fs.readdirSync(dir, { withFileTypes: true });
-            for (const entry of entries) {
-              const fullPath = path.join(dir, entry.name);
-              if (entry.isDirectory()) {
-                walk(fullPath);
-                continue;
-              }
-              if (!entry.name.endsWith(".html")) continue;
-
-              const html = fs.readFileSync(fullPath, "utf-8");
-              const sanitized = html
-                .replace(/\n?\s*<link rel="modulepreload" crossorigin href="\/assets\/prerender-[^"]+"><\/link>?/g, "")
-                .replace(/\n?\s*<link rel="modulepreload" crossorigin href="\/assets\/prerender-[^"]+">/g, "")
-                .replace(/\n?\s*<link rel="stylesheet" crossorigin href="\/assets\/prerender-[^"]+">/g, "");
-
-              if (sanitized !== html) {
-                fs.writeFileSync(fullPath, sanitized, "utf-8");
-              }
-            }
-          };
-
-          walk(distDir);
-          console.log("Removed prerender asset tags from built HTML.");
-        } catch (err) {
-          console.warn("Failed to strip prerender assets:", err?.message || err);
-        }
-      },
-    },
-    {
       name: "force-close",
       closeBundle() {
         console.log("Forcing process exit after closeBundle...");
