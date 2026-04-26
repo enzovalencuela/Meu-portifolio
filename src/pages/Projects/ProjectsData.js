@@ -134,13 +134,13 @@ export const projectsData = [
     stack: [
       { name: "React", icon: "/react.webp" },
       { name: "Next.js", icon: "/next.js.webp" },
-      { name: "Javascript", icon: "/javascript.svg" },
+      { name: "Typescript", icon: "/typescript.svg" },
       { name: "Tailwind", icon: "/tailwind.webp" },
-      { name: "Firebase", icon: "/firebase.svg" },
       { name: "Node Js", icon: "/nodejs.svg" },
-      { name: "Express", icon: "/express.svg" },
+      { name: "Prisma", icon: "/prisma.webp" },
       { name: "PostgreSQL", icon: "/postgresql.svg" },
       { name: "Dnd Kit", icon: "/dnd_kit.webp" },
+      { name: "Framer Motion", icon: "/framer-motion.webp" },
     ],
     name: "Nexgen Tasks",
     github: "https://github.com/enzovalencuela/MyToDoList",
@@ -220,6 +220,7 @@ export const projectsData = [
       it: "Applicazione web in React che usa la GitHub API per recuperare informazioni pubbliche degli utenti. Basta inserire uno username GitHub per vedere nome, bio e foto profilo.",
     },
   },
+  /*
   {
     id: 7,
     category: {
@@ -254,8 +255,45 @@ export const projectsData = [
       it: "Landing page fittizia sviluppata con attenzione a design visivo e UX, utilizzando buone pratiche di HTML, CSS, JavaScript e Swiper Js.",
     },
   },
+  */
   {
     id: 8,
+    category: {
+      pt: "Gestão Financeira",
+      en: "Financial Management",
+      es: "Gestión Financiera",
+      de: "Finanzmanagement",
+      it: "Gestione Finanziaria",
+    },
+    highlight: {
+      pt: "Controle inteligente de receitas, despesas e planejamento orçamentário.",
+      en: "Smart tracking of income, expenses, and budget planning.",
+      es: "Control inteligente de ingresos, gastos y planificación presupuestaria.",
+      de: "Intelligente Verfolgung von Einnahmen, Ausgaben und Budgetplanung.",
+      it: "Controllo intelligente di entrate, uscite e pianificazione del budget.",
+    },
+    stack: [
+      { name: "React", icon: "/react.webp" },
+      { name: "Next.js", icon: "/next.js.webp" },
+      { name: "TypeScript", icon: "/typescript.svg" },
+      { name: "Tailwind", icon: "/tailwind.webp" },
+      { name: "Prisma", icon: "/prisma.webp" },
+      { name: "PostgreSQL", icon: "/postgresql.svg" },
+    ],
+    name: "Nexgen Finances",
+    github: "https://github.com/enzovalencuela/Nexgen-Finances",
+    deploy: "https://finances.enzovalencuela.com",
+    img: "/14.webp",
+    description: {
+      pt: "Nexgen Finances é uma aplicação full-stack moderna para controle financeiro, permitindo a gestão detalhada de transações, integração com autenticação segura e visualização de dados para otimizar a saúde financeira.",
+      en: "Nexgen Finances is a modern full-stack application for financial control, allowing detailed transaction management, secure authentication integration, and data visualization to optimize financial health.",
+      es: "Nexgen Finances es una aplicación full-stack moderna para el control financiero, que permite la gestión detallada de transacciones, integración con autenticación segura y visualização de datos para optimizar la salud financiera.",
+      de: "Nexgen Finances ist eine moderne Full-Stack-Anwendung zur Finanzkontrolle, die ein detailliertes Transaktionsmanagement, die Integration sicherer Authentifizierung und Datenvisualisierung zur Optimierung der finanziellen Gesundheit ermöglicht.",
+      it: "Nexgen Finances è un'applicazione full-stack moderna per il controllo finanziario, che consente la gestione dettagliata delle transazioni, l'integrazione dell'autenticazione sicura e la visualizzazione dei dati per ottimizzare la salute finanziaria.",
+    },
+  },
+  {
+    id: 9,
     category: {
       pt: "Dashboard operacional",
       en: "Operational dashboard",
@@ -291,7 +329,7 @@ export const projectsData = [
     },
   },
   {
-    id: 9,
+    id: 10,
     category: {
       pt: "Landing page temática",
       en: "Themed landing page",
@@ -326,7 +364,7 @@ export const projectsData = [
   },
 
   {
-    id: 12,
+    id: 11,
     category: {
       pt: "Dashboard analítico",
       en: "Analytics dashboard",

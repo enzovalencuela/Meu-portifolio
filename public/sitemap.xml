@@ -21,7 +21,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://enzovalencuela.com/projetos/jubitasks</loc>
+    <loc>https://enzovalencuela.com/projetos/nexgen-tasks</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+    <url>
+    <loc>https://enzovalencuela.com/projetos/nexgen-finances</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
