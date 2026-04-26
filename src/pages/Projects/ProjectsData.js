@@ -67,7 +67,7 @@ export const projectsData = [
     ],
     name: "E-Commerce gamer",
     github: "https://github.com/enzovalencuela/e-commerce-gamer",
-    deploy: "https://enzovalencuela-e-commerce.vercel.app",
+    deploy: "https://ecommerce.enzovalencuela.com",
     img: "/4.webp",
     description: {
       pt: "E-commerce completo com fluxo de pagamento automatizado, autenticação segura e design responsivo. Focado em resolver desafios reais de integração de APIs financeiras e segurança de dados do usuário.",
