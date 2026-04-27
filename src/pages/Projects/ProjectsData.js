@@ -176,7 +176,7 @@ export const projectsData = [
     ],
     name: "World Football Players",
     github: "https://github.com/enzovalencuela/World-Football-Players",
-    deploy: "https://world-football-players.vercel.app",
+    deploy: "https://football.enzovalencuela.com/",
     description: {
       pt: "O World Football Players é um site que permite visualizar informações sobre jogadores de futebol, técnicos, clubes e seleções.",
       en: "World Football Players is a website that lets users view information about football players, coaches, clubs and national teams.",
