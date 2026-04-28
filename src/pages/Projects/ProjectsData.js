@@ -173,10 +173,12 @@ export const projectsData = [
       { name: "Next.js", icon: "/next.js.webp" },
       { name: "Javascript", icon: "/javascript.svg" },
       { name: "Css", icon: "/css.webp" },
+      { name: "Prisma", icon: "/prisma.webp" },
+      { name: "PostgreSQL", icon: "/postgresql.svg" },
     ],
     name: "World Football Players",
     github: "https://github.com/enzovalencuela/World-Football-Players",
-    deploy: "https://football.enzovalencuela.com/",
+    deploy: "https://football.enzovalencuela.com",
     description: {
       pt: "O World Football Players é um site que permite visualizar informações sobre jogadores de futebol, técnicos, clubes e seleções.",
       en: "World Football Players is a website that lets users view information about football players, coaches, clubs and national teams.",
