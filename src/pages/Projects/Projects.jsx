@@ -54,7 +54,7 @@ function Projects() {
           <p className="projects-intro">{copy.projects.intro}</p>
         </div>
 
-        <div className="see-all-btn" onClick={navigate("/projetos")}>
+        <div className="see-all-btn" onClick={() => navigate("/projetos")}>
           <span>{copy.projects.seeAll}</span>
           <span className="arrow">→</span>
         </div>
