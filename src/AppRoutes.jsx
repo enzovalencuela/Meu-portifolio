@@ -7,12 +7,14 @@ import ScrollToTop from "./components/ScrollToTop";
 
 function AppRoutes() {
   return (
-    <Routes>
+    <>
       <ScrollToTop />
-      <Route path="/" element={<HomePage />} />
-      <Route path="/projetos" element={<ProjectsPage />} />
-      {/*<Route path="/projetos/:slug" element={<ProjectDetails />} />*/}
-    </Routes>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projetos" element={<ProjectsPage />} />
+        {/*<Route path="/projetos/:slug" element={<ProjectDetails />} />*/}
+      </Routes>
+    </>
   );
 }
 
