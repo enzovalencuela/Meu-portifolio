@@ -6,6 +6,16 @@
   color: var(--fontColor);
 }
 
+::selection {
+  background-color: #3b82f6; /* Cor do fundo da seleção (ex: azul) */
+  color: #ffffff;            /* Cor do texto quando selecionado */
+}
+
+::-moz-selection {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;

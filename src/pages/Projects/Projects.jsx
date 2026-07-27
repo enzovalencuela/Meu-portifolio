@@ -5,9 +5,11 @@ import ProjectCard from "../../components/ProjectCard";
 import { motion } from "framer-motion";
 import "./Projects.css";
 import { useLanguage } from "@/components/ui/LanguageContext";
+import { useNavigate } from "react-router-dom";
 
 function Projects() {
   const { language, copy } = useLanguage();
+  const navigate = useNavigate();
   const projectsToShow = projectsWithSlug
     .slice(0, 4)
     .map((project) => getProjectTranslation(project, language));
@@ -33,20 +35,30 @@ function Projects() {
   };
 
   return (
-    <section id="projects" className="section projects" aria-labelledby="projects-title">
-      <motion.h2
-        id="projects-title"
-        initial={{ opacity: 0, y: 25 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        {copy.projects.title}
-      </motion.h2>
+    <section
+      id="projects"
+      className="section projects"
+      aria-labelledby="projects-title"
+    >
+      <div className="projects-header">
+        <div className="projects-header-text">
+          <motion.h2
+            id="projects-title"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            {copy.projects.title}
+          </motion.h2>
+          <p className="projects-intro">{copy.projects.intro}</p>
+        </div>
 
-      <p className="projects-intro">
-        {copy.projects.intro}
-      </p>
+        <div className="see-all-btn" onClick={navigate("/projetos")}>
+          <span>{copy.projects.seeAll}</span>
+          <span className="arrow">→</span>
+        </div>
+      </div>
 
       <motion.div
         className="div__projects"

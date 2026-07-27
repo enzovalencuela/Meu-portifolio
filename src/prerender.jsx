@@ -23,6 +23,7 @@ export async function prerender({ url }) {
     html,
     links: new Set([
       "/",
+      "/projetos",
       ...projectsWithSlug.map((project) => `/projetos/${project.slug}`),
     ]),
     head: {

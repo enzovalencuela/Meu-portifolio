@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 // Nota: alguns dispositivos/sistemas não renderizam emojis de bandeira e
 // exibem apenas as letras (ex.: "BR"). Para garantir consistência, usamos
@@ -56,8 +62,7 @@ const translations = {
     },
     hero: {
       greeting: "Olá, eu sou",
-      role:
-        "Desenvolvedor Full Stack com foco em React, Node.js, JavaScript, TypeScript e PostgreSQL.",
+      role: "Desenvolvedor Full Stack com foco em React, Node.js, JavaScript, TypeScript e PostgreSQL.",
       description:
         "Construo aplicações web completas, responsivas e orientadas a performance para empresas, projetos digitais e produtos reais.",
       cta: "Vamos conversar?",
@@ -94,6 +99,7 @@ const translations = {
       ],
     },
     projects: {
+      seeAll: "Ver todos os projetos",
       title: "Projetos",
       intro:
         "Seleção de projetos desenvolvidos com foco em performance, experiência do usuário e resolução de problemas reais.",
@@ -103,6 +109,7 @@ const translations = {
       openProject: "Abrir projeto",
       github: "GitHub",
       access: "Acessar",
+      backToHome: "Voltar para o início",
     },
     experience: {
       title: "Experiência",
@@ -211,7 +218,8 @@ const translations = {
     },
     feedback: {
       title: "Depoimentos",
-      description: "Feedbacks de pessoas e clientes que acompanharam meus projetos.",
+      description:
+        "Feedbacks de pessoas e clientes que acompanharam meus projetos.",
       loading: "Carregando feedbacks...",
       loadError: "Nao foi possivel carregar feedbacks agora.",
       projectLabel: "Projeto",
@@ -220,7 +228,8 @@ const translations = {
       success: "Feedback enviado! Obrigado por contribuir.",
       form: {
         title: "Deixe seu feedback",
-        subtitle: "Seu feedback sera enviado para aprovacao antes de aparecer no site.",
+        subtitle:
+          "Seu feedback sera enviado para aprovacao antes de aparecer no site.",
         name: "Nome",
         namePlaceholder: "Seu nome",
         project: "Projeto (opcional)",
@@ -305,8 +314,7 @@ const translations = {
     },
     hero: {
       greeting: "Hi, I'm",
-      role:
-        "Full Stack Developer focused on React, Node.js, JavaScript, TypeScript and PostgreSQL.",
+      role: "Full Stack Developer focused on React, Node.js, JavaScript, TypeScript and PostgreSQL.",
       description:
         "I build complete, responsive, performance-oriented web applications for companies, digital products and real-world projects.",
       cta: "Let's talk?",
@@ -343,6 +351,7 @@ const translations = {
       ],
     },
     projects: {
+      seeAll: "See all projects",
       title: "Projects",
       intro:
         "A selection of projects built with a focus on performance, user experience and solving real problems.",
@@ -352,6 +361,7 @@ const translations = {
       openProject: "Open project",
       github: "GitHub",
       access: "Open",
+      backToHome: "Back to home",
     },
     experience: {
       title: "Experience",
@@ -469,7 +479,8 @@ const translations = {
       success: "Feedback sent! Thank you for contributing.",
       form: {
         title: "Share your feedback",
-        subtitle: "Your feedback will be reviewed before it appears on the website.",
+        subtitle:
+          "Your feedback will be reviewed before it appears on the website.",
         name: "Name",
         namePlaceholder: "Your name",
         project: "Project (optional)",
@@ -554,8 +565,7 @@ const translations = {
     },
     hero: {
       greeting: "Hola, soy",
-      role:
-        "Desarrollador Full Stack enfocado en React, Node.js, JavaScript, TypeScript y PostgreSQL.",
+      role: "Desarrollador Full Stack enfocado en React, Node.js, JavaScript, TypeScript y PostgreSQL.",
       description:
         "Construyo aplicaciones web completas, responsivas y orientadas al rendimiento para empresas, productos digitales y proyectos reales.",
       cta: "¿Hablamos?",
@@ -592,6 +602,7 @@ const translations = {
       ],
     },
     projects: {
+      seeAll: "Ver todos los proyectos",
       title: "Proyectos",
       intro:
         "Selección de proyectos desarrollados con foco en rendimiento, experiencia del usuario y resolución de problemas reales.",
@@ -601,6 +612,7 @@ const translations = {
       openProject: "Abrir proyecto",
       github: "GitHub",
       access: "Acceder",
+      backToHome: "Volver al inicio",
     },
     experience: {
       title: "Experiencia",
@@ -709,7 +721,8 @@ const translations = {
     },
     feedback: {
       title: "Testimonios",
-      description: "Opiniones de personas y clientes que siguieron mis proyectos.",
+      description:
+        "Opiniones de personas y clientes que siguieron mis proyectos.",
       loading: "Cargando testimonios...",
       loadError: "No fue posible cargar los testimonios ahora.",
       projectLabel: "Proyecto",
@@ -732,7 +745,8 @@ const translations = {
       errors: {
         INVALID_NAME: "El nombre debe tener entre 2 y 80 caracteres.",
         INVALID_MESSAGE: "El feedback debe tener entre 10 y 800 caracteres.",
-        INVALID_PROJECT: "El nombre del proyecto debe tener como máximo 120 caracteres.",
+        INVALID_PROJECT:
+          "El nombre del proyecto debe tener como máximo 120 caracteres.",
         INVALID_LOCALE: "Idioma inválido.",
         LOAD_FAILED: "No fue posible cargar los testimonios ahora.",
         SUBMIT_FAILED: "No fue posible enviar el feedback.",
@@ -803,8 +817,7 @@ const translations = {
     },
     hero: {
       greeting: "Hallo, ich bin",
-      role:
-        "Full‑Stack‑Entwickler mit Fokus auf React, Node.js, JavaScript, TypeScript und PostgreSQL.",
+      role: "Full‑Stack‑Entwickler mit Fokus auf React, Node.js, JavaScript, TypeScript und PostgreSQL.",
       description:
         "Ich baue vollständige, responsive und performante Webanwendungen für Unternehmen, digitale Produkte und reale Projekte.",
       cta: "Lass uns sprechen?",
@@ -841,6 +854,7 @@ const translations = {
       ],
     },
     projects: {
+      seeAll: "Alle Projekte ansehen",
       title: "Projekte",
       intro:
         "Eine Auswahl an Projekten mit Fokus auf Performance, Nutzererlebnis und die Lösung realer Probleme.",
@@ -850,6 +864,7 @@ const translations = {
       openProject: "Projekt öffnen",
       github: "GitHub",
       access: "Öffnen",
+      backToHome: "Zurück zum Start",
     },
     experience: {
       title: "Erfahrung",
@@ -947,7 +962,8 @@ const translations = {
       email: "E‑Mail",
       emailPlaceholder: "dein@email.com",
       message: "Wie kann ich helfen?",
-      messagePlaceholder: "Beschreibe dein Projekt, deine Idee oder deinen Bedarf.",
+      messagePlaceholder:
+        "Beschreibe dein Projekt, deine Idee oder deinen Bedarf.",
       submit: "Nachricht senden",
       profile: "Profil",
       follow: "Folge mir für mehr…",
@@ -958,7 +974,8 @@ const translations = {
     },
     feedback: {
       title: "Feedbacks",
-      description: "Rückmeldungen von Personen und Kund*innen zu meinen Projekten.",
+      description:
+        "Rückmeldungen von Personen und Kund*innen zu meinen Projekten.",
       loading: "Feedbacks werden geladen...",
       loadError: "Feedbacks konnten gerade nicht geladen werden.",
       projectLabel: "Projekt",
@@ -967,7 +984,8 @@ const translations = {
       success: "Feedback gesendet! Danke für deinen Beitrag.",
       form: {
         title: "Hinterlasse dein Feedback",
-        subtitle: "Dein Feedback wird geprüft, bevor es auf der Website erscheint.",
+        subtitle:
+          "Dein Feedback wird geprüft, bevor es auf der Website erscheint.",
         name: "Name",
         namePlaceholder: "Dein Name",
         project: "Projekt (optional)",
@@ -980,7 +998,8 @@ const translations = {
       },
       errors: {
         INVALID_NAME: "Der Name muss zwischen 2 und 80 Zeichen lang sein.",
-        INVALID_MESSAGE: "Das Feedback muss zwischen 10 und 800 Zeichen lang sein.",
+        INVALID_MESSAGE:
+          "Das Feedback muss zwischen 10 und 800 Zeichen lang sein.",
         INVALID_PROJECT: "Der Projektname darf höchstens 120 Zeichen haben.",
         INVALID_LOCALE: "Ungültige Sprache.",
         LOAD_FAILED: "Feedbacks konnten gerade nicht geladen werden.",
@@ -1052,8 +1071,7 @@ const translations = {
     },
     hero: {
       greeting: "Ciao, sono",
-      role:
-        "Sviluppatore Full Stack con focus su React, Node.js, JavaScript, TypeScript e PostgreSQL.",
+      role: "Sviluppatore Full Stack con focus su React, Node.js, JavaScript, TypeScript e PostgreSQL.",
       description:
         "Costruisco applicazioni web complete, responsive e orientate alle prestazioni per aziende, prodotti digitali e progetti reali.",
       cta: "Parliamo?",
@@ -1090,6 +1108,7 @@ const translations = {
       ],
     },
     projects: {
+      seeAll: "Vedi tutti i progetti",
       title: "Progetti",
       intro:
         "Selezione di progetti costruiti con focus su performance, esperienza utente e soluzione di problemi reali.",
@@ -1099,6 +1118,7 @@ const translations = {
       openProject: "Apri progetto",
       github: "GitHub",
       access: "Apri",
+      backToHome: "Torna all'inizio",
     },
     experience: {
       title: "Esperienza",
@@ -1207,7 +1227,8 @@ const translations = {
     },
     feedback: {
       title: "Feedback",
-      description: "Feedback da persone e clienti che hanno seguito i miei progetti.",
+      description:
+        "Feedback da persone e clienti che hanno seguito i miei progetti.",
       loading: "Caricamento feedback...",
       loadError: "Impossibile caricare i feedback ora.",
       projectLabel: "Progetto",
@@ -1216,7 +1237,8 @@ const translations = {
       success: "Feedback inviato! Grazie per il contributo.",
       form: {
         title: "Lascia il tuo feedback",
-        subtitle: "Il tuo feedback sarà revisionato prima di apparire sul sito.",
+        subtitle:
+          "Il tuo feedback sarà revisionato prima di apparire sul sito.",
         name: "Nome",
         namePlaceholder: "Il tuo nome",
         project: "Progetto (opzionale)",
@@ -1230,7 +1252,8 @@ const translations = {
       errors: {
         INVALID_NAME: "Il nome deve contenere tra 2 e 80 caratteri.",
         INVALID_MESSAGE: "Il feedback deve contenere tra 10 e 800 caratteri.",
-        INVALID_PROJECT: "Il nome del progetto deve avere massimo 120 caratteri.",
+        INVALID_PROJECT:
+          "Il nome del progetto deve avere massimo 120 caratteri.",
         INVALID_LOCALE: "Lingua non valida.",
         LOAD_FAILED: "Impossibile caricare i feedback ora.",
         SUBMIT_FAILED: "Impossibile inviare il feedback.",
@@ -1327,7 +1350,8 @@ export function LanguageProvider({ children }) {
     };
 
     const currentLanguage =
-      languageOptions.find((option) => option.code === language) || languageOptions[0];
+      languageOptions.find((option) => option.code === language) ||
+      languageOptions[0];
 
     return {
       language,
@@ -1339,7 +1363,11 @@ export function LanguageProvider({ children }) {
     };
   }, [language]);
 
-  return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
+  return (
+    <LanguageContext.Provider value={value}>
+      {children}
+    </LanguageContext.Provider>
+  );
 }
 
 export function useLanguage() {

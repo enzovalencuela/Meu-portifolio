@@ -1,6 +1,7 @@
 export const projectsData = [
   {
     id: 1,
+    type: "megajr",
     category: {
       pt: "Landing page institucional",
       en: "Institutional landing page",
@@ -40,6 +41,7 @@ export const projectsData = [
   },
   {
     id: 2,
+    type: "fullstack",
     category: {
       pt: "Aplicação full stack",
       en: "Full stack application",
@@ -79,6 +81,7 @@ export const projectsData = [
   },
   {
     id: 3,
+    type: "freelance",
     category: {
       pt: "Sistema de gestão",
       en: "Management system",
@@ -117,6 +120,7 @@ export const projectsData = [
   },
   {
     id: 4,
+    type: "fullstack",
     category: {
       pt: "Produtividade web",
       en: "Web productivity",
@@ -156,6 +160,7 @@ export const projectsData = [
   },
   {
     id: 5,
+    type: "fullstack",
     category: {
       pt: "Plataforma de consulta",
       en: "Search platform",
@@ -190,6 +195,7 @@ export const projectsData = [
   },
   {
     id: 6,
+    type: "fullstack",
     category: {
       pt: "Consumo de API",
       en: "API consumption",
@@ -260,6 +266,7 @@ export const projectsData = [
   */
   {
     id: 8,
+    type: "fullstack",
     category: {
       pt: "Gestão Financeira",
       en: "Financial Management",
@@ -296,6 +303,7 @@ export const projectsData = [
   },
   {
     id: 9,
+    type: "fullstack",
     category: {
       pt: "Dashboard operacional",
       en: "Operational dashboard",
@@ -332,6 +340,7 @@ export const projectsData = [
   },
   {
     id: 10,
+    type: "frontend",
     category: {
       pt: "Landing page temática",
       en: "Themed landing page",
@@ -367,6 +376,7 @@ export const projectsData = [
 
   {
     id: 11,
+    type: "fullstack",
     category: {
       pt: "Dashboard analítico",
       en: "Analytics dashboard",
@@ -401,6 +411,111 @@ export const projectsData = [
       es: "Dashboard de ventas para gestión comercial. Este proyecto fue una gran oportunidad para profundizar mis habilidades y trabajar con una stack moderna y muy valorada en el mercado.",
       de: "Sales-Dashboard fuer das Vertriebsmanagement. Eine tolle Gelegenheit, Kenntnisse zu vertiefen und mit einem modernen, am Markt gefragten Stack zu arbeiten.",
       it: "Dashboard vendite per la gestione commerciale. Ottima occasione per approfondire competenze e lavorare con uno stack moderno e richiesto dal mercato.",
+    },
+  },
+  {
+    id: 12,
+    type: "megajr",
+    category: {
+      pt: "Landing Page Institucional",
+      en: "Institutional Landing Page",
+      es: "Landing Page Institucional",
+      de: "Institutionelle Landingpage",
+      it: "Landing Page Istituzionale",
+    },
+    highlight: {
+      pt: "Portal oficial da ERAD-CO com informações sobre o evento, chamadas e programação.",
+      en: "Official ERAD-CO portal featuring event details, call for papers, and schedule.",
+      es: "Portal oficial de ERAD-CO con información del evento, convocatorias y agenda.",
+      de: "Offizielles ERAD-CO-Portal mit Event-Informationen, Calls und Programm.",
+      it: "Portale ufficiale ERAD-CO con informazioni sull'evento, call e programma.",
+    },
+    stack: [
+      { name: "React", icon: "/react.webp" },
+      { name: "TypeScript", icon: "/typescript.svg" },
+      { name: "Vite", icon: "/vite.webp" },
+      { name: "Tailwind CSS", icon: "/tailwind.webp" },
+    ],
+    name: "ERAD-CO - Landing Page",
+    github: "",
+    deploy: "https://facom.ufms.br/erad-co",
+    img: "/15.webp",
+    description: {
+      pt: "Landing page desenvolvida para a ERAD-CO. Conta com estrutura modular em BEM, seções de chamadas de trabalho com modais interativos e exibição das instituições organizadoras com layout totalmente responsivo.",
+      en: "Landing page developed for ERAD-CO. Built with modular BEM architecture, featuring call for papers sections, interactive modals, and an institutional showcase with a fully responsive layout.",
+      es: "Landing page desarrollada para ERAD-CO. Cuenta con estrutura modular en BEM, secciones de convocatorias con modales interactivos y muestra institucional con diseño totalmente responsivo.",
+      de: "Landingpage für die ERAD-CO. Basiert auf modularer BEM-Architektur mit Call-for-Papers-Abschnitten, interaktiven Modals und vollkommen responsivem Layout.",
+      it: "Landing page sviluppata per ERAD-CO. Presenta un'architettura modulare BEM, sezioni call for papers con modal interattivi e layout completamente reattivo.",
+    },
+  },
+  {
+    id: 13,
+    type: "megajr",
+    category: {
+      pt: "Plataforma de Evento",
+      en: "Event Platform",
+      es: "Plataforma de Evento",
+      de: "Event-Plattform",
+      it: "Piattaforma per Eventi",
+    },
+    highlight: {
+      pt: "Website oficial da Semana Acadêmica de Computação com cronograma dinâmico e inscrições.",
+      en: "Official website for the Academic Computing Week with dynamic schedule and registration.",
+      es: "Sitio web oficial de la Semana Académica de Computación con cronograma dinámico e inscripciones.",
+      de: "Offizielle Website für die Akademische Computerwoche mit dynamischem Zeitplan und Anmeldungen.",
+      it: "Sito web ufficiale della Settimana Accademica di Informatica con programma dinamico e iscrizioni.",
+    },
+    stack: [
+      { name: "React", icon: "/react.webp" },
+      { name: "Vite", icon: "/vite.webp" },
+      { name: "TypeScript", icon: "/typescript.svg" },
+      { name: "Tailwind CSS", icon: "/tailwind.webp" },
+    ],
+    name: "SECOMP - Semana Acadêmica de Computação",
+    github: "",
+    deploy: "https://facom.ufms.br/secomp",
+    img: "/16.webp",
+    description: {
+      pt: "Plataforma web para a SECOMP com cronograma dinâmico de palestras e minicursos, links para formulários de inscrição e layout responsivo baseado no Figma.",
+      en: "Web platform for SECOMP featuring dynamic lecture and workshop schedules, registration links, and a responsive layout built from Figma.",
+      es: "Plataforma web para SECOMP con cronograma dinámico de conferencias y talleres, enlaces de inscripción e interfaz responsiva basada en Figma.",
+      de: "Webplattform für SECOMP mit dynamischem Zeitplan für Vorträge und Workshops, Anmeldelinks und responsivem Layout basierend auf Figma.",
+      it: "Piattaforma web per SECOMP con programma dinamico di conferenze e workshop, link di iscrizione e layout reattivo basato su Figma.",
+    },
+  },
+  {
+    id: 14,
+    type: "megajr",
+    category: {
+      pt: "Landing page & Evento",
+      en: "Landing page & Event",
+      es: "Landing page y Evento",
+      de: "Landingpage & Veranstaltung",
+      it: "Landing page e Evento",
+    },
+    highlight: {
+      pt: "Landing page oficial para evento acadêmico com suporte a i18n e navegação responsiva.",
+      en: "Official landing page for an academic event with i18n support and responsive navigation.",
+      es: "Landing page oficial para evento académico con soporte i18n y navegación responsiva.",
+      de: "Offizielle Landingpage für ein akademisches Event mit i18n-Unterstützung und responsiver Navigation.",
+      it: "Landing page ufficiale per un evento accademico con supporto i18n e navigazione reattiva.",
+    },
+    stack: [
+      { name: "React", icon: "/react.webp" },
+      { name: "Vite", icon: "/vite.webp" },
+      { name: "TypeScript", icon: "/typescript.svg" },
+      { name: "Tailwind CSS", icon: "/tailwind.webp" },
+    ],
+    name: "SBSI Landing Page",
+    github: "",
+    deploy: "",
+    img: "/17.webp",
+    description: {
+      pt: "Plataforma web oficial do Simpósio Brasileiro de Sistemas de Informação. Desenvolvida na Mega Jr, traz navegação fluida, suporte a internacionalização (i18n), layout 100% responsivo e estrita fidelidade ao protótipo do Figma.",
+      en: "Official web platform for the Brazilian Symposium on Information Systems. Built at Mega Jr with smooth navigation, i18n support, 100% responsive layout, and pixel-perfect Figma implementation.",
+      es: "Plataforma web oficial del Simposio Brasileño de Sistemas de Información. Desarrollada en Mega Jr con navegación fluida, soporte para i18n, diseño 100% responsivo y total fidelidad al prototipo de Figma.",
+      de: "Offizielle Webplattform für das Brasilianische Symposium für Informationssysteme. Bei Mega Jr entwickelt mit flüssiger Navigation, i18n-Unterstützung, 100% responsivem Layout und hoher Figma-Treue.",
+      it: "Piattaforma web ufficiale del Simposio Brasiliano di Sistemi Informativi. Sviluppata presso Mega Jr con navigazione fluida, supporto i18n, layout 100% reattivo e massima fedeltà al prototipo Figma.",
     },
   },
 ];

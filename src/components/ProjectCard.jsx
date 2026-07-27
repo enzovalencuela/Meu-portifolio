@@ -10,9 +10,9 @@ const ProjectCard = ({ project }) => {
   const navigate = useNavigate();
   const { copy } = useLanguage();
 
-  const handleOpenDetails = () => {
+  /*const handleOpenDetails = () => {
     navigate(`/projetos/${project.slug}`);
-  };
+  };*/
 
   return (
     <motion.article
@@ -22,11 +22,11 @@ const ProjectCard = ({ project }) => {
       aria-label={`${copy.projects.openDetails} ${project.name}`}
       whileHover={{ y: -8 }}
       transition={{ duration: 0.2 }}
-      onClick={handleOpenDetails}
+      //onClick={handleOpenDetails}
       onKeyDown={(event) => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
-          handleOpenDetails();
+          //handleOpenDetails();
         }
       }}
     >
@@ -57,7 +57,9 @@ const ProjectCard = ({ project }) => {
               rel="noopener noreferrer"
               aria-label={`${copy.projects.openRepository} ${project.name} no GitHub`}
             >
-              <button className="btn-github">{copy.projects.github}</button>
+              <button className="btn-github" disabled={project.github === ""}>
+                {copy.projects.github}
+              </button>
             </a>
 
             <a

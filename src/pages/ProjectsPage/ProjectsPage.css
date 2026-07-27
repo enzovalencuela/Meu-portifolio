@@ -1,0 +1,99 @@
+.projetos-page-container {
+  background-color: var(--bg);
+  min-height: 100vh;
+  padding: 4rem 1.5rem 8rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.projetos-page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.back-link {
+  align-self: flex-start;
+  color: var(--pColor);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.back-link:hover {
+  color: var(--btnBg, #3b82f6);
+}
+
+.projetos-page-header h1 {
+  font-size: 2.8rem;
+  color: var(--fontColor);
+  margin-bottom: 0.8rem;
+}
+
+.projetos-page-description {
+  max-width: 680px;
+  color: var(--pColor);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+/* Container de Botões de Filtro */
+.filters-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 8px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.filter-btn {
+  padding: 0.6rem 1.4rem;
+  border-radius: 100px;
+  border: none;
+  background-color: transparent;
+  color: var(--pColor);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  color: var(--fontColor);
+}
+
+.filter-btn.active {
+  background-color: var(--btnBg, #3b82f6);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Responsividade do Filtro para telas pequenas */
+@media (max-width: 600px) {
+  .projetos-page-header h1 {
+    font-size: 2rem;
+  }
+
+  .filters-container {
+    border-radius: 16px;
+    padding: 6px;
+    width: 100%;
+  }
+
+  .filter-btn {
+    flex: 1 1 calc(50% - 12px);
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+    text-align: center;
+  }
+}
