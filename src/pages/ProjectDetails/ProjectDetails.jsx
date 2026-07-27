@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import Seo from "@/components/Seo";
 import { getProjectSeo } from "@/lib/seo";
 import Footer from "../Footer/Footer";
-import { getProjectTranslation, projectsWithSlug } from "../Projects/ProjectsData";
+import {
+  getProjectTranslation,
+  projectsWithSlug,
+} from "../Projects/ProjectsData";
 import { useLanguage } from "@/components/ui/LanguageContext";
 import "./ProjectDetails.css";
 
@@ -11,13 +14,6 @@ function ProjectDetails() {
   const { language, copy, t } = useLanguage();
   const { slug } = useParams();
   const project = projectsWithSlug.find((item) => item.slug === slug);
-
-  // Garante que, ao abrir a página de projeto, o scroll comece do topo
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-    }
-  }, [slug]);
 
   if (!project) {
     return <Navigate to="/" replace />;
@@ -58,7 +54,9 @@ function ProjectDetails() {
               <p className="project-eyebrow">{translatedProject.category}</p>
               <h1>{translatedProject.name}</h1>
               <p className="project-highlight">{translatedProject.highlight}</p>
-              <p className="project-description">{translatedProject.description}</p>
+              <p className="project-description">
+                {translatedProject.description}
+              </p>
 
               <div className="project-meta-grid">
                 <div className="project-meta-item">
@@ -67,7 +65,12 @@ function ProjectDetails() {
                 </div>
                 <div className="project-meta-item">
                   <span>{copy.projectDetails.mainStack}</span>
-                  <strong>{translatedProject.stack.slice(0, 3).map((tech) => tech.name).join(" • ")}</strong>
+                  <strong>
+                    {translatedProject.stack
+                      .slice(0, 3)
+                      .map((tech) => tech.name)
+                      .join(" • ")}
+                  </strong>
                 </div>
                 <div className="project-meta-item">
                   <span>{copy.projectDetails.status}</span>
@@ -112,13 +115,17 @@ function ProjectDetails() {
               <div className="project-media-card">
                 <img
                   src={translatedProject.img}
-                  alt={t("projectDetails.imageAlt", { name: translatedProject.name })}
+                  alt={t("projectDetails.imageAlt", {
+                    name: translatedProject.name,
+                  })}
                   className="project-image"
                 />
               </div>
 
               <div className="project-tech-card">
-                <p className="project-card-title">{copy.projectDetails.technologies}</p>
+                <p className="project-card-title">
+                  {copy.projectDetails.technologies}
+                </p>
                 <ul className="project-tech-list">
                   {translatedProject.stack.map((tech) => (
                     <li key={tech.name}>{tech.name}</li>
@@ -131,16 +138,22 @@ function ProjectDetails() {
 
         <section className="project-content-grid">
           <article className="project-section project-section-main">
-            <p className="project-section-label">{copy.projectDetails.context}</p>
+            <p className="project-section-label">
+              {copy.projectDetails.context}
+            </p>
             <h2>{copy.projectDetails.deliveryTitle}</h2>
             <p>
-              {t("projectDetails.deliveryText1", { name: translatedProject.name })}
+              {t("projectDetails.deliveryText1", {
+                name: translatedProject.name,
+              })}
             </p>
             <p>{copy.projectDetails.deliveryText2}</p>
           </article>
 
           <aside className="project-section project-section-side">
-            <p className="project-section-label">{copy.projectDetails.quickSummary}</p>
+            <p className="project-section-label">
+              {copy.projectDetails.quickSummary}
+            </p>
             <ul className="project-summary-list">
               <li>{translatedProject.highlight}</li>
               <li>
@@ -158,7 +171,9 @@ function ProjectDetails() {
         </section>
 
         <section className="project-section project-section-wide">
-          <p className="project-section-label">{copy.projectDetails.approach}</p>
+          <p className="project-section-label">
+            {copy.projectDetails.approach}
+          </p>
           <h2>{copy.projectDetails.technicalTitle}</h2>
           <div className="project-columns">
             <p>{copy.projectDetails.technicalText1}</p>
@@ -169,14 +184,19 @@ function ProjectDetails() {
         <section className="project-section project-section-wide">
           <div className="project-navigation-header">
             <div>
-              <p className="project-section-label">{copy.projectDetails.navigation}</p>
+              <p className="project-section-label">
+                {copy.projectDetails.navigation}
+              </p>
               <h2>{copy.projectDetails.continueExploring}</h2>
             </div>
           </div>
 
           <div className="project-prev-next">
             {previousProject ? (
-              <Link to={`/projetos/${previousProject.slug}`} className="project-nav-card">
+              <Link
+                to={`/projetos/${previousProject.slug}`}
+                className="project-nav-card"
+              >
                 <span>{copy.projectDetails.previousProject}</span>
                 <strong>{previousProject.name}</strong>
               </Link>
@@ -188,7 +208,10 @@ function ProjectDetails() {
             )}
 
             {nextProject ? (
-              <Link to={`/projetos/${nextProject.slug}`} className="project-nav-card">
+              <Link
+                to={`/projetos/${nextProject.slug}`}
+                className="project-nav-card"
+              >
                 <span>{copy.projectDetails.nextProject}</span>
                 <strong>{nextProject.name}</strong>
               </Link>
@@ -202,7 +225,11 @@ function ProjectDetails() {
 
           <div className="project-related-grid">
             {relatedProjects.map((item) => (
-              <Link key={item.slug} to={`/projetos/${item.slug}`} className="project-related-card">
+              <Link
+                key={item.slug}
+                to={`/projetos/${item.slug}`}
+                className="project-related-card"
+              >
                 <span>{item.category}</span>
                 <strong>{item.name}</strong>
                 <p>{item.highlight}</p>
