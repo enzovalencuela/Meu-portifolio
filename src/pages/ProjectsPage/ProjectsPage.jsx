@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Seo from "@/components/Seo";
+import { getProjectsSeo } from "@/lib/seo";
 import {
   getProjectTranslation,
   projectsWithSlug,
@@ -15,18 +17,26 @@ function ProjectsPage() {
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState("all");
 
-  // Tradução dos projetos
+  const seo = getProjectsSeo
+    ? getProjectsSeo(language)
+    : {
+        title:
+          copy.projects?.allProjectsTitle ||
+          "Todos os Projetos | Enzo Valencuela",
+        description:
+          copy.projects?.allProjectsIntro ||
+          "Explore o portfólio completo de aplicações web, sistemas corporativos e projetos em equipe.",
+      };
+
   const allProjects = projectsWithSlug.map((project) =>
     getProjectTranslation(project, language),
   );
 
-  // Lógica do Filtro
   const filteredProjects = allProjects.filter((project) => {
     if (activeFilter === "all") return true;
     return project.type === activeFilter;
   });
 
-  // Rótulos traduzidos dos filtros
   const filterLabels = {
     pt: {
       all: "Todos",
@@ -96,62 +106,66 @@ function ProjectsPage() {
   };
 
   return (
-    <div className="projetos-page-container">
-      <div className="projetos-page-header">
-        <div className="back-link" onClick={() => navigate("/")}>
-          ← {copy.projects.backToHome}
+    <>
+      <Seo {...seo} />
+
+      <div className="projetos-page-container">
+        <div className="projetos-page-header">
+          <div className="back-link" onClick={() => navigate("/")}>
+            ← {copy.projects.backToHome}
+          </div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {copy.projects?.allProjectsTitle || "Todos os Projetos"}
+          </motion.h1>
+
+          <p className="projetos-page-description">
+            {copy.projects?.allProjectsIntro ||
+              "Explore o portfólio completo de aplicações web, sistemas corporativos e projetos em equipe."}
+          </p>
+
+          {/* Filtros por Categoria */}
+          <div className="filters-container">
+            {filters.map((filter) => (
+              <button
+                key={filter.key}
+                className={`filter-btn ${activeFilter === filter.key ? "active" : ""}`}
+                onClick={() => setActiveFilter(filter.key)}
+              >
+                {filter.label}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+        {/* Grid de Projetos com Animação de Troca de Filtro */}
+        <motion.div
+          className="div__projects"
+          variants={container}
+          initial="hidden"
+          animate="show"
         >
-          {copy.projects?.allProjectsTitle || "Todos os Projetos"}
-        </motion.h1>
-
-        <p className="projetos-page-description">
-          {copy.projects?.allProjectsIntro ||
-            "Explore o portfólio completo de aplicações web, sistemas corporativos e projetos em equipe."}
-        </p>
-
-        {/* Filtros por Categoria */}
-        <div className="filters-container">
-          {filters.map((filter) => (
-            <button
-              key={filter.key}
-              className={`filter-btn ${activeFilter === filter.key ? "active" : ""}`}
-              onClick={() => setActiveFilter(filter.key)}
-            >
-              {filter.label}
-            </button>
-          ))}
-        </div>
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project) => (
+              <motion.div
+                key={project.id}
+                variants={item}
+                layout
+                initial="hidden"
+                animate="show"
+                exit="exit"
+              >
+                <ProjectCard project={project} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
-
-      {/* Grid de Projetos com Animação de Troca de Filtro */}
-      <motion.div
-        className="div__projects"
-        variants={container}
-        initial="hidden"
-        animate="show"
-      >
-        <AnimatePresence mode="popLayout">
-          {filteredProjects.map((project) => (
-            <motion.div
-              key={project.id}
-              variants={item}
-              layout
-              initial="hidden"
-              animate="show"
-              exit="exit"
-            >
-              <ProjectCard project={project} />
-            </motion.div>
-          ))}
-        </AnimatePresence>
-      </motion.div>
-    </div>
+    </>
   );
 }
 

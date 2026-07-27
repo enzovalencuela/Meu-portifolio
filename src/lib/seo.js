@@ -11,11 +11,14 @@ function getTextByLanguage(value, language = "pt") {
   return value?.[language] || value?.pt || "";
 }
 
-export function getHomeSeo() {
+export function getHomeSeo(language = "pt") {
+  const isEn = language === "en";
+
   return {
-    title: "Enzo Valençuela | Portfólio",
-    description:
-      "Portfólio de Edilson Enzo da Silva Valençuela, desenvolvedor Full Stack com foco em React, Next.js, Node.js, TypeScript e PostgreSQL. Conheça meus projetos, experiência e contatos.",
+    title: isEn ? "Enzo Valençuela | Portfolio" : "Enzo Valençuela | Portfólio",
+    description: isEn
+      ? "Portfolio of Edilson Enzo da Silva Valençuela, Full Stack developer focusing on React, Next.js, Node.js, TypeScript, and PostgreSQL."
+      : "Portfólio de Edilson Enzo da Silva Valençuela, desenvolvedor Full Stack com foco em React, Next.js, Node.js, TypeScript e PostgreSQL. Conheça meus projetos, experiência e contatos.",
     canonical: `${siteUrl}/`,
     image: defaultOgImage,
     jsonLd: {
@@ -45,19 +48,25 @@ export function getHomeSeo() {
   };
 }
 
-export function getProjectsPageSeo() {
+export function getProjectsSeo(language = "pt") {
+  const isEn = language === "en";
+  const title = isEn
+    ? "Projects | Enzo Valençuela - Full Stack Developer"
+    : "Projetos | Enzo Valençuela - Desenvolvedor Full Stack";
+  const description = isEn
+    ? "Explore the full project portfolio of Enzo Valençuela. Full-stack apps, freelance work, and team systems."
+    : "Explore o portfólio completo de projetos de Enzo Valençuela. Aplicações full-stack, trabalhos freelancers e sistemas em equipe desenvolvidos na Mega Jr.";
+
   return {
-    title: "Projetos | Enzo Valençuela - Desenvolvedor Full Stack",
-    description:
-      "Explore o portfólio completo de projetos de Enzo Valençuela. Aplicações full-stack, trabalhos freelancers e sistemas em equipe desenvolvidos na Mega Jr.",
+    title,
+    description,
     canonical: `${siteUrl}/projetos`,
     image: defaultOgImage,
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: "Projetos de Enzo Valençuela",
-      description:
-        "Galeria completa de projetos full-stack, freelas e sistemas em equipe.",
+      name: isEn ? "Enzo Valençuela's Projects" : "Projetos de Enzo Valençuela",
+      description,
       url: `${siteUrl}/projetos`,
       breadcrumb: {
         "@type": "BreadcrumbList",
@@ -65,13 +74,13 @@ export function getProjectsPageSeo() {
           {
             "@type": "ListItem",
             position: 1,
-            name: "Início",
+            name: isEn ? "Home" : "Início",
             item: siteUrl,
           },
           {
             "@type": "ListItem",
             position: 2,
-            name: "Projetos",
+            name: isEn ? "Projects" : "Projetos",
             item: `${siteUrl}/projetos`,
           },
         ],
@@ -81,17 +90,29 @@ export function getProjectsPageSeo() {
 }
 
 export function getProjectSeo(project, language = "pt") {
+  if (!project) return getHomeSeo(language);
+
   const projectName = getTextByLanguage(project.name, language);
   const projectDescription = getTextByLanguage(project.description, language);
-  const description = `${projectDescription} Tecnologias principais: ${project.stack
-    ?.map((tech) => tech.name)
-    .join(", ")}.`;
+  const techList =
+    project.stack?.map((tech) => tech.name || tech).join(", ") || "";
+
+  const description = techList
+    ? `${projectDescription} ${language === "en" ? "Key tech:" : "Tecnologias principais:"} ${techList}.`
+    : projectDescription;
+
+  let imageUrl = defaultOgImage;
+  if (project.img) {
+    imageUrl = project.img.startsWith("http")
+      ? project.img
+      : `${siteUrl}${project.img.startsWith("/") ? "" : "/"}${project.img}`;
+  }
 
   return {
-    title: `${projectName} | Projeto de Enzo Valençuela`,
+    title: `${projectName} | ${language === "en" ? "Project by Enzo Valençuela" : "Projeto de Enzo Valençuela"}`,
     description,
     canonical: `${siteUrl}/projetos/${project.slug}`,
-    image: project.img ? `${siteUrl}${project.img}` : defaultOgImage,
+    image: imageUrl,
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "SoftwareSourceCode",
@@ -99,7 +120,7 @@ export function getProjectSeo(project, language = "pt") {
       description: projectDescription,
       url: `${siteUrl}/projetos/${project.slug}`,
       codeRepository: project.github || undefined,
-      programmingLanguage: project.stack?.map((tech) => tech.name),
+      programmingLanguage: project.stack?.map((tech) => tech.name || tech),
       author: {
         "@type": "Person",
         name: "Enzo Valençuela",
@@ -109,18 +130,18 @@ export function getProjectSeo(project, language = "pt") {
   };
 }
 
-export function getSeoByPath(pathname) {
+export function getSeoByPath(pathname, language = "pt") {
   const cleanPathname =
     pathname.length > 1 && pathname.endsWith("/")
       ? pathname.slice(0, -1)
       : pathname;
 
   if (cleanPathname === "/" || cleanPathname === "") {
-    return getHomeSeo();
+    return getHomeSeo(language);
   }
 
   if (cleanPathname === "/projetos") {
-    return getProjectsPageSeo();
+    return getProjectsSeo(language);
   }
 
   const project = projectsWithSlug.find(
@@ -128,10 +149,10 @@ export function getSeoByPath(pathname) {
   );
 
   if (project) {
-    return getProjectSeo(project);
+    return getProjectSeo(project, language);
   }
 
-  return getHomeSeo();
+  return getHomeSeo(language);
 }
 
 export function buildHeadElements(seo) {
