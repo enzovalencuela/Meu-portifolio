@@ -20,12 +20,8 @@ function ProjectsPage() {
   const seo = getProjectsSeo
     ? getProjectsSeo(language)
     : {
-        title:
-          copy.projects?.allProjectsTitle ||
-          "Todos os Projetos | Enzo Valencuela",
-        description:
-          copy.projects?.allProjectsIntro ||
-          "Explore o portfólio completo de aplicações web, sistemas corporativos e projetos em equipe.",
+        title: copy.projects.allProjectsTitle,
+        description: copy.projects.allProjectsIntro,
       };
 
   const allProjects = projectsWithSlug.map((project) =>
@@ -120,12 +116,11 @@ function ProjectsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {copy.projects?.allProjectsTitle || "Todos os Projetos"}
+            {copy.projects.allProjectsTitle}
           </motion.h1>
 
           <p className="projetos-page-description">
-            {copy.projects?.allProjectsIntro ||
-              "Explore o portfólio completo de aplicações web, sistemas corporativos e projetos em equipe."}
+            {copy.projects.allProjectsIntro}
           </p>
 
           {/* Filtros por Categoria */}

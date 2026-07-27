@@ -110,6 +110,8 @@ const translations = {
       github: "GitHub",
       access: "Acessar",
       backToHome: "Voltar para o início",
+      allProjectsTitle: "Todos os Projetos | Enzo Valencuela",
+      allProjectsIntro: "Explore o portfólio completo de aplicações web, sistemas corporativos e projetos em equipe.",
     },
     experience: {
       title: "Experiência",
@@ -362,6 +364,8 @@ const translations = {
       github: "GitHub",
       access: "Open",
       backToHome: "Back to home",
+      allProjectsTitle: "All Projects | Enzo Valencuela",
+      allProjectsIntro: "Explore the complete portfolio of web applications, corporate systems and team projects.",
     },
     experience: {
       title: "Experience",
@@ -613,6 +617,8 @@ const translations = {
       github: "GitHub",
       access: "Acceder",
       backToHome: "Volver al inicio",
+      allProjectsIntro:
+        "Explora el portafolio completo de aplicaciones web, sistemas corporativos y proyectos en equipo.",
     },
     experience: {
       title: "Experiencia",
@@ -865,6 +871,9 @@ const translations = {
       github: "GitHub",
       access: "Öffnen",
       backToHome: "Zurück zum Start",
+      allProjectsTitle: "Alle Projekte | Enzo Valençuela",
+      allProjectsIntro:
+        "Eine Auswahl an Projekten mit Fokus auf Performance, Nutzererlebnis und die Lösung realer Probleme.",
     },
     experience: {
       title: "Erfahrung",
@@ -1119,6 +1128,9 @@ const translations = {
       github: "GitHub",
       access: "Apri",
       backToHome: "Torna all'inizio",
+      allProjectsTitle: "Tutti i progetti | Enzo Valençuela",
+      allProjectsIntro:
+        "Esplora l'intero portfolio di applicazioni web, sistemi aziendali e progetti di squadra."
     },
     experience: {
       title: "Esperienza",
