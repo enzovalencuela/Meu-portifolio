@@ -56,7 +56,8 @@ export function getProjectsPageSeo() {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       name: "Projetos de Enzo Valençuela",
-      description: "Galeria completa de projetos full-stack, freelas e sistemas em equipe.",
+      description:
+        "Galeria completa de projetos full-stack, freelas e sistemas em equipe.",
       url: `${siteUrl}/projetos`,
       breadcrumb: {
         "@type": "BreadcrumbList",
@@ -109,16 +110,21 @@ export function getProjectSeo(project, language = "pt") {
 }
 
 export function getSeoByPath(pathname) {
-  if (pathname === "/" || pathname === "") {
+  const cleanPathname =
+    pathname.length > 1 && pathname.endsWith("/")
+      ? pathname.slice(0, -1)
+      : pathname;
+
+  if (cleanPathname === "/" || cleanPathname === "") {
     return getHomeSeo();
   }
 
-  if (pathname === "/projetos" || pathname === "/projetos/") {
+  if (cleanPathname === "/projetos") {
     return getProjectsPageSeo();
   }
 
   const project = projectsWithSlug.find(
-    (item) => `/projetos/${item.slug}` === pathname,
+    (item) => item.slug && `/projetos/${item.slug}` === cleanPathname,
   );
 
   if (project) {
@@ -142,7 +148,10 @@ export function buildHeadElements(seo) {
     { type: "meta", props: { property: "og:url", content: seo.canonical } },
     {
       type: "meta",
-      props: { property: "og:site_name", content: "Portfólio de Edilson Enzo da Silva Valençuela" },
+      props: {
+        property: "og:site_name",
+        content: "Portfólio de Edilson Enzo da Silva Valençuela",
+      },
     },
     { type: "meta", props: { property: "og:image", content: seo.image } },
     {
@@ -152,8 +161,14 @@ export function buildHeadElements(seo) {
         content: "Imagem de compartilhamento do portfólio de Enzo Valençuela",
       },
     },
-    { type: "meta", props: { property: "og:image:type", content: "image/webp" } },
-    { type: "meta", props: { name: "twitter:card", content: "summary_large_image" } },
+    {
+      type: "meta",
+      props: { property: "og:image:type", content: "image/webp" },
+    },
+    {
+      type: "meta",
+      props: { name: "twitter:card", content: "summary_large_image" },
+    },
     { type: "meta", props: { name: "twitter:title", content: seo.title } },
     {
       type: "meta",
