@@ -521,7 +521,12 @@ export const projectsData = [
 ];
 
 export function slugifyProjectName(name) {
-  return name
+  const nameString = typeof name === "object" ? name?.pt || name?.en || "" : name;
+
+  if (!nameString) return "";
+
+  return nameString
+    .toString()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
