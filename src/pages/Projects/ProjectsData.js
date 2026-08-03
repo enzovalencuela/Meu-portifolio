@@ -29,6 +29,7 @@ export const projectsData = [
       { name: "Chart Js", icon: "/chartjs.svg" },
     ],
     name: "COP 15 UFMS",
+    github: "",
     deploy: "https://cop15.ufms.br",
     description: {
       pt: "Desenvolvimento da Landing Page oficial do evento em parceria com a Mega Júnior - UFMS. O projeto focou em entregar uma solução de alta performance e design refinado, servindo como o hub digital principal para discussões globais sobre biodiversidade.",
@@ -195,7 +196,7 @@ export const projectsData = [
   },
   {
     id: 6,
-    type: "fullstack",
+    type: "frontend",
     category: {
       pt: "Consumo de API",
       en: "API consumption",
@@ -376,7 +377,7 @@ export const projectsData = [
 
   {
     id: 11,
-    type: "fullstack",
+    type: "frontend",
     category: {
       pt: "Dashboard analítico",
       en: "Analytics dashboard",
@@ -521,7 +522,8 @@ export const projectsData = [
 ];
 
 export function slugifyProjectName(name) {
-  const nameString = typeof name === "object" ? name?.pt || name?.en || "" : name;
+  const nameString =
+    typeof name === "object" ? name?.pt || name?.en || "" : name;
 
   if (!nameString) return "";
 
